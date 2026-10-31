@@ -16,19 +16,19 @@ DeepSeek-V4-Flash / SGLang 在四张 RTX PRO 6000 上的推理部署与性能研
 
 ## 阶段报告
 
-| 报告 | 内容 |
-|---|---|
-| [预填充分块 2048/1024 对照](REPORT-CHUNK-2026-10-31.md) | 固定调度条件下比较预填充分块 2048/1024，核对 GPU 时间线与端到端结果。 |
-| [长输入时间线诊断](REPORT-TIMELINE-2026-10-31.md) | 对齐输入处理与验证步骤，分析长输入等待与批次变化。 |
-| [等待预算原型](REPORT-WAIT-BUDGET-2026-10-31.md) | 比较等待预算下的首字延迟、逐 token 耗时与达标率。 |
-| [MTP 步数与调度间隔初筛](REPORT-FACTORIAL-2026-10-31.md) | 固定 1/3 步 MTP 与 0/8 调度间隔的四配置初筛。 |
-| [夜间独立复验与负载边界](REPORT-OVERNIGHT-2026-10-31.md) | 不同输入长度、到达节奏和独立重复下的负载边界。 |
-| [TTFT 口径与到达节奏归因](REPORT-TTFT-ATTRIBUTION.md) | 统一 TTFT 计时口径与到达条件，检查闭环反馈和排队影响。 |
-| [持续负载下的调度实验](REPORT-SUSTAINED-SCHEDULING.md) | 持续输入下比较 MTP 步数及 prefill/decode 调度间隔。 |
-| [有效吞吐与请求达标率](REPORT-GOODPUT.md) | 在冻结的延迟阈值下比较有效吞吐与请求达标率。 |
-| [MTP 性能边界](REPORT-MTP-BOUNDARY.md) | 主基准、候选筛选、独立验证与分段回放。 |
-| [部署与基础基准](REPORT.md) | 环境、TP 配置、MTP 部署及基础基准结果。 |
-| [REPORT-CONTINUATION-2026-10-31.md](REPORT-CONTINUATION-2026-10-31.md) | 详见阶段报告。 |
+| 时间 | 报告 | 内容 |
+|---|---|---|
+| 2026-10-31 | [预填充分块 2048/1024 对照](REPORT-CHUNK-2026-10-31.md) | 固定调度条件下比较预填充分块 2048/1024，核对 GPU 时间线与端到端结果。 |
+| 2026-10-31 | [长输入时间线诊断](REPORT-TIMELINE-2026-10-31.md) | 对齐输入处理与验证步骤，分析长输入等待与批次变化。 |
+| 2026-10-31 | [等待预算原型](REPORT-WAIT-BUDGET-2026-10-31.md) | 比较等待预算下的首字延迟、逐 token 耗时与达标率。 |
+| 2026-10-31 | [MTP 步数与调度间隔初筛](REPORT-FACTORIAL-2026-10-31.md) | 固定 1/3 步 MTP 与 0/8 调度间隔的四配置初筛。 |
+| 2026-10-31 | [夜间独立复验与负载边界](REPORT-OVERNIGHT-2026-10-31.md) | 不同输入长度、到达节奏和独立重复下的负载边界。 |
+| 2026-10-30 | [TTFT 口径与到达节奏归因](REPORT-TTFT-ATTRIBUTION.md) | 统一 TTFT 计时口径与到达条件，检查闭环反馈和排队影响。 |
+| 2026-10-30 | [持续负载下的调度实验](REPORT-SUSTAINED-SCHEDULING.md) | 持续输入下比较 MTP 步数及 prefill/decode 调度间隔。 |
+| 2026-10-30 | [有效吞吐与请求达标率](REPORT-GOODPUT.md) | 在冻结的延迟阈值下比较有效吞吐与请求达标率。 |
+| 2026-10-30 | [MTP 性能边界](REPORT-MTP-BOUNDARY.md) | 主基准、候选筛选、独立验证与分段回放。 |
+| 2026-10-30 | [部署与基础基准](REPORT.md) | 环境、TP 配置、MTP 部署及基础基准结果。 |
+| 2026-10-31 | [REPORT-CONTINUATION-2026-10-31.md](REPORT-CONTINUATION-2026-10-31.md) | 详见阶段报告。 |
 
 ## 评估指标
 
