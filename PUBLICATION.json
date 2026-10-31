@@ -19,13 +19,13 @@
     },
     {
       "path": "PUBLICATION.md",
-      "sha256": "b6da0e948ccc8f5a51c77558377fa63cbbda48d013f96e1175ec255bcbf1dec7",
-      "bytes": 1793
+      "sha256": "8dc2f29c7ac839165dc90e4a3456bd3d7d33d7fd220ca669fef0cddd43879ff3",
+      "bytes": 2388
     },
     {
       "path": "README.md",
-      "sha256": "d312ed74432b666f0aa3505303866c57e710ba934d5d0dcb79a666bfad7fcfd8",
-      "bytes": 12855
+      "sha256": "1227cc3f5a7ac2558e4726883a1dfe1359d3b69c2c63f5ee2b65bec55b796a50",
+      "bytes": 13474
     },
     {
       "path": "REPORT-CHUNK-2026-10-31.md",
@@ -84,18 +84,48 @@
     },
     {
       "path": "daily/2026-10-30.md",
-      "sha256": "0227e643822a938ef7963ce1d937af0ceee2cd8927dd3abce995ccd00309dcd8",
-      "bytes": 4443
+      "sha256": "e87c0c86d12a39d54eff0eaac36a0c3cb5461ed90ff1e19606893a7493a196f5",
+      "bytes": 5259
     },
     {
       "path": "daily/2026-10-31.md",
-      "sha256": "875f63131860da1575a36a0a32e729e00d56f51ee2f58b87b8ec6136d5b77ed3",
-      "bytes": 6133
+      "sha256": "50618813320e1c49377cdb149143927e31b5c9686d3f2da3ac3c3536fc1d5264",
+      "bytes": 12147
     },
     {
       "path": "daily/README.md",
-      "sha256": "1e06fd50e241ef48fccbf483c77f57be2fcca06af4ef3ac35231d06702cbdc45",
-      "bytes": 1482
+      "sha256": "4cfa0210fec5afaa81f4e2b452607b8c36731ecd00b8ecd68ce0a095a11025d0",
+      "bytes": 5244
+    },
+    {
+      "path": "daily/data/2026-10-30-mtp-boundary.json",
+      "sha256": "7d16f77d5596cb2b344bd2141eea8418328fd81b8551a05fa563e2c5c9da7e57",
+      "bytes": 5607
+    },
+    {
+      "path": "daily/data/2026-10-31-latency-tradeoffs.json",
+      "sha256": "799c9b14a4871806369936cae77af6b6b8fee368c342febd2b6f72e4da2b7466",
+      "bytes": 3001
+    },
+    {
+      "path": "daily/data/README.md",
+      "sha256": "9b6744e269830866c25a309082880571e46a424dbbb785e69d9dfaea9e66bf99",
+      "bytes": 1992
+    },
+    {
+      "path": "daily/figures/2026-10-30-mtp-boundary.png",
+      "sha256": "d79e5d677cfd2d6fcd9ddc3f4d6b1c1742890f630f7bd05a4c89aee6f3a3abf9",
+      "bytes": 139070
+    },
+    {
+      "path": "daily/figures/2026-10-31-latency-tradeoffs.png",
+      "sha256": "20a2e45c2b021b3e93d3f82c8d49e098ab3e0c26ffd1aa1835ca99818f81d32c",
+      "bytes": 202663
+    },
+    {
+      "path": "daily/figures/2026-10-31-single-stream.png",
+      "sha256": "346f610d5be496cba9a827a2fa60843929598c140f0679d9b7c8ba1dc2cd4d26",
+      "bytes": 141279
     },
     {
       "path": "docs/superpowers/plans/2026-10-30-deepseek-v4-pro6000.md",
@@ -206,6 +236,11 @@
       "path": "results/briefing-2026-10-31/04-progress-and-plan.png",
       "sha256": "15f9f7f195d556cb1b02b3668728d3923510aefdfdf3bf2e7fc9d6d18aefa02c",
       "bytes": 253962
+    },
+    {
+      "path": "results/briefing-2026-10-31/single-stream-summary.json",
+      "sha256": "b5387a5bcf762952b7c2678089b174e1bc2fc3e63711eae4af5d0f03b4adf3fb",
+      "bytes": 15519
     },
     {
       "path": "results/chunk-study-2026-10-31/run-20261031T052225Z/SUMMARY.md",
@@ -621,6 +656,11 @@
       "path": "tools/check_publication.py",
       "sha256": "0c6ea624e0fc2f1106e6d34a3591fc5afc97bcce2b9f20aee0c9919cf9419fc7",
       "bytes": 5436
+    },
+    {
+      "path": "tools/render_daily_figures.py",
+      "sha256": "1e47b5023d5592538004d57d5fcf3a7c6fc3e74550aad582ae174bc0f9a7d6d6",
+      "bytes": 9458
     }
   ],
   "readme_sync": {
@@ -639,7 +679,26 @@
     ],
     "supporting_records": [
       "REPORT-CONTINUATION-2026-10-31.md",
-      "results/continuation-study-2026-10-31/run-20261031T070530Z/completion.json"
-    ]
+      "results/continuation-study-2026-10-31/run-20261031T070530Z/completion.json",
+      "results/briefing-2026-10-31/single-stream-summary.json"
+    ],
+    "figures": [
+      "daily/figures/2026-10-30-mtp-boundary.png",
+      "daily/figures/2026-10-31-single-stream.png",
+      "daily/figures/2026-10-31-latency-tradeoffs.png"
+    ],
+    "figure_data": [
+      "daily/data/2026-10-30-mtp-boundary.json",
+      "daily/data/2026-10-31-latency-tradeoffs.json",
+      "results/briefing-2026-10-31/single-stream-summary.json"
+    ],
+    "render_script": "tools/render_daily_figures.py",
+    "figure_review": "visual review completed; PNG text and EXIF metadata removed",
+    "new_gpu_measurements": false,
+    "raw_baseline_windows_checked": 54,
+    "baseline_completed_requests_checked": 7032,
+    "single_stream_windows_subset": 18,
+    "single_stream_completed_requests_subset": 696,
+    "counts_overlap": true
   }
 }

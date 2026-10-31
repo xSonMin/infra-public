@@ -1,0 +1,353 @@
+{
+  "review_date_beijing": "2026-10-31",
+  "operation": "Recompute archived results; no new inference benchmark and no live service verification.",
+  "measurement_date": "2026-10-30",
+  "source_summary": "results/mtp-study-2026-10-30/run-20261030T070100Z/analysis-final/summary.json",
+  "source_summary_sha256": "7d52337df7bfad9365c821c5e3db113322332386565e0bf816daf0a9e7a48961",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "model_revision": "60d8d70770c6776ff598c94bb586a859a38244f1",
+  "framework": "SGLang 0.5.23",
+  "hardware": "4 x RTX PRO 6000 Blackwell Server Edition, TP=4",
+  "cache": "radix/prefix cache disabled; service and kernels warmed",
+  "mtp": "EAGLE path; fixed 3 steps, top-k=1, 4 draft tokens",
+  "metrics": {
+    "mean_output_tok_s": "Arithmetic mean over 3 native benchmark windows of actual total output tokens / native duration; includes prefill and decode. Four-GPU service total, not per GPU.",
+    "mean_tpot_ms": "Native SGLang TPOT = (E2E - TTFT) / (actual output tokens - 1), averaged within and then across rounds.",
+    "reciprocal_mean_tpot_tok_s": "1000 / mean TPOT in ms. A derived rate; not the arithmetic mean of per-request rates and not guaranteed identical to AIPerf generation TPS.",
+    "aggregation": "Each primary row preserves one workload, one mode, and three independent rounds; no cross-workload or replay pooling."
+  },
+  "formal_raw_files_verified": 18,
+  "formal_completed_requests_verified": 696,
+  "formal_output_tokens_verified": 187392,
+  "rows": [
+    {
+      "workload": "short",
+      "input_tokens": 512,
+      "output_tokens_per_request": 128,
+      "concurrency": 1,
+      "mode": "none",
+      "rounds": 3,
+      "completed_requests": 156,
+      "output_tokens": 19968,
+      "mean_output_tok_s": 101.84811274815868,
+      "min_output_tok_s": 101.62562948563047,
+      "max_output_tok_s": 102.06533638572157,
+      "mean_ttft_ms": 87.10891572450353,
+      "mean_tpot_ms": 9.207677003786381,
+      "reciprocal_mean_tpot_tok_s": 108.60502595701173,
+      "measurements": [
+        {
+          "round": 1,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/short-c1-none-r1-i512-o128-c1.jsonl",
+          "sha256": "88b1802777fbbe63449aee23354c97ecac8f85c154ae27ab04ffe37b0b336f4c",
+          "completed": 52,
+          "output_tokens": 6656,
+          "duration_s": 65.49528926599305,
+          "output_tok_s": 101.62562948563047,
+          "mean_ttft_ms": 88.82260884610542,
+          "mean_tpot_ms": 9.215763270891564
+        },
+        {
+          "round": 2,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/short-c1-none-r2-i512-o128-c1.jsonl",
+          "sha256": "b1e60c797510105d362caf736ba6da3b740f9a01122cbe423673e75b6c6a8d78",
+          "completed": 52,
+          "output_tokens": 6656,
+          "duration_s": 65.21312950800348,
+          "output_tok_s": 102.06533638572157,
+          "mean_ttft_ms": 85.58983192359356,
+          "mean_tpot_ms": 9.19850149742985
+        },
+        {
+          "round": 3,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/short-c1-none-r3-i512-o128-c1.jsonl",
+          "sha256": "ce7e7288efdc07e4f24ee2b8084c8e0498b882a4eecc491aa28d388d7c17305e",
+          "completed": 52,
+          "output_tokens": 6656,
+          "duration_s": 65.34884260500257,
+          "output_tok_s": 101.85337237312403,
+          "mean_ttft_ms": 86.91430640381161,
+          "mean_tpot_ms": 9.208766243037731
+        }
+      ]
+    },
+    {
+      "workload": "short",
+      "input_tokens": 512,
+      "output_tokens_per_request": 128,
+      "concurrency": 1,
+      "mode": "mtp",
+      "rounds": 3,
+      "completed_requests": 156,
+      "output_tokens": 19968,
+      "mean_output_tok_s": 187.70151984377605,
+      "min_output_tok_s": 187.32968311019965,
+      "max_output_tok_s": 187.95356986862936,
+      "mean_ttft_ms": 94.17806940417414,
+      "mean_tpot_ms": 4.625908587467093,
+      "reciprocal_mean_tpot_tok_s": 216.17374859271658,
+      "measurements": [
+        {
+          "round": 1,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/short-c1-mtp-r1-i512-o128-c1.jsonl",
+          "sha256": "f1cdcd1032ca84a8fa767919e88175bab2d23fead326bf546f0d78bb85104b3c",
+          "completed": 52,
+          "output_tokens": 6656,
+          "duration_s": 35.530941436998546,
+          "output_tok_s": 187.32968311019965,
+          "mean_ttft_ms": 95.02637401993314,
+          "mean_tpot_ms": 4.629829330260007
+        },
+        {
+          "round": 2,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/short-c1-mtp-r2-i512-o128-c1.jsonl",
+          "sha256": "b3c9e6742cdda63902bacd71b07a4566a5f7ccbe52a8a7c77af9e8170591b61f",
+          "completed": 52,
+          "output_tokens": 6656,
+          "duration_s": 35.437938975999714,
+          "output_tok_s": 187.82130655249915,
+          "mean_ttft_ms": 94.00303276897131,
+          "mean_tpot_ms": 4.623915907622651
+        },
+        {
+          "round": 3,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/short-c1-mtp-r3-i512-o128-c1.jsonl",
+          "sha256": "309a70eefdda76741918d7ca960b4aed8d3b6579c5196a2fc6ff0c53e64d3177",
+          "completed": 52,
+          "output_tokens": 6656,
+          "duration_s": 35.41300122499524,
+          "output_tok_s": 187.95356986862936,
+          "mean_ttft_ms": 93.50480142361798,
+          "mean_tpot_ms": 4.623980524518619
+        }
+      ]
+    },
+    {
+      "workload": "long-context",
+      "input_tokens": 2048,
+      "output_tokens_per_request": 256,
+      "concurrency": 1,
+      "mode": "none",
+      "rounds": 3,
+      "completed_requests": 96,
+      "output_tokens": 24576,
+      "mean_output_tok_s": 102.81593921265105,
+      "min_output_tok_s": 102.65619172290404,
+      "max_output_tok_s": 103.02453522966293,
+      "mean_ttft_ms": 156.72482879032637,
+      "mean_tpot_ms": 9.148138071612182,
+      "reciprocal_mean_tpot_tok_s": 109.31186129592045,
+      "measurements": [
+        {
+          "round": 1,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-context-c1-none-r1-i2048-o256-c1.jsonl",
+          "sha256": "66adeed95e1adc7d66ebe0973995c5befd581d30a9f3725b31f52be7d85891f5",
+          "completed": 32,
+          "output_tokens": 8192,
+          "duration_s": 79.80034971599525,
+          "output_tok_s": 102.65619172290404,
+          "mean_ttft_ms": 156.61712237488246,
+          "mean_tpot_ms": 9.163738622182969
+        },
+        {
+          "round": 2,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-context-c1-none-r2-i2048-o256-c1.jsonl",
+          "sha256": "5c89b8cf389312da4d1009542dd4504197ee01d32cb4a43815a98afd7859ce52",
+          "completed": 32,
+          "output_tokens": 8192,
+          "duration_s": 79.5150396139943,
+          "output_tok_s": 103.02453522966293,
+          "mean_ttft_ms": 156.66054296707443,
+          "mean_tpot_ms": 9.128597959680324
+        },
+        {
+          "round": 3,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-context-c1-none-r3-i2048-o256-c1.jsonl",
+          "sha256": "519602d20644040729bc85ebbddf5475a1502f04e9a60f01b05a17f1322fc909",
+          "completed": 32,
+          "output_tokens": 8192,
+          "duration_s": 79.71423483300896,
+          "output_tok_s": 102.76709068538617,
+          "mean_ttft_ms": 156.89682102902225,
+          "mean_tpot_ms": 9.152077632973254
+        }
+      ]
+    },
+    {
+      "workload": "long-context",
+      "input_tokens": 2048,
+      "output_tokens_per_request": 256,
+      "concurrency": 1,
+      "mode": "mtp",
+      "rounds": 3,
+      "completed_requests": 96,
+      "output_tokens": 24576,
+      "mean_output_tok_s": 194.05043064609177,
+      "min_output_tok_s": 193.9150324222992,
+      "max_output_tok_s": 194.14696068827433,
+      "mean_ttft_ms": 173.67743016635964,
+      "mean_tpot_ms": 4.48957016368475,
+      "reciprocal_mean_tpot_tok_s": 222.73847240183557,
+      "measurements": [
+        {
+          "round": 1,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-context-c1-mtp-r1-i2048-o256-c1.jsonl",
+          "sha256": "07149c365d5da1a90b17dcde7203e079e5c4ac7874e23279ff64ba113ff750e2",
+          "completed": 32,
+          "output_tokens": 8192,
+          "duration_s": 42.1948402949929,
+          "output_tok_s": 194.14696068827433,
+          "mean_ttft_ms": 173.62166875273033,
+          "mean_tpot_ms": 4.487249819238273
+        },
+        {
+          "round": 2,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-context-c1-mtp-r2-i2048-o256-c1.jsonl",
+          "sha256": "c372b800c24aff625bb3c29e863449c2bdc460766d8b8f8f0b5b7453c0809d3f",
+          "completed": 32,
+          "output_tokens": 8192,
+          "duration_s": 42.2453066050075,
+          "output_tok_s": 193.9150324222992,
+          "mean_ttft_ms": 173.66358559092987,
+          "mean_tpot_ms": 4.49318560221061
+        },
+        {
+          "round": 3,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-context-c1-mtp-r3-i2048-o256-c1.jsonl",
+          "sha256": "143fd47317f9d8e569c9cdc2990945c5fec9e7d01573c9a57f4b960e2c9af0a3",
+          "completed": 32,
+          "output_tokens": 8192,
+          "duration_s": 42.20737593200465,
+          "output_tok_s": 194.0892988277018,
+          "mean_ttft_ms": 173.74703615541875,
+          "mean_tpot_ms": 4.488275069605366
+        }
+      ]
+    },
+    {
+      "workload": "long-decode",
+      "input_tokens": 512,
+      "output_tokens_per_request": 512,
+      "concurrency": 1,
+      "mode": "none",
+      "rounds": 3,
+      "completed_requests": 96,
+      "output_tokens": 49152,
+      "mean_output_tok_s": 108.3495102376313,
+      "min_output_tok_s": 108.04440761076533,
+      "max_output_tok_s": 108.62844796717036,
+      "mean_ttft_ms": 88.4132505522454,
+      "mean_tpot_ms": 9.0736665556295,
+      "reciprocal_mean_tpot_tok_s": 110.20903114183518,
+      "measurements": [
+        {
+          "round": 1,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-decode-c1-none-r1-i512-o512-c1.jsonl",
+          "sha256": "fa8d5c31d2b9d64c969cd0929f7a7c3101aecd402bfb63c80763ca9f064dceb2",
+          "completed": 32,
+          "output_tokens": 16384,
+          "duration_s": 151.6413515729946,
+          "output_tok_s": 108.04440761076533,
+          "mean_ttft_ms": 88.68067506136867,
+          "mean_tpot_ms": 9.099197034066153
+        },
+        {
+          "round": 2,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-decode-c1-none-r2-i512-o512-c1.jsonl",
+          "sha256": "2a59ded5ea63f366bbe804eced4b16b4da3c5817168ff6813be9cc39cbbb5105",
+          "completed": 32,
+          "output_tokens": 16384,
+          "duration_s": 151.1778356129944,
+          "output_tok_s": 108.37567513495824,
+          "mean_ttft_ms": 87.57136168878787,
+          "mean_tpot_ms": 9.073066978958186
+        },
+        {
+          "round": 3,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-decode-c1-none-r3-i512-o512-c1.jsonl",
+          "sha256": "bbc3b73191618bfe27aa86fce8fb4477ab008cdbb87b1518ce76bed22542a878",
+          "completed": 32,
+          "output_tokens": 16384,
+          "duration_s": 150.82605253599468,
+          "output_tok_s": 108.62844796717036,
+          "mean_ttft_ms": 88.98771490657964,
+          "mean_tpot_ms": 9.048735653864162
+        }
+      ]
+    },
+    {
+      "workload": "long-decode",
+      "input_tokens": 512,
+      "output_tokens_per_request": 512,
+      "concurrency": 1,
+      "mode": "mtp",
+      "rounds": 3,
+      "completed_requests": 96,
+      "output_tokens": 49152,
+      "mean_output_tok_s": 212.2461729985353,
+      "min_output_tok_s": 212.17791354604117,
+      "max_output_tok_s": 212.3683862039976,
+      "mean_ttft_ms": 91.57102981134813,
+      "mean_tpot_ms": 4.54077116230308,
+      "reciprocal_mean_tpot_tok_s": 220.22690953948003,
+      "measurements": [
+        {
+          "round": 1,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-decode-c1-mtp-r1-i512-o512-c1.jsonl",
+          "sha256": "7438a8220e11596a9ead35d6cdae12175302eda306c1fe20ccbab3c27e5639c2",
+          "completed": 32,
+          "output_tokens": 16384,
+          "duration_s": 77.21821619498951,
+          "output_tok_s": 212.17791354604117,
+          "mean_ttft_ms": 90.70424818719403,
+          "mean_tpot_ms": 4.543994014857732
+        },
+        {
+          "round": 2,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-decode-c1-mtp-r2-i512-o512-c1.jsonl",
+          "sha256": "d9ef9131d89192548daeacc8840bd5b2540468bb1665e6cee74ea0191bc161f8",
+          "completed": 32,
+          "output_tokens": 16384,
+          "duration_s": 77.14895937600522,
+          "output_tok_s": 212.3683862039976,
+          "mean_ttft_ms": 92.14464756041707,
+          "mean_tpot_ms": 4.536934527396373
+        },
+        {
+          "round": 3,
+          "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/baseline-remote/baseline/results/long-decode-c1-mtp-r3-i512-o512-c1.jsonl",
+          "sha256": "642ff77593a7a78598c41cf73b76b6ab67213f97abf8f692efb1000b66b8c2d0",
+          "completed": 32,
+          "output_tokens": 16384,
+          "duration_s": 77.21301025198773,
+          "output_tok_s": 212.19221924556712,
+          "mean_ttft_ms": 91.86419368643328,
+          "mean_tpot_ms": 4.5413849446551335
+        }
+      ]
+    }
+  ],
+  "independent_corpus_replay": {
+    "source_file": "results/mtp-study-2026-10-30/run-20261030T070100Z/candidate-remote/replay/results/fixed3-seg1-c1-i512-o128-c1.jsonl",
+    "sha256": "3b0993b15e182b86666291d46d7318985b605ca361631255bf65733f020e2448",
+    "mode": "fixed3",
+    "input_tokens": 512,
+    "output_tokens_per_request": 128,
+    "concurrency": 1,
+    "rounds": 1,
+    "completed_requests": 52,
+    "output_tok_s": 181.1008484416528,
+    "mean_ttft_ms": 100.06431023066398,
+    "mean_tpot_ms": 4.773388591913867,
+    "reciprocal_mean_tpot_tok_s": 209.49478148374567,
+    "limit": "Different prompt corpus; a single segment of a segmented replay, excluded from the three-round baseline."
+  },
+  "limitations": [
+    "No matched 8K-input/1024-output C1 measurement against the peer report.",
+    "Do not infer a framework ranking from different model revisions, workloads, cache settings, or averaging methods.",
+    "Reciprocal TPOT does not establish GPU compute time or a hardware roofline percentage.",
+    "Saved acceptance records describe their measurement time and are not proof of current runtime health."
+  ],
+  "public_evidence_note": "Source paths and hashes identify privately retained originals. Raw requests are not distributed; this public file is a derived summary, not independent reproduction evidence.",
+  "raw_data_included": false
+}

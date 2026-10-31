@@ -1,0 +1,96 @@
+{
+  "measurement_date": "2026-10-31",
+  "precision": "Values transcribed from the two-decimal unprofiled tables in the three published source reports; no claim of a fresh raw-request reanalysis.",
+  "scope": "Three separate fixed-order single-round paired experiments, not one continuous sweep or independent replication.",
+  "input_tokens": 2048,
+  "output_tokens": 128,
+  "arrival_rate_req_s": 4,
+  "arrival_process": "periodic",
+  "input_window_s": 120,
+  "profile_enabled": false,
+  "research_thresholds_ms": {
+    "ttft": 500,
+    "tpot": 30
+  },
+  "business_slo_confirmed": false,
+  "pairs": [
+    {
+      "id": "wait-budget",
+      "label": "等待预算：仅同步 → 100ms",
+      "source_report": "REPORT-WAIT-BUDGET-2026-10-31.md",
+      "section": "长输入2048/128，4req/s",
+      "baseline": {
+        "label": "仅同步，无预算",
+        "ttft_ms": 5695.86,
+        "tpot_ms": 17.88,
+        "planned_requests": 480,
+        "completed_requests": 432,
+        "local_rejections": 48,
+        "goodput_percent": 2.5
+      },
+      "variant": {
+        "label": "100ms 等待预算",
+        "ttft_ms": 378.52,
+        "tpot_ms": 39.63,
+        "planned_requests": 480,
+        "completed_requests": 480,
+        "local_rejections": 0,
+        "goodput_percent": 7.08
+      },
+      "ttft_change_percent": -93.35447149333025,
+      "tpot_change_percent": 121.64429530201346
+    },
+    {
+      "id": "chunk-size",
+      "label": "预填充分块：2048 → 1024",
+      "source_report": "REPORT-CHUNK-2026-10-31.md",
+      "section": "无采样性能",
+      "baseline": {
+        "label": "2048-token 分块",
+        "ttft_ms": 352.58,
+        "tpot_ms": 40.36,
+        "planned_requests": 480,
+        "completed_requests": 480,
+        "local_rejections": 0,
+        "goodput_percent": 4.79
+      },
+      "variant": {
+        "label": "1024-token 分块",
+        "ttft_ms": 626.98,
+        "tpot_ms": 57.02,
+        "planned_requests": 480,
+        "completed_requests": 441,
+        "local_rejections": 39,
+        "goodput_percent": 0.21
+      },
+      "ttft_change_percent": 77.82630892279766,
+      "tpot_change_percent": 41.278493557978216
+    },
+    {
+      "id": "continuation",
+      "label": "预算集合：普通队列 → 加入续块",
+      "source_report": "REPORT-CONTINUATION-2026-10-31.md",
+      "section": "无采样性能",
+      "baseline": {
+        "label": "仅普通等待队列",
+        "ttft_ms": 625.77,
+        "tpot_ms": 57.31,
+        "planned_requests": 480,
+        "completed_requests": 441,
+        "local_rejections": 39,
+        "goodput_percent": 0.21
+      },
+      "variant": {
+        "label": "普通队列加未完成续块",
+        "ttft_ms": 395.19,
+        "tpot_ms": 57.46,
+        "planned_requests": 480,
+        "completed_requests": 442,
+        "local_rejections": 38,
+        "goodput_percent": 2.08
+      },
+      "ttft_change_percent": -36.84740399827412,
+      "tpot_change_percent": 0.2617344268015964
+    }
+  ]
+}

@@ -1,0 +1,178 @@
+{
+  "measurement_date": "2026-10-30",
+  "review_date_beijing": "2026-10-31",
+  "source_report": "REPORT-MTP-BOUNDARY.md",
+  "source_scope": "54 unprofiled benchmark windows, 7032 completed requests; privately retained raw JSONL rechecked before this export.",
+  "raw_data_included": false,
+  "aggregation": "Arithmetic mean of 3 paired-round MTP/plain ratios. Error bars show observed min/max across 3 paired rounds, not a confidence interval.",
+  "hardware": "4 x RTX PRO 6000 Blackwell Server Edition, TP=4",
+  "model": "deepseek-ai/DeepSeek-V4-Flash",
+  "model_revision": "60d8d70770c6776ff598c94bb586a859a38244f1",
+  "framework": "SGLang 0.5.23",
+  "cache": "radix/prefix cache disabled; warmed kernels",
+  "mtp": "fixed 3 steps, top-k=1, 4 draft tokens",
+  "rows": [
+    {
+      "workload": "short",
+      "input_tokens": 512,
+      "output_tokens": 128,
+      "concurrency": 1,
+      "rounds": 3,
+      "normal_output_tok_s": 101.84811274815868,
+      "mtp_output_tok_s": 187.70151984377605,
+      "mean_paired_speedup": 1.8429574933079578,
+      "round_speedups": [
+        1.843331097267028,
+        1.840206608859758,
+        1.8453347737970875
+      ],
+      "min_paired_speedup": 1.840206608859758,
+      "max_paired_speedup": 1.8453347737970875,
+      "formal_completed_requests": 312
+    },
+    {
+      "workload": "short",
+      "input_tokens": 512,
+      "output_tokens": 128,
+      "concurrency": 8,
+      "rounds": 3,
+      "normal_output_tok_s": 605.0022548472077,
+      "mtp_output_tok_s": 675.5512155121023,
+      "mean_paired_speedup": 1.1166114419090922,
+      "round_speedups": [
+        1.11850638831423,
+        1.1128577499739971,
+        1.1184701874390492
+      ],
+      "min_paired_speedup": 1.1128577499739971,
+      "max_paired_speedup": 1.11850638831423,
+      "formal_completed_requests": 1200
+    },
+    {
+      "workload": "short",
+      "input_tokens": 512,
+      "output_tokens": 128,
+      "concurrency": 32,
+      "rounds": 3,
+      "normal_output_tok_s": 1325.5747691150932,
+      "mtp_output_tok_s": 1246.2754688998243,
+      "mean_paired_speedup": 0.940177439365789,
+      "round_speedups": [
+        0.9400639932101427,
+        0.9402236715929582,
+        0.9402446532942662
+      ],
+      "min_paired_speedup": 0.9400639932101427,
+      "max_paired_speedup": 0.9402446532942662,
+      "formal_completed_requests": 2304
+    },
+    {
+      "workload": "long-context",
+      "input_tokens": 2048,
+      "output_tokens": 256,
+      "concurrency": 1,
+      "rounds": 3,
+      "normal_output_tok_s": 102.81593921265105,
+      "mtp_output_tok_s": 194.05043064609177,
+      "mean_paired_speedup": 1.887363150608539,
+      "round_speedups": [
+        1.891234785061264,
+        1.88222186093849,
+        1.8886328058258632
+      ],
+      "min_paired_speedup": 1.88222186093849,
+      "max_paired_speedup": 1.891234785061264,
+      "formal_completed_requests": 192
+    },
+    {
+      "workload": "long-context",
+      "input_tokens": 2048,
+      "output_tokens": 256,
+      "concurrency": 8,
+      "rounds": 3,
+      "normal_output_tok_s": 518.6083242168704,
+      "mtp_output_tok_s": 617.1522837253973,
+      "mean_paired_speedup": 1.190018209951353,
+      "round_speedups": [
+        1.1928380675396228,
+        1.188572198762491,
+        1.188644363551945
+      ],
+      "min_paired_speedup": 1.188572198762491,
+      "max_paired_speedup": 1.1928380675396228,
+      "formal_completed_requests": 528
+    },
+    {
+      "workload": "long-context",
+      "input_tokens": 2048,
+      "output_tokens": 256,
+      "concurrency": 32,
+      "rounds": 3,
+      "normal_output_tok_s": 944.4489253261128,
+      "mtp_output_tok_s": 937.8722275439156,
+      "mean_paired_speedup": 0.9930365627692905,
+      "round_speedups": [
+        0.9951795282581509,
+        0.9895845355042423,
+        0.9943456245454783
+      ],
+      "min_paired_speedup": 0.9895845355042423,
+      "max_paired_speedup": 0.9951795282581509,
+      "formal_completed_requests": 960
+    },
+    {
+      "workload": "long-decode",
+      "input_tokens": 512,
+      "output_tokens": 512,
+      "concurrency": 1,
+      "rounds": 3,
+      "normal_output_tok_s": 108.3495102376313,
+      "mtp_output_tok_s": 212.2461729985353,
+      "mean_paired_speedup": 1.9589122186414742,
+      "round_speedups": [
+        1.9638028310583302,
+        1.959557676937552,
+        1.9533761479285403
+      ],
+      "min_paired_speedup": 1.9533761479285403,
+      "max_paired_speedup": 1.9638028310583302,
+      "formal_completed_requests": 192
+    },
+    {
+      "workload": "long-decode",
+      "input_tokens": 512,
+      "output_tokens": 512,
+      "concurrency": 8,
+      "rounds": 3,
+      "normal_output_tok_s": 714.1972149833057,
+      "mtp_output_tok_s": 898.4971024721605,
+      "mean_paired_speedup": 1.2580524347371684,
+      "round_speedups": [
+        1.2596863501970799,
+        1.2572717086419398,
+        1.2571992453724856
+      ],
+      "min_paired_speedup": 1.2571992453724856,
+      "max_paired_speedup": 1.2596863501970799,
+      "formal_completed_requests": 384
+    },
+    {
+      "workload": "long-decode",
+      "input_tokens": 512,
+      "output_tokens": 512,
+      "concurrency": 32,
+      "rounds": 3,
+      "normal_output_tok_s": 1905.609324209537,
+      "mtp_output_tok_s": 1876.079709475809,
+      "mean_paired_speedup": 0.9845050972537613,
+      "round_speedups": [
+        0.9861548503430998,
+        0.9831923408489406,
+        0.9841681005692436
+      ],
+      "min_paired_speedup": 0.9831923408489406,
+      "max_paired_speedup": 0.9861548503430998,
+      "formal_completed_requests": 960
+    }
+  ]
+}
