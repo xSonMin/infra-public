@@ -1,0 +1,66 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-31T03:13:53.687973+00:00",
+  "attempt": 2,
+  "planned_cases": 8,
+  "verified_cases": 8,
+  "planned_formal_requests": 5280,
+  "verified_formal_requests": 5280,
+  "successful_requests": 5145,
+  "local_rejections": 135,
+  "unexpected_service_or_network_errors": 0,
+  "unfinished_items": [],
+  "classification": "single-round exploratory factorial screening, not independent confirmation",
+  "all_formal_cases_paired_inputs_and_arrivals": true,
+  "maximum_actual_send_lag_ms": 2.1356203069444746,
+  "research_slos_ms": {
+    "ttft": 500,
+    "tpot": 30
+  },
+  "business_slo_confirmed": false,
+  "local_raw_recomputation_matches_remote": true,
+  "service_restored_and_accepted": true,
+  "restored_pid": 728767,
+  "original_default_retained": true,
+  "executor_ended": true,
+  "parent_lock_released": true,
+  "tests": {
+    "local": {
+      "count": 81,
+      "exit_code": 0,
+      "log_sha256": "37eeae12ecad82dd1ffd434510ad9ab8b122a0ac93e40ec1a93f44774a40c73e"
+    },
+    "remote": {
+      "count": 81,
+      "exit_code": 0,
+      "log_sha256": "848f71ccdde539619d59781e67353ef5753357d389b1e6b2a090c08ba2af0ea7"
+    }
+  },
+  "retrieval": {
+    "covered_cases": 8,
+    "covered_formal_requests": 5280,
+    "files_verified": 117,
+    "receipt": "retrieval.json",
+    "scope": "completed formal windows and support; logs captured as byte snapshots at retrieval, not an assertion that a live service log is permanently closed",
+    "archive_sha256": "bc65239234bc3cd72da5f6cdf40df985fecbfc51a9e8ab743ae1a432781dfdf7"
+  },
+  "previous_attempt": {
+    "run": "../run-20261031T023022Z",
+    "status": "failed_before_formal_windows",
+    "formal_cases": 0,
+    "service_restored_and_accepted": true,
+    "reason": "file-only transfer omitted empty cases directory; regression-tested initialization fix",
+    "evidence_files_recovered": 58,
+    "included_in_formal_results": false
+  },
+  "report": "$LOCAL_HOME/Documents/infra/REPORT-FACTORIAL-2026-10-31.md",
+  "primary_result": "audit-latest.json",
+  "checksum_manifest": "SHA256SUMS",
+  "limits": [
+    "one fixed execution order and one round; requests are not experimental replicates",
+    "short and context workloads differ in length and arrival rate",
+    "successful-request latency statistics; rejections in attainment denominator",
+    "client timing does not isolate GPU or service queue causes",
+    "no promotion, further measurements or unbounded parameter search"
+  ]
+}

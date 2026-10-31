@@ -1,0 +1,154 @@
+{
+  "checked_at_utc": "2026-10-31T05:59:08.080068+00:00",
+  "rank_observations": [
+    {
+      "label": "chunk1024",
+      "rank": 0,
+      "target_prefill_calls": 27,
+      "target_verify_calls": 21,
+      "prefill_token_histogram": {
+        "1024": 27
+      },
+      "mean_verify_batch_size": 26.666666666666668,
+      "prefill_gpu_activity_per_call_ms": 94.20929273365161,
+      "verify_gpu_activity_per_call_ms": 30.176688430059524,
+      "verify_start_gap_median_ms": 32.139491943359374,
+      "consecutive_verify_start_gap_median_ms": 31.6727900390625,
+      "prefill_gpu_activity_per_input_token_us": 92.00126243520666,
+      "target_prefill_activity_union_ms": 2543.6509038085937,
+      "gpu_busy_union_ms": 3296.295334472656,
+      "kernel_mapping_fraction": 0.986979099829753
+    },
+    {
+      "label": "chunk1024",
+      "rank": 1,
+      "target_prefill_calls": 27,
+      "target_verify_calls": 21,
+      "prefill_token_histogram": {
+        "1024": 27
+      },
+      "mean_verify_batch_size": 26.666666666666668,
+      "prefill_gpu_activity_per_call_ms": 101.06454150390626,
+      "verify_gpu_activity_per_call_ms": 30.182697312127978,
+      "verify_start_gap_median_ms": 32.134067626953126,
+      "consecutive_verify_start_gap_median_ms": 31.69972998046875,
+      "prefill_gpu_activity_per_input_token_us": 98.69584131240845,
+      "target_prefill_activity_union_ms": 2728.742620605469,
+      "gpu_busy_union_ms": 3503.2618671875,
+      "kernel_mapping_fraction": 0.986979099829753
+    },
+    {
+      "label": "chunk1024",
+      "rank": 2,
+      "target_prefill_calls": 27,
+      "target_verify_calls": 21,
+      "prefill_token_histogram": {
+        "1024": 27
+      },
+      "mean_verify_batch_size": 26.666666666666668,
+      "prefill_gpu_activity_per_call_ms": 103.9034046947338,
+      "verify_gpu_activity_per_call_ms": 30.190330915178574,
+      "verify_start_gap_median_ms": 32.12183715820313,
+      "consecutive_verify_start_gap_median_ms": 31.5872509765625,
+      "prefill_gpu_activity_per_input_token_us": 101.46816864720097,
+      "target_prefill_activity_union_ms": 2805.3919267578126,
+      "gpu_busy_union_ms": 3589.4860771484373,
+      "kernel_mapping_fraction": 0.986979099829753
+    },
+    {
+      "label": "chunk2048",
+      "rank": 0,
+      "target_prefill_calls": 12,
+      "target_verify_calls": 36,
+      "prefill_token_histogram": {
+        "2048": 12
+      },
+      "mean_verify_batch_size": 21.38888888888889,
+      "prefill_gpu_activity_per_call_ms": 150.3815848795573,
+      "verify_gpu_activity_per_call_ms": 28.45655929904514,
+      "verify_start_gap_median_ms": 64.6350166015625,
+      "consecutive_verify_start_gap_median_ms": 30.789658447265627,
+      "prefill_gpu_activity_per_input_token_us": 73.42850824197133,
+      "target_prefill_activity_union_ms": 1804.5790185546875,
+      "gpu_busy_union_ms": 2945.597844238281,
+      "kernel_mapping_fraction": 0.98247170310221
+    },
+    {
+      "label": "chunk2048",
+      "rank": 1,
+      "target_prefill_calls": 12,
+      "target_verify_calls": 36,
+      "prefill_token_histogram": {
+        "2048": 12
+      },
+      "mean_verify_batch_size": 21.38888888888889,
+      "prefill_gpu_activity_per_call_ms": 150.32833418782553,
+      "verify_gpu_activity_per_call_ms": 28.457593383789064,
+      "verify_start_gap_median_ms": 64.643546875,
+      "consecutive_verify_start_gap_median_ms": 30.8053037109375,
+      "prefill_gpu_activity_per_input_token_us": 73.40250692764918,
+      "target_prefill_activity_union_ms": 1803.9400102539062,
+      "gpu_busy_union_ms": 2944.9975615234375,
+      "kernel_mapping_fraction": 0.98247170310221
+    },
+    {
+      "label": "chunk2048",
+      "rank": 2,
+      "target_prefill_calls": 12,
+      "target_verify_calls": 36,
+      "prefill_token_histogram": {
+        "2048": 12
+      },
+      "mean_verify_batch_size": 21.38888888888889,
+      "prefill_gpu_activity_per_call_ms": 150.40095646158852,
+      "verify_gpu_activity_per_call_ms": 28.46699651421441,
+      "verify_start_gap_median_ms": 64.6913359375,
+      "consecutive_verify_start_gap_median_ms": 30.788833251953125,
+      "prefill_gpu_activity_per_input_token_us": 73.43796702226003,
+      "target_prefill_activity_union_ms": 1804.8114775390625,
+      "gpu_busy_union_ms": 2946.305239746094,
+      "kernel_mapping_fraction": 0.98247170310221
+    },
+    {
+      "label": "chunk2048",
+      "rank": 3,
+      "target_prefill_calls": 12,
+      "target_verify_calls": 36,
+      "prefill_token_histogram": {
+        "2048": 12
+      },
+      "mean_verify_batch_size": 21.38888888888889,
+      "prefill_gpu_activity_per_call_ms": 150.37481648763023,
+      "verify_gpu_activity_per_call_ms": 28.459904893663197,
+      "verify_start_gap_median_ms": 64.6349970703125,
+      "consecutive_verify_start_gap_median_ms": 30.793117919921876,
+      "prefill_gpu_activity_per_input_token_us": 73.42520336310069,
+      "target_prefill_activity_union_ms": 1804.4977978515626,
+      "gpu_busy_union_ms": 2945.6845620117188,
+      "kernel_mapping_fraction": 0.98247170310221
+    },
+    {
+      "label": "chunk1024",
+      "rank": 3,
+      "target_prefill_calls": 27,
+      "target_verify_calls": 21,
+      "prefill_token_histogram": {
+        "1024": 27
+      },
+      "mean_verify_batch_size": 26.666666666666668,
+      "prefill_gpu_activity_per_call_ms": 101.9873144712095,
+      "verify_gpu_activity_per_call_ms": 30.184577613467262,
+      "verify_start_gap_median_ms": 32.129177001953124,
+      "consecutive_verify_start_gap_median_ms": 31.6869404296875,
+      "prefill_gpu_activity_per_input_token_us": 99.59698678829052,
+      "target_prefill_activity_union_ms": 2753.6574907226563,
+      "gpu_busy_union_ms": 3535.6486733398438,
+      "kernel_mapping_fraction": 0.986979099829753
+    }
+  ],
+  "limits": [
+    "different capture durations, batch populations and number of chunks; per-call comparisons are not same-work end-to-end speedups",
+    "GPU activity union is rank-local and cannot be added to latency",
+    "the prefill per-input-token activity normalization includes the different attended prefix/context and chunk overhead"
+  ]
+}

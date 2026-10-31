@@ -1,0 +1,167 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-30T11:43:12.438174+00:00",
+  "local_run_dir": "$LOCAL_HOME/Documents/infra/results/mtp-study-2026-10-30/run-20261030T070100Z",
+  "remote_run_dir": "$HOME/infra-deepseek-v4/results/mtp-study-2026-10-30/run-20261030T070100Z",
+  "scope": "Approved MTP performance-boundary study on physical GPUs 0,1,2,3; negative candidate outcome retained.",
+  "stages": {
+    "1": "completed",
+    "2": "completed",
+    "3": "completed",
+    "4": "completed",
+    "5": "completed",
+    "6": "completed",
+    "7": "completed"
+  },
+  "evidence": {
+    "status": "passed",
+    "checked_at_utc": "2026-10-30T11:40:22.069143+00:00",
+    "cases_by_phase": {
+      "baseline": 54,
+      "supplement": 12,
+      "tuning": 9,
+      "validation": 20,
+      "replay": 12
+    },
+    "requests_by_phase": {
+      "baseline": 7032,
+      "supplement": 3504,
+      "tuning": 3456,
+      "validation": 10240,
+      "replay": 2544
+    },
+    "total_formal_cases": 107,
+    "total_formal_requests": 26776,
+    "profile_ranks": 24,
+    "input_bridge_request_prefix_checks": 1200,
+    "verified_snapshot_manifests": {
+      "baseline-remote/baseline-snapshot-sha256.json": 485,
+      "profiles-remote/profile-snapshot-sha256.json": 130,
+      "candidate-remote/SNAPSHOT-SHA256.json": 180,
+      "candidate-remote/REPLAY-SNAPSHOT-SHA256.json": 167
+    },
+    "correctness_smoke_cases": 20,
+    "limits": [
+      "Segmented replay has warmup gaps and is not an uninterrupted production arrival trace.",
+      "Correctness smoke does not establish broad model quality.",
+      "Independent validation used a different prompt corpus from the baseline."
+    ]
+  },
+  "candidate": {
+    "selected_high_batch_steps": 1,
+    "retained": false,
+    "reason": "Mean TTFT regression exceeds the prespecified five-percent bound.",
+    "gates": {
+      "best-fixed": {
+        "retained": false,
+        "checks": {
+          "throughput_at_least_five_percent": true,
+          "ttft_guard": false,
+          "p99_guard": true,
+          "no_errors": true,
+          "independent_round_count": true,
+          "tail_sample_count": true
+        },
+        "throughput_ratio": 1.0755122316540378,
+        "ttft_ratio": 2.649939634604116,
+        "p99_ratio": 0.7981744553571224,
+        "limits": [
+          "This numerical gate does not replace independent quality checks or workload-scoped interpretation."
+        ]
+      },
+      "adaptive": {
+        "retained": false,
+        "checks": {
+          "throughput_at_least_five_percent": true,
+          "ttft_guard": false,
+          "p99_guard": true,
+          "no_errors": true,
+          "independent_round_count": true,
+          "tail_sample_count": true
+        },
+        "throughput_ratio": 1.0740088988301884,
+        "ttft_ratio": 2.6508850011895437,
+        "p99_ratio": 0.806511445392763,
+        "limits": [
+          "This numerical gate does not replace independent quality checks or workload-scoped interpretation."
+        ]
+      }
+    },
+    "policy_switch_log_count": 3,
+    "summary": "analysis/candidate-summary.json"
+  },
+  "tests": {
+    "local": {
+      "count": 50,
+      "exit_code": 0,
+      "log": "final-tests-local.log",
+      "sha256": "aba6e2417a4dc60761f4c415bafa6d23a58a5136f1a5fbd89fd2f8d4a52aefdb"
+    },
+    "remote": {
+      "count": 50,
+      "exit_code": 0,
+      "log": "final-tests-remote.log",
+      "sha256": "2bac282f21d4e1711c7817b78897ac258a434fb5625f6c25d85e5361fbe68ccf"
+    },
+    "shared_source_hashes_match": true
+  },
+  "service": {
+    "status": "healthy",
+    "pid": 235501,
+    "uid": 1005,
+    "physical_gpus": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tp": 4,
+    "speculative_mode": "fixed3_mtp",
+    "host": "127.0.0.1",
+    "port": 30000,
+    "health_http_status": 200,
+    "models_http_status": 200,
+    "generation_smoke_passed": true,
+    "acceptance": "final-service-acceptance.json"
+  },
+  "archives": {
+    "candidate-replay-final-snapshot.tar.gz": {
+      "bytes": 3996079,
+      "sha256": "a0885e30815a787acfe55a0de614b4803c492c2388ecb9e70c8e412f957ff2af",
+      "location": "local recovery run directory"
+    },
+    "candidate-validation-snapshot.tar.gz": {
+      "bytes": 10937419,
+      "sha256": "5c9ccb553d36d662704f00c344b232767e3f5b7fbb45642bad1b5856ff632d72",
+      "location": "local recovery run directory"
+    },
+    "baseline-remote.tar.gz": {
+      "bytes": 13367250,
+      "sha256": "17362ed6998950fc560ff6fdf3a1a1c0f9e28c72a6f648d66c873341952d6256",
+      "location": "local recovery run directory"
+    }
+  },
+  "checksum_manifest": {
+    "file": "SHA256SUMS",
+    "location": "local run directory",
+    "scope": "All persisted run files except SHA256SUMS itself, temporary files and Python caches."
+  },
+  "unfinished_items": [],
+  "known_limits": [
+    "Segmented replay has warmup gaps and is not an uninterrupted production arrival trace.",
+    "Correctness smoke does not establish broad model quality.",
+    "Independent validation used a different prompt corpus from the baseline.",
+    "Exact GPU critical-path cost of adaptive runtime-state switching was not independently measured; timestamped state logs and whole replay wall throughput are retained.",
+    "The upstream compaction input-ordering error is diagnosed but not claimed fixed; this run recovered through a new conversation and persisted checkpoints.",
+    "Profile stage activity is not a complete additive end-to-end latency decomposition; communication overlaps stage activity."
+  ],
+  "preflight_manifest_sha256": "7558ba6609529d0d7fd30d1ab2e50c1552b236d919cd80e8a43cf8b1adb334c2",
+  "document_sha256": {
+    "README.md": "7dbbf9e9ccad424ca37c12320a76f2758e8d17740f286f9c5850596fd35cdb6c",
+    "REPORT-MTP-BOUNDARY.md": "70cb2ec3d3c9604855c1bc939e783909f8705a8b23fcb02895bedab13813ff10",
+    "INTERRUPTION.md": "cea2f9cf934a237ae0e5c84f6485a17cf0beb0ecf7948cc18cabe68f7cd9aee0",
+    "docs/superpowers/plans/2026-10-30-mtp-performance-boundary.md": "39f73e5c0858756d0e871a821c7275639a6d7720bccf31b857366a2de7efd140",
+    "docs/superpowers/specs/2026-10-30-mtp-performance-boundary-design.md": "42006f32c321957cffebee343f89fb8252ac4d77217e39cba343c7f1c247e46c"
+  },
+  "remote_delivery_record": "remote-final-delivery.json"
+}

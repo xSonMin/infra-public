@@ -1,0 +1,165 @@
+{
+  "generated_at_utc": "2026-10-30T05:30:57.119102+00:00",
+  "source_snapshot": "results/remote-2026-10-30/results",
+  "raw_jsonl_count": 29,
+  "raw_completed_requests": 788,
+  "raw_output_tokens": 104960,
+  "all_errors_empty": true,
+  "tp4_three_run_aggregates": {
+    "1": {
+      "normal": {
+        "runs": 3,
+        "output_throughput_tok_s_mean": 101.21794920651004,
+        "mean_ttft_ms": 87.69113491507596,
+        "mean_tpot_ms": 9.251620450124769,
+        "output_throughput_tok_s_min": 101.1465067165729,
+        "output_throughput_tok_s_max": 101.27916134652428
+      },
+      "mtp": {
+        "runs": 3,
+        "output_throughput_tok_s_mean": 188.38595006304675,
+        "mean_ttft_ms": 93.94714958034456,
+        "mean_tpot_ms": 4.571806359594994,
+        "output_throughput_tok_s_min": 188.0764897283981,
+        "output_throughput_tok_s_max": 188.88517676249216,
+        "speedup_vs_normal": 1.8611911379343606
+      }
+    },
+    "8": {
+      "normal": {
+        "runs": 3,
+        "output_throughput_tok_s_mean": 588.8268840257496,
+        "mean_ttft_ms": 316.8295280205105,
+        "mean_tpot_ms": 11.159074667165468,
+        "output_throughput_tok_s_min": 588.4524463533356,
+        "output_throughput_tok_s_max": 589.251232225033
+      },
+      "mtp": {
+        "runs": 3,
+        "output_throughput_tok_s_mean": 758.176243835785,
+        "mean_ttft_ms": 323.14704460441135,
+        "mean_tpot_ms": 7.983230013293698,
+        "output_throughput_tok_s_min": 739.9896557935342,
+        "output_throughput_tok_s_max": 767.5545392680156,
+        "speedup_vs_normal": 1.2876046668457308
+      }
+    },
+    "32": {
+      "normal": {
+        "runs": 3,
+        "output_throughput_tok_s_mean": 1288.7561539561918,
+        "mean_ttft_ms": 815.9845961511868,
+        "mean_tpot_ms": 18.55090407291855,
+        "output_throughput_tok_s_min": 1286.7697123468909,
+        "output_throughput_tok_s_max": 1291.9991298182465
+      },
+      "mtp": {
+        "runs": 3,
+        "output_throughput_tok_s_mean": 1321.94835836088,
+        "mean_ttft_ms": 679.0155679011605,
+        "mean_tpot_ms": 18.653825582548105,
+        "output_throughput_tok_s_min": 1317.4100641986472,
+        "output_throughput_tok_s_max": 1328.5521347636661,
+        "speedup_vs_normal": 1.0257552247590016
+      }
+    }
+  },
+  "long_context": {
+    "tp4-none-long": {
+      "file": "tp4-none-long-i2048-o256-c8.jsonl",
+      "tag": "tp4-none-long",
+      "input_len": 2048,
+      "output_len": 256,
+      "concurrency": 8,
+      "completed": 16,
+      "total_input_tokens": 32768,
+      "total_output_tokens": 4096,
+      "duration_s": 8.097845135998796,
+      "output_throughput_tok_s": 505.8135752425445,
+      "mean_ttft_ms": 777.2362557507222,
+      "mean_tpot_ms": 12.812676093138483,
+      "errors": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "sha256": "59513e63c368fb601a58904f8aee703542bbda9b59625467ab559a8123748389"
+    },
+    "tp4-mtp-long": {
+      "file": "tp4-mtp-long-i2048-o256-c8.jsonl",
+      "tag": "tp4-mtp-long",
+      "input_len": 2048,
+      "output_len": 256,
+      "concurrency": 8,
+      "completed": 16,
+      "total_input_tokens": 32768,
+      "total_output_tokens": 4096,
+      "duration_s": 7.060218526996323,
+      "output_throughput_tok_s": 580.1520143233569,
+      "mean_ttft_ms": 651.2155695627371,
+      "mean_tpot_ms": 10.528851282099055,
+      "errors": [
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "sha256": "98c2a48a289a151a72748891366fde4f97703a85e0f6d8989fed7c55ebb0d002"
+    },
+    "speedup_mtp_vs_normal": 1.1469680584297606
+  },
+  "final_selection": {
+    "finished_at": 1793332043.9470577,
+    "active_profile": "final-tp4-mtp",
+    "selection_metric": "single-request output throughput including prefill",
+    "tp4_mtp_tok_s": 188.19618369825,
+    "tp2_mtp_tok_s": 165.19943508489072
+  },
+  "final_server": {
+    "pid": 35780,
+    "tag": "final-tp4-mtp",
+    "command": [
+      "$HOME/infra-deepseek-v4/.venv/bin/python",
+      "$HOME/infra-deepseek-v4/scripts/launch.py",
+      "--gpus",
+      "0,1,2,3",
+      "--speculative",
+      "mtp",
+      "--gpu-addressing",
+      "uuid",
+      "--port",
+      "30000"
+    ],
+    "log": "$HOME/infra-deepseek-v4/logs/final-tp4-mtp-server.log",
+    "started_at": 1793331978.9372172
+  },
+  "final_health_status": 200,
+  "model_revision": "60d8d70770c6776ff598c94bb586a859a38244f1",
+  "remote_test_count": 15,
+  "remote_test_log_sha256": "7708126d73ab3deb70447525181c263e863fc2ff6e3a0fb51e1444245509731d"
+}

@@ -1,0 +1,79 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-31T04:07:32.543059+00:00",
+  "planned_cases": 8,
+  "verified_cases": 8,
+  "planned_formal_requests": 5280,
+  "verified_formal_requests": 5280,
+  "successful_requests": 5184,
+  "local_rejections": 96,
+  "unexpected_service_or_network_errors": 0,
+  "unfinished_items": [],
+  "classification": "single-round exploratory wait-budget prototype evaluation; not confirmation or deployment",
+  "budget_ms": 100,
+  "budget_unchanged_during_measurement": true,
+  "all_formal_cases_paired_inputs_and_arrivals": true,
+  "maximum_actual_send_lag_ms": 2.421589713776484,
+  "research_slos_ms": {
+    "ttft": 500,
+    "tpot": 30
+  },
+  "business_slo_confirmed": false,
+  "local_raw_recomputation_matches_remote": true,
+  "cpu_consensus": {
+    "passed": true,
+    "ranks": 4,
+    "backend": "gloo",
+    "gpu_use": false,
+    "evidence_files": 15
+  },
+  "prototype_rank_receipts": {
+    "sync_control": 4,
+    "budget100": 4
+  },
+  "service_restored_and_accepted": true,
+  "restored_pid": 769480,
+  "original_default_retained": true,
+  "runtime_override_cleared": true,
+  "installed_scheduler_source_unchanged": true,
+  "executor_ended": true,
+  "parent_lock_released": true,
+  "tests": {
+    "local": {
+      "count": 102,
+      "exit_code": 0,
+      "log_sha256": "ba431ede0e081b8713295d6da4179f94e7333fc69e5002078ff0f401c6a7fd8a"
+    },
+    "remote": {
+      "count": 102,
+      "exit_code": 0,
+      "log_sha256": "00b159543f2c5eff35b7296ab301d16ae4749bea5ffdd3001f9d06f534da66f6"
+    }
+  },
+  "retrieval": {
+    "covered_cases": 8,
+    "covered_formal_requests": 5280,
+    "files_verified": 140,
+    "receipt": "retrieval.json",
+    "scope": "completed formal windows and support; logs captured as byte snapshots at retrieval, not an assertion that a live service log is permanently closed",
+    "archive_sha256": "5cc778cf35759ac73b75fc019783ad41960fb0ed5882cb52f3237d83ecefe936"
+  },
+  "report": "$LOCAL_HOME/Documents/infra/REPORT-WAIT-BUDGET-2026-10-31.md",
+  "primary_result": "audit-latest.json",
+  "arrival_cohort_analysis": "cohort-analysis.json",
+  "checksum_manifest": "SHA256SUMS",
+  "limits": [
+    "one fixed order and one round; requests are not experimental replicates",
+    "short and context workloads differ in length and arrival rate",
+    "successful-request latency statistics; rejections remain in attainment denominator",
+    "100ms budget limits voluntary deferral only, not the entire first-token latency",
+    "CPU broadcast overhead is compared with an uncapped synchronization control",
+    "no automatic promotion, retuning or additional measurements"
+  ],
+  "document_sha256": {
+    "REPORT-WAIT-BUDGET-2026-10-31.md": "1dc8d011880d5e0e754d16a93cb2990bbc9f2b7fb4165c6c04107534019616a1",
+    "README.md": "5c705b5a04f564114a5be85b6dd07ee11c3121fea625f94caf5cecc94f1e9c58",
+    "docs/superpowers/plans/2026-10-31-wait-budget.md": "1fdb76fcee8eeca7376e9b8e16a6dae36fdc06725aeef9331a18a5493aeb95c8",
+    "results/wait-budget-study-2026-10-31/run-20261031T034015Z/SUMMARY.md": "bb7c6e8793273fee6d8f2db54fdfe7344b07518cadad6d1a9a81f11adb3eb9f1"
+  }
+}

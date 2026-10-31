@@ -1,0 +1,5 @@
+{
+  "passed": true,
+  "probe_count": 4,
+  "criterion": "identical deterministic generated text on frozen long-input probes"
+}

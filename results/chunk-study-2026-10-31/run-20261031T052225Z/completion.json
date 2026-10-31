@@ -1,0 +1,103 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-31T05:59:08.231652+00:00",
+  "planned_cases": 4,
+  "verified_cases": 4,
+  "planned_formal_requests": 1920,
+  "verified_formal_requests": 1920,
+  "successful_generation_requests": 1759,
+  "local_rejections": 161,
+  "unexpected_generation_request_errors": 0,
+  "clean_windows": 2,
+  "profile_windows": 2,
+  "planned_rank_traces": 8,
+  "verified_raw_rank_traces": 8,
+  "raw_trace_compressed_bytes": 179713434,
+  "independent_local_raw_trace_reparse": true,
+  "actual_chunk_token_histograms_verified": true,
+  "local_request_recomputation_matches_remote": true,
+  "classification": "single-round exploratory2048/1024 chunk comparison, not performance confirmation",
+  "fixed_conditions": {
+    "mtp_steps": 1,
+    "interval": 8,
+    "wait_budget_ms": 100,
+    "chunk_sizes": [
+      2048,
+      1024
+    ]
+  },
+  "long_output_probes": {
+    "probes_per_configuration": 4,
+    "input_tokens": 2048,
+    "output_tokens": 32,
+    "deterministic_text_matches": true,
+    "zero_retractions": true
+  },
+  "profile_steps": 48,
+  "profile_offset_s": 40,
+  "native_auto_stop_verified": true,
+  "redundant_stop_requests": 0,
+  "request_timeout_s": 45,
+  "client_case_timeout_s": 300,
+  "max_inflight": 32,
+  "maximum_actual_send_lag_ms": 2.146023034583777,
+  "research_slos_ms": {
+    "ttft": 500,
+    "tpot": 30
+  },
+  "business_slo_confirmed": false,
+  "retrieval": {
+    "formal_cases": 4,
+    "formal_requests": 1920,
+    "support_files_verified": 133,
+    "raw_trace_files_verified": 8,
+    "support_receipt": "retrieval.json",
+    "trace_receipt": "trace-retrieval.json",
+    "support_scope": "complete request records, trace summaries and support; raw trace files are retrieved separately by resumable transfer and per-file digest"
+  },
+  "service_restored_and_accepted": true,
+  "restored_pid": 826800,
+  "original_default_retained": true,
+  "runtime_override_cleared": true,
+  "installed_scheduler_source_unchanged": true,
+  "native_sources_unchanged": true,
+  "executor_ended": true,
+  "parent_lock_released": true,
+  "tests": {
+    "local": {
+      "count": 122,
+      "exit_code": 0,
+      "log_sha256": "b83048f3eddecce9dc82f4671f512d06016187cb43151ccb80d1017e4e31a091"
+    },
+    "remote": {
+      "count": 122,
+      "exit_code": 0,
+      "log_sha256": "81fe94116c8d149689c0c31c4bd3268d7d6d725b1c0e08870a5e1097de77e8b1"
+    }
+  },
+  "unfinished_items": [],
+  "report": "$LOCAL_HOME/Documents/infra/REPORT-CHUNK-2026-10-31.md",
+  "primary_results": "audit-latest.json",
+  "raw_trace_analysis": "trace-analysis-local.json",
+  "cohort_analysis": "cohort-analysis.json",
+  "checksum_manifest": "SHA256SUMS",
+  "limits": [
+    "single fixed order and single round; request/rank/kernel counts are not independent trials",
+    "profiled latencies kept separate; profiling can cause rejection and delay",
+    "per-rank GPU activity is not additive end-to-end critical-path latency",
+    "four deterministic long prompts do not establish broad quality equivalence",
+    "no automatic promotion or additional chunk/budget search"
+  ],
+  "verifier_repair": {
+    "reason": "field lookup tuple introduced while adapting verifier; corrected before independent acceptance",
+    "previous_source_preserved": "verify-restoration-before-key-fix.py.txt",
+    "measurement_code_or_results_changed": false,
+    "independent_acceptance_repeated_and_passed": true
+  },
+  "document_sha256": {
+    "REPORT-CHUNK-2026-10-31.md": "a2d27ab4f34e69daf0481bf440ad8258205d2ebf6c2a6124343028214875eaa7",
+    "README.md": "d324ccbf64bf114f26f72a4cf2bd9d89db4fe70f65f908b7f63c39981fe1fd29",
+    "docs/superpowers/plans/2026-10-31-prefill-chunk.md": "ed3c2b5430b5b4752b9f0013ed59c39700a6bb2a6f2f024e9c513a59c17d1863",
+    "results/chunk-study-2026-10-31/run-20261031T052225Z/SUMMARY.md": "7f510f3c591375b6ad01b7704e15a707a0843339687e7474022259a716333e74"
+  }
+}

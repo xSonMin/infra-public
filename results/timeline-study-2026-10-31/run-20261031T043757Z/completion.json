@@ -1,0 +1,115 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-31T05:06:03.057495+00:00",
+  "planned_cases": 6,
+  "verified_cases": 6,
+  "planned_formal_requests": 2880,
+  "verified_formal_requests": 2880,
+  "successful_generation_requests": 2702,
+  "local_rejections": 178,
+  "unexpected_generation_request_errors": 0,
+  "clean_windows": 3,
+  "profile_windows": 3,
+  "planned_rank_traces": 12,
+  "verified_raw_rank_traces": 12,
+  "raw_trace_compressed_bytes": 201682077,
+  "independent_local_raw_trace_reparse": true,
+  "trace_target_counts_and_batches_independently_scanned": true,
+  "local_request_recomputation_matches_remote": true,
+  "classification": "single-round long-input diagnostic snapshots, not performance optimization confirmation",
+  "profile_steps": 48,
+  "profile_trigger_after_client_origin_s": 40,
+  "uniform_request_timeout_s": 45,
+  "client_case_timeout_s": 300,
+  "max_inflight": 32,
+  "maximum_actual_send_lag_ms": 2.1175610017962754,
+  "research_slos_ms": {
+    "ttft": 500,
+    "tpot": 30
+  },
+  "business_slo_confirmed": false,
+  "known_profiler_control_errors": [
+    {
+      "label": "budget100",
+      "endpoint": "stop_profile",
+      "http_status": 500,
+      "classification": "automatic_stop_confirmed",
+      "raw_response_and_server_stack_preserved": true
+    },
+    {
+      "label": "sync0",
+      "endpoint": "stop_profile",
+      "http_status": 500,
+      "classification": "automatic_stop_confirmed",
+      "raw_response_and_server_stack_preserved": true
+    },
+    {
+      "label": "sync8",
+      "endpoint": "stop_profile",
+      "http_status": 500,
+      "classification": "automatic_stop_confirmed",
+      "raw_response_and_server_stack_preserved": true
+    }
+  ],
+  "profiler_control_errors_are_not_http_success": true,
+  "transfer_incident": {
+    "first_scp_archive_timed_out_after_s": 90,
+    "partial_retained_under": "transfer-failures/",
+    "recovery": "per-profile rsync partial/resume; all12 raw trace digests verified"
+  },
+  "retrieval": {
+    "formal_cases": 6,
+    "formal_requests": 2880,
+    "support_files_verified": 149,
+    "raw_trace_files_verified": 12,
+    "support_receipt": "retrieval.json",
+    "trace_receipt": "trace-retrieval.json",
+    "support_scope": "complete request records, trace summaries and support; raw trace files are retrieved separately by resumable transfer and per-file digest",
+    "support_archive_sha256": "bd75bb82b2758269f6bae83d4d30122b4566ae3467aecad30c50db46f573f95c"
+  },
+  "service_restored_and_accepted": true,
+  "restored_pid": 801050,
+  "original_default_retained": true,
+  "runtime_override_cleared": true,
+  "installed_scheduler_source_unchanged": true,
+  "profiler_sources_unchanged": true,
+  "executor_ended": true,
+  "parent_lock_released": true,
+  "tests": {
+    "local": {
+      "count": 115,
+      "exit_code": 0,
+      "log_sha256": "de3819c9391a3fd2eefebbc937c272e9abf61cf858c1bbcd51b5bb466900e7ae"
+    },
+    "remote": {
+      "count": 115,
+      "exit_code": 0,
+      "log_sha256": "43f14ee34d7a4b2a3641da71bbf650f423015020c4f9fdbddf9dc02266c44914"
+    },
+    "audit_rules": {
+      "count": 4,
+      "exit_code": 0,
+      "log_sha256": "710c45ab9529315f82ad965e3c7399c5a51acbf7d7e47ea775d6b3cfb9492ca5"
+    }
+  },
+  "unfinished_items": [],
+  "report": "$LOCAL_HOME/Documents/infra/REPORT-TIMELINE-2026-10-31.md",
+  "primary_results": "audit-latest.json",
+  "raw_trace_analysis": "trace-analysis-local.json",
+  "stage_comparison": "stage-comparison.json",
+  "checksum_manifest": "SHA256SUMS",
+  "limits": [
+    "single fixed order and one short48-step trace per configuration; neither ranks nor kernels are independent trials",
+    "clean and profile windows kept separate; sampling causes admission rejections and latency perturbation",
+    "per-rank GPU activity unions are not additive end-to-end latency components",
+    "different verification batch sizes confound comparison of normalized per-call costs",
+    "mechanism observations support a chunking hypothesis, not a unique bottleneck or causal percentage",
+    "no automatic promotion or additional measurements"
+  ],
+  "document_sha256": {
+    "REPORT-TIMELINE-2026-10-31.md": "ca191f2f92d80f9c80bf4db47c9017393fae3d53c1cfa67c28dd9241147cd59c",
+    "README.md": "38d96bfd91e3a4bafe7902e9cddab710c3e87de4e0a21c0d7744f6eb2a50cbba",
+    "docs/superpowers/plans/2026-10-31-long-input-timeline.md": "8e614fc1438046bacb5ab6395f9907aedd758d0d0c2ef3ae171747bb037c5595",
+    "results/timeline-study-2026-10-31/run-20261031T043757Z/SUMMARY.md": "dda30d9618809dc7a3071b496beba06e454858ca6bf5b944b668a5cafa1fcf11"
+  }
+}

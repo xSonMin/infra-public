@@ -1,0 +1,60 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-30T23:07:01.215929+00:00",
+  "source_workflow_status": "completed",
+  "attempt": 2,
+  "deadline_china": "2026-10-31T08:00:00+08:00",
+  "verified_cases": 63,
+  "planned_cases": 63,
+  "verified_offered_requests": 104940,
+  "planned_offered_requests": 104940,
+  "unfinished_items": [],
+  "phase_A_verified": true,
+  "phase_B_verified": true,
+  "service_restored_and_accepted": true,
+  "service_pid": 601155,
+  "original_default_retained": true,
+  "tests": {
+    "local": {
+      "count": 72,
+      "exit_code": 0,
+      "log_sha256": "c584112e0be0784f7b4167d279776aeae8c940b97de47d8f1ce689e609bc46ad"
+    },
+    "remote": {
+      "count": 72,
+      "exit_code": 0,
+      "log_sha256": "89370db11e1a9858c785084bbe8f68a730bdbf9fa5c541f6b453728a13f464bd"
+    }
+  },
+  "retrieval": {
+    "completed_case_files_verified": 351,
+    "supporting_files_verified": 127,
+    "supporting_archive_sha256": "e0607e0c6edc9633f9956949536c6f0061ed3651d0f404e80f205ececf162a88",
+    "scope": "All audited completed-case records and final supporting materials recovered; failed/excluded first-attempt full raw files are preserved remotely and explicitly excluded."
+  },
+  "research_slos_ms": {
+    "ttft": 500,
+    "tpot": 30
+  },
+  "primary_results": "audit-latest.json",
+  "report": "REPORT-OVERNIGHT-2026-10-31.md",
+  "checksum_manifest": "SHA256SUMS",
+  "limits": [
+    "No instrumentation/low server logging during all compared windows; actual client observations are notGPU kernel timing.",
+    "Research SLO500msTTFT/30msTPOT is not a user-confirmed business requirement.",
+    "Repeated frozen inputs and arrival seed give paired comparisons, not broad random-workload or production-capacity proof.",
+    "32in-flight cap rejects immediately; failures remain in the offered denominator.",
+    "Primary facts are within this matrix; prior instrumented runs differ in duration,inputs,and logging."
+  ],
+  "successful_requests": 102806,
+  "local_rejections": 2134,
+  "unexpected_service_or_network_errors": 0,
+  "maximum_actual_send_lag_ms": 4.685071879066527,
+  "document_sha256": {
+    "README.md": "63398f537348aa725e3b3e01a6aa6a3e94d1f20413d7276c284195b043219ee5",
+    "docs/superpowers/plans/2026-10-30-overnight-validation.md": "72097397cedfb8e8fde5074c05e4e7add82c303fba28b1de2a4f6b0e8eff30f2",
+    "REPORT-OVERNIGHT-2026-10-31.md": "47024adaac9e723bb64e0df15b5540ee47819b20d0c44c8c0bb69d70cb3b09e5",
+    "results/overnight-study-2026-10-30/run-20261030T154057Z/MORNING-SUMMARY.md": "f93ab19f1e257b54c1d505a69fb58ecf59b83330c2d7275ad77d3d086bb0815c"
+  },
+  "final_delivery": "final-delivery-receipt.json"
+}

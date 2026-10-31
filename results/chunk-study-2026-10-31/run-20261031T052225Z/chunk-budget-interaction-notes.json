@@ -1,0 +1,30 @@
+{
+  "source_observations": [
+    {
+      "source": "$LOCAL_HOME/Documents/infra/results/sustained-study-2026-10-30/run-20261030T143405Z/installed-sources/srt/managers/scheduler.py",
+      "sha256": "cb8f6de62ad1e200df34114cbcffec747e16d667eddbc719ccb9052723e8b4e5",
+      "function": "_arm_prefill_decode_interval",
+      "line_start": 1413,
+      "line_end": 1426,
+      "source_excerpt": "def _arm_prefill_decode_interval(self, batch: Optional[ScheduleBatch]) -> None:\n        if self.prefill_decode_interval == 0 or batch is None:\n            return\n\n        # DP attention synchronizes this flag across ranks. This keeps every\n        # rank on the same prefill/decode cadence even when only one rank has\n        # local prefill work. Non-DP scheduling can use the local mode directly.\n        is_extend = (\n            batch.is_extend_in_batch\n            if self.require_mlp_sync\n            else batch.forward_mode.is_extend()\n        )\n        if is_extend:\n            self._prefill_decode_interval_remaining = self.prefill_decode_interval"
+    },
+    {
+      "source": "$LOCAL_HOME/Documents/infra/scripts/wait_budget_policy.py",
+      "sha256": "a9a7005ee87f12565d21bf1442a5eb47e0796f63acfb5b0cc82b7ca7a2d1177a",
+      "function": "master_decision",
+      "line_start": 26,
+      "line_end": 38,
+      "source_excerpt": "def master_decision(scheduler,batch,original,budget_ms,now=time.perf_counter):\n    try:\n        defer=original(scheduler,batch)\n        remaining=scheduler._prefill_decode_interval_remaining\n        entries=[]\n        if budget_ms is not None and defer:\n            entries=[getattr(getattr(req,'time_stats',None),'wait_queue_entry_time',None)\n                     for req in scheduler.waiting_queue]\n        decision,count,reason=limit_wait(defer,remaining,entries,\n            now() if entries else None,budget_ms)\n        return [int(decision),count,reason]\n    except Exception:\n        return [-1,0,3]"
+    }
+  ],
+  "direct_code_facts": [
+    "Existing scheduler arms the interval counter after an EXTEND forward, without requiring that an entire input request has finished.",
+    "The current100ms policy checks waiting_queue entry times; it does not explicitly read the outstanding chunked_req."
+  ],
+  "next_hypothesis": "Continuation chunks and new input admissions may interact differently with interval rearming and waiting budgets; inspect explicitly before another chunk-size choice.",
+  "limits": [
+    "source path is hash-matched to the installed version checked in preflight",
+    "the code facts do not alone prove the causal contribution to the measured latency regression",
+    "no new runtime policy or GPU case was launched for this follow-up hypothesis"
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-30T15:23:01.484575+00:00",
+  "local_run_dir": "$LOCAL_HOME/Documents/infra/results/sustained-study-2026-10-30/run-20261030T143405Z",
+  "remote_run_dir": "$HOME/infra-deepseek-v4/results/sustained-study-2026-10-30/run-20261030T143405Z",
+  "formal_cases": 9,
+  "formal_requests": 7560,
+  "successful_requests": 7560,
+  "failed_requests": 0,
+  "local_rejections": 0,
+  "formal_output_tokens": 967680,
+  "warmup_requests": 72,
+  "smoke_requests": 8,
+  "smoke_warmup_requests": 8,
+  "quality_smoke_cases": 20,
+  "rate_req_per_s": 7,
+  "arrival_window_seconds": 120,
+  "research_slos_ms": {
+    "ttft": 500,
+    "tpot": 30
+  },
+  "business_slo_confirmed": false,
+  "sse_events_verified": 445389,
+  "max_send_lag_ms": 2.389821704127826,
+  "production_default_changed": false,
+  "candidate": "fixed1 + prefill_decode_interval8; diagnostic only, original fixed3 + interval0 restored",
+  "service": {
+    "pid": 369767,
+    "status": "healthy",
+    "physical_gpus": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tp": 4,
+    "mode": "fixed3_mtp",
+    "prefill_decode_interval": 0,
+    "diagnostic_flags_disabled": true,
+    "acceptance": "service-acceptance.json"
+  },
+  "tests": {
+    "local": {
+      "count": 66,
+      "exit_code": 0,
+      "log_sha256": "c4dd28931f226c0963aa557b109bca4ff695011edacbf99ec1e3ee87bca67d9f"
+    },
+    "remote": {
+      "count": 66,
+      "exit_code": 0,
+      "log_sha256": "0767e723ca932f275f3370184b1ffdacfd332be04cd82c00c8c8c21066358f13"
+    },
+    "source_hashes_match": true,
+    "additional_remote_files_preserved": [
+      "scripts/preflight_triton.py",
+      "scripts/final_experiments.py",
+      "scripts/download_model.py"
+    ]
+  },
+  "snapshot_files_verified": 134,
+  "archive_sha256": "04173e8dc88851b007676a82e8c10d75c33918c171104d4725306f232265a285",
+  "unfinished_items": [],
+  "known_limits": [
+    "Research latency targets, not a business SLO or production capacity guarantee.",
+    "SSE gaps are client-visible chunks and normalized estimates, notGPU kernel timing.",
+    "Central60s cohorts remove arrival-start/end edges but are not an infinite-time steady-state proof.",
+    "The840request sequence repeats the earlier270request corpus; previous30s comparisons used210requests. Within this matrix every mode and round has identical inputs.",
+    "Common32in-flight admission policy records rejections as failures without deferring arrivals.",
+    "A single scheduler interval8is tested; no global optimum or cross-workload guarantee is claimed.",
+    "All configurations use timing instrumentation; reduced log volume can contribute overhead differences. No uninstrumented serving improvement is established.",
+    "Rotation and warmup reduce temporal confounding, butGPU clocks and temperature were not independently controlled."
+  ],
+  "report": "REPORT-SUSTAINED-SCHEDULING.md",
+  "checksum_manifest": "SHA256SUMS",
+  "document_sha256": {
+    "REPORT-SUSTAINED-SCHEDULING.md": "4fa6e611dbc30ea99d59eeab4c2cc98b29ff9a6075bbf8f9e40c11b45ba13ea0",
+    "README.md": "ee35586664387b6cbf7074c6036a2f9b9bbec19650f389ce145d8c39ac5bf1f7",
+    "docs/superpowers/plans/2026-10-30-sustained-scheduling.md": "563faa7f0cad76f601611c724ca5a2de6cf08a8172be3265293861d3eb7bdbff",
+    "docs/superpowers/specs/2026-10-30-sustained-scheduling-design.md": "47e39c2047aab748ad0e76354eb10f48201758eddb30977977f9e89fba554be3"
+  }
+}

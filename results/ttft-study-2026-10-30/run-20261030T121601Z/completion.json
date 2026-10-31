@@ -1,0 +1,71 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-30T12:49:08.555386+00:00",
+  "local_run_dir": "$LOCAL_HOME/Documents/infra/results/ttft-study-2026-10-30/run-20261030T121601Z",
+  "remote_run_dir": "$HOME/infra-deepseek-v4/results/ttft-study-2026-10-30/run-20261030T121601Z",
+  "formal_cases": 27,
+  "formal_requests": 873,
+  "warmup_requests": 96,
+  "independent_control_protocols": [
+    "solo",
+    "burst32",
+    "paced4rps"
+  ],
+  "input_manifest_sha256": "fb852285ca635fb06a93c2fd82445ff8305f0209e6d5dec516e32bbac415fc69",
+  "snapshot_files_verified": 70,
+  "archive_sha256": "a91410f36e55614bf92b81aa292c0e3036f8b99d7e89983b92f63dfef93c0782",
+  "client_source_matches_original": true,
+  "finding": "The old 2.65x mean TTFT difference is not reproduced under the same controlled arrival pattern. Closed-loop arrival feedback and server queueing are supported as important contributors; no intrinsic 2.65x first-token compute penalty is established.",
+  "production_optimization_applied": false,
+  "production_patch_reason": "No confirmed framework timing defect or isolated optimization target; controlled diagnostic observation was implemented instead.",
+  "service": {
+    "pid": 265779,
+    "status": "healthy",
+    "physical_gpus": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tp": 4,
+    "mode": "fixed3_mtp",
+    "diagnostic_flags_disabled": true,
+    "acceptance": "service-acceptance.json"
+  },
+  "tests": {
+    "local": {
+      "count": 55,
+      "exit_code": 0,
+      "log_sha256": "752f51f97839292d3a11920e5d987eeaa57e27956e6714b3570c72fbd5c45de8"
+    },
+    "remote": {
+      "count": 55,
+      "exit_code": 0,
+      "log_sha256": "cd965252ef6d6a8b78e4f24f65c94e3e1848b886ab62ac32ca77414493f43246"
+    },
+    "source_hashes_match": true,
+    "additional_remote_files_preserved": [
+      "scripts/preflight_triton.py",
+      "scripts/final_experiments.py",
+      "scripts/download_model.py"
+    ]
+  },
+  "unfinished_items": [],
+  "known_limits": [
+    "Diagnostic timing and metrics enabled for every configuration; these are not uninstrumented benchmark throughput measurements.",
+    "Each configuration was run as a group; three rounds and few solo samples are descriptive controls, not production tail-latency guarantees.",
+    "Fixed-arrival paced load has a lower offered load than saturated closed-loop concurrency32; report it as a separate load regime.",
+    "The framework forward-to-prefill-finished interval is wall time, not isolated GPU execution time.",
+    "No original-run server queue_time exists; this diagnostic cannot retroactively fill it.",
+    "Exact GPU critical-path costs and why fixed3 completion times dephase were not independently isolated.",
+    "The independent SSE client shares the first-nonempty-text definition, but differs from the native benchmark implementation; absolute cross-client differences are not optimization gains."
+  ],
+  "report": "REPORT-TTFT-ATTRIBUTION.md",
+  "checksum_manifest": "SHA256SUMS",
+  "document_sha256": {
+    "REPORT-TTFT-ATTRIBUTION.md": "cd3cd0d6eda6b1b5cb16eaa043b05eab344b6a54d8a7312531aa55d2501b6ba8",
+    "README.md": "991b88d1876e407520f72361d808d6fc518fbf7383c1c3384f7700c746c2ebb7",
+    "docs/superpowers/plans/2026-10-30-ttft-attribution.md": "013b3c4a774f7a6d6a2c4617279a07c7bfef6a808b6ef9281daf65c70c363117",
+    "docs/superpowers/specs/2026-10-30-ttft-attribution-design.md": "348c134c7f1a122c0aa9643b348e6fbd9d8d3be4a81c19376c103ba81df1afaf"
+  }
+}

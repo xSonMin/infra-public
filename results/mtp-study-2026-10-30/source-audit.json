@@ -1,0 +1,4020 @@
+{
+  "collected_at_utc": "2026-10-30T06:27:47.205732+00:00",
+  "source_root": "$HOME/infra-deepseek-v4/.venv/lib/python3.12/site-packages/sglang",
+  "files": {
+    "benchmark/serving.py": {
+      "sha256": "852c7d3076f58fc1e96f65021ce26b3a1dfd2b5839f1487f20fa18a8019b9935",
+      "line_count": 2893,
+      "excerpts": [
+        {
+          "line": 114,
+          "text": "    error: str = \"\""
+        },
+        {
+          "line": 115,
+          "text": "    output_len: int = 0"
+        },
+        {
+          "line": 116,
+          "text": "    start_time: float = 0.0"
+        },
+        {
+          "line": 117,
+          "text": "    cached_tokens: int = 0"
+        },
+        {
+          "line": 118,
+          "text": "    cached_tokens_details: Optional[Dict[str, Any]] = None"
+        },
+        {
+          "line": 119,
+          "text": "    spec_accept_length: float = 0.0"
+        },
+        {
+          "line": 120,
+          "text": "    spec_cap_length: float = 0.0"
+        },
+        {
+          "line": 121,
+          "text": "    spec_block_accept_length: float = 0.0"
+        },
+        {
+          "line": 122,
+          "text": "    spec_cap_lens_histogram: List[int] = field(default_factory=list)"
+        },
+        {
+          "line": 123,
+          "text": ""
+        },
+        {
+          "line": 124,
+          "text": "    @staticmethod"
+        },
+        {
+          "line": 125,
+          "text": "    def init_new(request_func_input: RequestFuncInput):"
+        },
+        {
+          "line": 126,
+          "text": "        output = RequestFuncOutput()"
+        },
+        {
+          "line": 127,
+          "text": "        output.prompt_len = request_func_input.prompt_len"
+        },
+        {
+          "line": 128,
+          "text": "        return output"
+        },
+        {
+          "line": 129,
+          "text": ""
+        },
+        {
+          "line": 130,
+          "text": ""
+        },
+        {
+          "line": 516,
+          "text": "                        output.output_len = response_json.get(\"usage\", {}).get("
+        },
+        {
+          "line": 517,
+          "text": "                            \"completion_tokens\", output_len"
+        },
+        {
+          "line": 518,
+          "text": "                        )"
+        },
+        {
+          "line": 519,
+          "text": "                        _record_server_prompt_len(response_json, output)"
+        },
+        {
+          "line": 520,
+          "text": "                        _meta_info = response_json[\"choices\"][0].get(\"meta_info\") or {}"
+        },
+        {
+          "line": 521,
+          "text": "                        output.spec_accept_length = ("
+        },
+        {
+          "line": 522,
+          "text": "                            _meta_info.get(\"spec_accept_length\", 0.0) or 0.0"
+        },
+        {
+          "line": 523,
+          "text": "                        )"
+        },
+        {
+          "line": 524,
+          "text": "                        output.spec_cap_length = ("
+        },
+        {
+          "line": 525,
+          "text": "                            _meta_info.get(\"spec_cap_length\", 0.0) or 0.0"
+        },
+        {
+          "line": 526,
+          "text": "                        )"
+        },
+        {
+          "line": 527,
+          "text": "                        output.spec_block_accept_length = ("
+        },
+        {
+          "line": 528,
+          "text": "                            _meta_info.get(\"spec_block_accept_length\", 0.0) or 0.0"
+        },
+        {
+          "line": 529,
+          "text": "                        )"
+        },
+        {
+          "line": 530,
+          "text": "                        output.spec_cap_lens_histogram = ("
+        },
+        {
+          "line": 531,
+          "text": "                            _meta_info.get(\"spec_cap_lens_histogram\", []) or []"
+        },
+        {
+          "line": 532,
+          "text": "                        )"
+        },
+        {
+          "line": 533,
+          "text": "                        if getattr(args, \"cache_report\", False):"
+        },
+        {
+          "line": 758,
+          "text": "                            pass"
+        },
+        {
+          "line": 759,
+          "text": "                        else:"
+        },
+        {
+          "line": 760,
+          "text": "                            data = orjson.loads(sse_data)"
+        },
+        {
+          "line": 761,
+          "text": ""
+        },
+        {
+          "line": 762,
+          "text": "                            _meta_info = data.get(\"meta_info\") or {}"
+        },
+        {
+          "line": 763,
+          "text": "                            if _meta_info.get(\"spec_accept_length\") is not None:"
+        },
+        {
+          "line": 764,
+          "text": "                                output.spec_accept_length = _meta_info["
+        },
+        {
+          "line": 765,
+          "text": "                                    \"spec_accept_length\""
+        },
+        {
+          "line": 766,
+          "text": "                                ]"
+        },
+        {
+          "line": 767,
+          "text": ""
+        },
+        {
+          "line": 768,
+          "text": "                            # NOTE: Some completion API might have a last"
+        },
+        {
+          "line": 769,
+          "text": "                            # usage summary response without a token so we"
+        },
+        {
+          "line": 770,
+          "text": "                            # want to check a token was generated"
+        },
+        {
+          "line": 771,
+          "text": "                            _record_server_prompt_len(data, output)"
+        },
+        {
+          "line": 772,
+          "text": ""
+        },
+        {
+          "line": 773,
+          "text": "                            if getattr(args, \"cache_report\", False):"
+        },
+        {
+          "line": 774,
+          "text": "                                _meta = data.get(\"meta_info\") or {}"
+        },
+        {
+          "line": 775,
+          "text": "                                output.cached_tokens = _meta.get(\"cached_tokens\", 0)"
+        },
+        {
+          "line": 776,
+          "text": "                                output.cached_tokens_details = _meta.get("
+        },
+        {
+          "line": 1514,
+          "text": "        )"
+        },
+        {
+          "line": 1515,
+          "text": ""
+        },
+        {
+          "line": 1516,
+          "text": "    # Flush cache after warmup so the measured run does not benefit from"
+        },
+        {
+          "line": 1517,
+          "text": "    # request-local prefix reuse. vLLM exposes a different, development-mode"
+        },
+        {
+          "line": 1518,
+          "text": "    # endpoint for the same purpose."
+        },
+        {
+          "line": 1519,
+          "text": "    should_flush_cache = ("
+        },
+        {
+          "line": 1520,
+          "text": "        \"sglang\" in backend and _get_bool_env_var(\"SGLANG_IS_IN_CI\")"
+        },
+        {
+          "line": 1521,
+          "text": "    ) or flush_cache"
+        },
+        {
+          "line": 1522,
+          "text": "    if should_flush_cache:"
+        },
+        {
+          "line": 1523,
+          "text": "        flush_server_cache(base_url, backend, flush_cache_timeout)"
+        },
+        {
+          "line": 1524,
+          "text": ""
+        },
+        {
+          "line": 1525,
+          "text": "    await asyncio.sleep(1.0)"
+        },
+        {
+          "line": 1526,
+          "text": ""
+        },
+        {
+          "line": 1527,
+          "text": "    # Build profile URLs for PD separated mode (do this once at the beginning)"
+        },
+        {
+          "line": 1528,
+          "text": "    pd_profile_urls = []"
+        },
+        {
+          "line": 1529,
+          "text": "    if profile and pd_separated:"
+        },
+        {
+          "line": 1530,
+          "text": "        pd_profile_urls = _build_profile_urls(profile_prefill_url, profile_decode_url)"
+        },
+        {
+          "line": 1531,
+          "text": "        if not pd_profile_urls:"
+        },
+        {
+          "line": 1532,
+          "text": "            print("
+        },
+        {
+          "line": 1533,
+          "text": "                \"Warning: PD separated mode requires --profile-prefill-url or --profile-decode-url\""
+        },
+        {
+          "line": 1650,
+          "text": "            if ("
+        },
+        {
+          "line": 1651,
+          "text": "                \"internal_states\" in server_info_json"
+        },
+        {
+          "line": 1652,
+          "text": "                and server_info_json[\"internal_states\"]"
+        },
+        {
+          "line": 1653,
+          "text": "            ):"
+        },
+        {
+          "line": 1654,
+          "text": "                accept_length = server_info_json[\"internal_states\"][0].get("
+        },
+        {
+          "line": 1655,
+          "text": "                    \"avg_spec_accept_length\", None"
+        },
+        {
+          "line": 1656,
+          "text": "                )"
+        },
+        {
+          "line": 1657,
+          "text": "            else:"
+        },
+        {
+          "line": 1658,
+          "text": "                accept_length = None"
+        },
+        {
+          "line": 1659,
+          "text": "        else:"
+        },
+        {
+          "line": 1660,
+          "text": "            accept_length = None"
+        },
+        {
+          "line": 1661,
+          "text": "    else:"
+        },
+        {
+          "line": 1662,
+          "text": "        accept_length = None"
+        },
+        {
+          "line": 1663,
+          "text": ""
+        },
+        {
+          "line": 1664,
+          "text": "    # Compute metrics and print results"
+        },
+        {
+          "line": 1665,
+          "text": "    benchmark_duration = time.perf_counter() - benchmark_start_time"
+        },
+        {
+          "line": 1666,
+          "text": "    metrics, output_lens = calculate_metrics("
+        },
+        {
+          "line": 1667,
+          "text": "        input_requests=None if is_multi_turn else benchmark_requests,"
+        },
+        {
+          "line": 1668,
+          "text": "        outputs=outputs,"
+        },
+        {
+          "line": 1669,
+          "text": "        dur_s=benchmark_duration,"
+        },
+        {
+          "line": 1670,
+          "text": "        tokenizer=tokenizer,"
+        },
+        {
+          "line": 1671,
+          "text": "        backend=backend,"
+        },
+        {
+          "line": 1672,
+          "text": "        accept_length=accept_length,"
+        },
+        {
+          "line": 1673,
+          "text": "        plot_throughput=args.plot_throughput,"
+        },
+        {
+          "line": 1674,
+          "text": "    )"
+        },
+        {
+          "line": 1675,
+          "text": "    goodput = None"
+        },
+        {
+          "line": 1676,
+          "text": "    if args.goodput:"
+        }
+      ]
+    },
+    "srt/managers/io_struct.py": {
+      "sha256": "0518aa62b3d864be6f4d76a7fcf14720a2f5854b557df19ddd8ea717de62cb57",
+      "line_count": 2761,
+      "excerpts": [
+        {
+          "line": 2369,
+          "text": "class ProfileReqType(Enum):"
+        },
+        {
+          "line": 2370,
+          "text": "    START_PROFILE = 1"
+        },
+        {
+          "line": 2371,
+          "text": "    STOP_PROFILE = 2"
+        },
+        {
+          "line": 2372,
+          "text": ""
+        },
+        {
+          "line": 2373,
+          "text": ""
+        },
+        {
+          "line": 2374,
+          "text": "class ProfileReq(BaseReq, kw_only=True):"
+        },
+        {
+          "line": 2375,
+          "text": "    req_type: ProfileReqType = ProfileReqType.START_PROFILE"
+        },
+        {
+          "line": 2376,
+          "text": "    # The output directory"
+        },
+        {
+          "line": 2377,
+          "text": "    output_dir: Optional[str] = None"
+        },
+        {
+          "line": 2378,
+          "text": "    # Specify the steps to start the profiling"
+        },
+        {
+          "line": 2379,
+          "text": "    start_step: Optional[int] = None"
+        },
+        {
+          "line": 2380,
+          "text": "    # If set, it profile as many as this number of steps."
+        },
+        {
+          "line": 2381,
+          "text": "    # If it is set, profiling is automatically stopped after this step, and"
+        },
+        {
+          "line": 2382,
+          "text": "    # the caller doesn't need to run stop_profile."
+        },
+        {
+          "line": 2383,
+          "text": "    num_steps: Optional[int] = None"
+        },
+        {
+          "line": 2384,
+          "text": "    # The activities to record. The choices are [\"CPU\", \"GPU\", \"MEM\", \"RPD\"]"
+        },
+        {
+          "line": 2385,
+          "text": "    activities: Optional[List[str]] = None"
+        },
+        {
+          "line": 2398,
+          "text": "    profile_stages: Optional[List[str]] = None"
+        },
+        {
+          "line": 2399,
+          "text": "    # Add iteration-level annotations (KV / request aggregates) for roofline-style analysis"
+        },
+        {
+          "line": 2400,
+          "text": "    detailed_annotations: bool = False"
+        },
+        {
+          "line": 2401,
+          "text": ""
+        },
+        {
+          "line": 2402,
+          "text": ""
+        },
+        {
+          "line": 2403,
+          "text": "class ProfileReqOutput(BaseReq, kw_only=True):"
+        },
+        {
+          "line": 2404,
+          "text": "    success: bool"
+        },
+        {
+          "line": 2405,
+          "text": "    message: str"
+        },
+        {
+          "line": 2406,
+          "text": ""
+        },
+        {
+          "line": 2407,
+          "text": ""
+        },
+        {
+          "line": 2408,
+          "text": "class FreezeGCReq(BaseReq, kw_only=True):"
+        },
+        {
+          "line": 2409,
+          "text": "    gc_threshold: Optional[List[int]] = None"
+        },
+        {
+          "line": 2410,
+          "text": ""
+        },
+        {
+          "line": 2411,
+          "text": ""
+        },
+        {
+          "line": 2412,
+          "text": "class ShutdownReq(BaseReq, kw_only=True):"
+        },
+        {
+          "line": 2413,
+          "text": "    # Broadcast across TP ranks via the normal recv path, so all ranks break"
+        },
+        {
+          "line": 2414,
+          "text": "    # the scheduler loop on the same iteration."
+        }
+      ]
+    },
+    "srt/managers/scheduler_components/profiler_manager.py": {
+      "sha256": "5bf4828dbb4471c87cbd6c363fe1ddd211efb9bf8b4ab9bebec1de6b710af90d",
+      "line_count": 492,
+      "excerpts": [
+        {
+          "line": 55,
+          "text": "    get_forward_ct: Callable[[], int]"
+        },
+        {
+          "line": 56,
+          "text": "    # Taken at construction: a batch can stop profiling while a scoped"
+        },
+        {
+          "line": 57,
+          "text": "    # override has moved the TP group."
+        },
+        {
+          "line": 58,
+          "text": "    dp_tp_cpu_group: Any = field(init=False)"
+        },
+        {
+          "line": 59,
+          "text": ""
+        },
+        {
+          "line": 60,
+          "text": "    def __post_init__(self) -> None:"
+        },
+        {
+          "line": 61,
+          "text": "        self.dp_tp_cpu_group = get_dp_tp_group().cpu_group"
+        },
+        {
+          "line": 62,
+          "text": "        if envs.SGLANG_PROFILE_V2.get():"
+        },
+        {
+          "line": 63,
+          "text": "            self._profile_manager = ProfileManager("
+        },
+        {
+          "line": 64,
+          "text": "                cpu_group=self.dp_tp_cpu_group,"
+        },
+        {
+          "line": 65,
+          "text": "            )"
+        },
+        {
+          "line": 66,
+          "text": "            return"
+        },
+        {
+          "line": 67,
+          "text": ""
+        },
+        {
+          "line": 68,
+          "text": "        self.torch_profiler = None"
+        },
+        {
+          "line": 69,
+          "text": "        self.torch_profiler_output_dir: Optional[Path] = None"
+        },
+        {
+          "line": 70,
+          "text": "        self.profiler_activities: Optional[List[str]] = None"
+        },
+        {
+          "line": 71,
+          "text": "        self.profile_id: Optional[str] = None"
+        },
+        {
+          "line": 72,
+          "text": ""
+        },
+        {
+          "line": 73,
+          "text": "        self.profiler_start_forward_ct: Optional[int] = None"
+        },
+        {
+          "line": 74,
+          "text": "        self.profiler_target_forward_ct: Optional[int] = None"
+        },
+        {
+          "line": 75,
+          "text": ""
+        },
+        {
+          "line": 76,
+          "text": "        self.profiler_prefill_ct: Optional[int] = None"
+        },
+        {
+          "line": 77,
+          "text": "        self.profiler_decode_ct: Optional[int] = None"
+        },
+        {
+          "line": 78,
+          "text": "        self.profiler_target_prefill_ct: Optional[int] = None"
+        },
+        {
+          "line": 79,
+          "text": "        self.profiler_target_decode_ct: Optional[int] = None"
+        },
+        {
+          "line": 80,
+          "text": ""
+        },
+        {
+          "line": 81,
+          "text": "        self.profile_by_stage: bool = False"
+        },
+        {
+          "line": 82,
+          "text": "        self.profile_in_progress: bool = False"
+        },
+        {
+          "line": 83,
+          "text": "        self.merge_profiles = False"
+        },
+        {
+          "line": 84,
+          "text": "        self.detailed_annotations: bool = False"
+        },
+        {
+          "line": 85,
+          "text": ""
+        },
+        {
+          "line": 86,
+          "text": "        # For ROCM"
+        },
+        {
+          "line": 87,
+          "text": "        self.rpd_profiler = None"
+        },
+        {
+          "line": 88,
+          "text": ""
+        },
+        {
+          "line": 89,
+          "text": "    def _init_profile("
+        },
+        {
+          "line": 90,
+          "text": "        self,"
+        },
+        {
+          "line": 91,
+          "text": "        output_dir: Optional[str],"
+        },
+        {
+          "line": 92,
+          "text": "        start_step: Optional[int],"
+        },
+        {
+          "line": 93,
+          "text": "        num_steps: Optional[int],"
+        },
+        {
+          "line": 94,
+          "text": "        activities: Optional[List[str]],"
+        },
+        {
+          "line": 95,
+          "text": "        with_stack: Optional[bool],"
+        },
+        {
+          "line": 96,
+          "text": "        record_shapes: Optional[bool],"
+        },
+        {
+          "line": 97,
+          "text": "        profile_by_stage: bool,"
+        },
+        {
+          "line": 98,
+          "text": "        profile_id: str,"
+        },
+        {
+          "line": 99,
+          "text": "        merge_profiles: bool = False,"
+        },
+        {
+          "line": 100,
+          "text": "        profile_prefix: str = \"\","
+        },
+        {
+          "line": 101,
+          "text": "        detailed_annotations: bool = False,"
+        },
+        {
+          "line": 102,
+          "text": "        profile_stages: Optional[List[str]] = None,"
+        },
+        {
+          "line": 103,
+          "text": "    ) -> ProfileReqOutput:"
+        },
+        {
+          "line": 104,
+          "text": "        if envs.SGLANG_PROFILE_V2.get():"
+        },
+        {
+          "line": 105,
+          "text": "            self.detailed_annotations = detailed_annotations"
+        },
+        {
+          "line": 106,
+          "text": "            return self._profile_manager.configure("
+        },
+        {
+          "line": 107,
+          "text": "                output_dir=output_dir,"
+        },
+        {
+          "line": 108,
+          "text": "                start_step=start_step,"
+        },
+        {
+          "line": 109,
+          "text": "                num_steps=num_steps,"
+        },
+        {
+          "line": 110,
+          "text": "                activities=activities,"
+        },
+        {
+          "line": 111,
+          "text": "                with_stack=with_stack,"
+        },
+        {
+          "line": 112,
+          "text": "                record_shapes=record_shapes,"
+        },
+        {
+          "line": 113,
+          "text": "                profile_by_stage=profile_by_stage,"
+        },
+        {
+          "line": 114,
+          "text": "                profile_id=profile_id,"
+        },
+        {
+          "line": 115,
+          "text": "                merge_profiles=merge_profiles,"
+        },
+        {
+          "line": 116,
+          "text": "                profile_prefix=profile_prefix,"
+        },
+        {
+          "line": 117,
+          "text": "                profile_stages=profile_stages,"
+        },
+        {
+          "line": 118,
+          "text": "                detailed_annotations=detailed_annotations,"
+        },
+        {
+          "line": 119,
+          "text": "            )"
+        },
+        {
+          "line": 120,
+          "text": ""
+        },
+        {
+          "line": 121,
+          "text": "        if self.profile_in_progress:"
+        },
+        {
+          "line": 122,
+          "text": "            return ProfileReqOutput("
+        },
+        {
+          "line": 123,
+          "text": "                success=False,"
+        },
+        {
+          "line": 124,
+          "text": "                message=\"Profiling is already in progress. Call /stop_profile first.\","
+        },
+        {
+          "line": 125,
+          "text": "            )"
+        },
+        {
+          "line": 126,
+          "text": ""
+        },
+        {
+          "line": 127,
+          "text": "        self.profile_by_stage = profile_by_stage"
+        },
+        {
+          "line": 128,
+          "text": "        self.merge_profiles = merge_profiles"
+        },
+        {
+          "line": 129,
+          "text": ""
+        },
+        {
+          "line": 130,
+          "text": "        if output_dir is None:"
+        },
+        {
+          "line": 131,
+          "text": "            output_dir = os.getenv(\"SGLANG_TORCH_PROFILER_DIR\", \"/tmp\")"
+        },
+        {
+          "line": 132,
+          "text": "        if activities is None:"
+        },
+        {
+          "line": 133,
+          "text": "            activities = [\"CPU\", \"GPU\"]"
+        },
+        {
+          "line": 134,
+          "text": ""
+        },
+        {
+          "line": 135,
+          "text": "        self.torch_profiler_output_dir = Path(output_dir).expanduser()"
+        },
+        {
+          "line": 136,
+          "text": "        self.torch_profiler_with_stack = with_stack"
+        },
+        {
+          "line": 137,
+          "text": "        self.torch_profiler_record_shapes = record_shapes"
+        },
+        {
+          "line": 138,
+          "text": "        self.profiler_activities = activities"
+        },
+        {
+          "line": 139,
+          "text": "        self.profile_id = profile_id"
+        },
+        {
+          "line": 140,
+          "text": "        self.profile_prefix = profile_prefix"
+        },
+        {
+          "line": 141,
+          "text": "        self.detailed_annotations = detailed_annotations"
+        },
+        {
+          "line": 142,
+          "text": ""
+        },
+        {
+          "line": 143,
+          "text": "        if start_step:"
+        },
+        {
+          "line": 144,
+          "text": "            self.profiler_start_forward_ct = max(start_step, self.get_forward_ct() + 1)"
+        },
+        {
+          "line": 145,
+          "text": ""
+        },
+        {
+          "line": 146,
+          "text": "        if num_steps:"
+        },
+        {
+          "line": 147,
+          "text": "            if self.profile_by_stage:"
+        },
+        {
+          "line": 148,
+          "text": "                self.profiler_prefill_ct = 0"
+        },
+        {
+          "line": 149,
+          "text": "                self.profiler_decode_ct = 0"
+        },
+        {
+          "line": 150,
+          "text": "                self.profiler_target_prefill_ct = num_steps"
+        },
+        {
+          "line": 151,
+          "text": "                self.profiler_target_decode_ct = num_steps"
+        },
+        {
+          "line": 152,
+          "text": "            elif start_step:"
+        },
+        {
+          "line": 153,
+          "text": "                self.profiler_target_forward_ct = ("
+        },
+        {
+          "line": 154,
+          "text": "                    self.profiler_start_forward_ct + num_steps"
+        },
+        {
+          "line": 155,
+          "text": "                )"
+        },
+        {
+          "line": 156,
+          "text": "            else:"
+        },
+        {
+          "line": 157,
+          "text": "                self.profiler_target_forward_ct = self.get_forward_ct() + num_steps + 1"
+        },
+        {
+          "line": 158,
+          "text": "            # The caller will be notified when reaching profiler_target_forward_ct"
+        },
+        {
+          "line": 159,
+          "text": "        else:"
+        },
+        {
+          "line": 160,
+          "text": "            self.profiler_target_forward_ct = None"
+        },
+        {
+          "line": 161,
+          "text": ""
+        },
+        {
+          "line": 162,
+          "text": "        return ProfileReqOutput(success=True, message=\"Succeeded\")"
+        },
+        {
+          "line": 163,
+          "text": ""
+        },
+        {
+          "line": 164,
+          "text": "    def _apply_detailed_annotations(self, enabled: bool) -> None:"
+        },
+        {
+          "line": 165,
+          "text": "        # Toggle the process-wide flag read by build_step_span_name; folds the"
+        },
+        {
+          "line": 166,
+          "text": "        # per-phase sq/sqsq/sqsk/sk aggregates (context c_ / generation g_)"
+        },
+        {
+          "line": 167,
+          "text": "        # into the step span while a detailed-annotation profile is active."
+        },
+        {
+          "line": 168,
+          "text": "        set_detailed_annotations_enabled(enabled)"
+        },
+        {
+          "line": 169,
+          "text": ""
+        },
+        {
+          "line": 170,
+          "text": "    def _start_profile("
+        },
+        {
+          "line": 171,
+          "text": "        self, stage: Optional[ForwardMode] = None"
+        },
+        {
+          "line": 172,
+          "text": "    ) -> ProfileReqOutput | None:"
+        },
+        {
+          "line": 173,
+          "text": "        if envs.SGLANG_PROFILE_V2.get():"
+        },
+        {
+          "line": 174,
+          "text": "            self._apply_detailed_annotations(self.detailed_annotations)"
+        },
+        {
+          "line": 175,
+          "text": "            return self._profile_manager.manual_start()"
+        },
+        {
+          "line": 176,
+          "text": ""
+        },
+        {
+          "line": 177,
+          "text": "        stage_str = f\" for {stage.name}\" if stage else \"\""
+        },
+        {
+          "line": 178,
+          "text": "        logger.info("
+        },
+        {
+          "line": 179,
+          "text": "            f\"Profiling starts{stage_str}. Traces will be saved to: {self.torch_profiler_output_dir} (with profile id: {self.profile_id})\","
+        },
+        {
+          "line": 180,
+          "text": "        )"
+        },
+        {
+          "line": 181,
+          "text": ""
+        },
+        {
+          "line": 182,
+          "text": "        activities = self.profiler_activities"
+        },
+        {
+          "line": 183,
+          "text": "        with_stack = self.torch_profiler_with_stack"
+        },
+        {
+          "line": 184,
+          "text": "        record_shapes = self.torch_profiler_record_shapes"
+        },
+        {
+          "line": 185,
+          "text": ""
+        },
+        {
+          "line": 186,
+          "text": "        activity_map = {"
+        },
+        {
+          "line": 187,
+          "text": "            \"CPU\": torch.profiler.ProfilerActivity.CPU,"
+        },
+        {
+          "line": 188,
+          "text": "            \"GPU\": torch.profiler.ProfilerActivity.CUDA,"
+        },
+        {
+          "line": 189,
+          "text": "        }"
+        },
+        {
+          "line": 190,
+          "text": ""
+        },
+        {
+          "line": 191,
+          "text": "        if current_platform.is_out_of_tree():"
+        },
+        {
+          "line": 192,
+          "text": "            if hasattr("
+        },
+        {
+          "line": 193,
+          "text": "                torch.profiler.ProfilerActivity,"
+        },
+        {
+          "line": 196,
+          "text": "                activity_map[current_platform.get_torch_profiler_activity_str()] = ("
+        },
+        {
+          "line": 197,
+          "text": "                    current_platform.get_torch_profiler_activity()"
+        },
+        {
+          "line": 198,
+          "text": "                )"
+        },
+        {
+          "line": 199,
+          "text": "        if hasattr(torch.profiler.ProfilerActivity, \"XPU\"):"
+        },
+        {
+          "line": 200,
+          "text": "            activity_map[\"XPU\"] = torch.profiler.ProfilerActivity.XPU"
+        },
+        {
+          "line": 201,
+          "text": "        torchprof_activities = ["
+        },
+        {
+          "line": 202,
+          "text": "            activity_map[a] for a in activities if a in activity_map"
+        },
+        {
+          "line": 203,
+          "text": "        ]"
+        },
+        {
+          "line": 204,
+          "text": ""
+        },
+        {
+          "line": 205,
+          "text": "        if \"RPD\" in activities:  # for ROCM"
+        },
+        {
+          "line": 206,
+          "text": "            from rpdTracerControl import rpdTracerControl"
+        },
+        {
+          "line": 207,
+          "text": ""
+        },
+        {
+          "line": 208,
+          "text": "            rpdTracerControl.skipCreate()"
+        },
+        {
+          "line": 209,
+          "text": ""
+        },
+        {
+          "line": 210,
+          "text": "            self.rpd_profile_path = os.path.join("
+        },
+        {
+          "line": 211,
+          "text": "                self.torch_profiler_output_dir,"
+        },
+        {
+          "line": 212,
+          "text": "                \"rpd-\""
+        },
+        {
+          "line": 213,
+          "text": "                + str(time.time())"
+        },
+        {
+          "line": 214,
+          "text": "                + f\"-TP-{get_parallel().tp_rank}\""
+        },
+        {
+          "line": 215,
+          "text": "                + \".trace.json.gz\","
+        },
+        {
+          "line": 216,
+          "text": "            )"
+        },
+        {
+          "line": 232,
+          "text": "            self.rpd_profiler = rpdTracerControl()"
+        },
+        {
+          "line": 233,
+          "text": "            self.rpd_profiler.setPythonTrace(True)"
+        },
+        {
+          "line": 234,
+          "text": "            self.rpd_profiler.start()"
+        },
+        {
+          "line": 235,
+          "text": "            self.rpd_profiler.rangePush(\"\", \"rpd profile range\", \"\")"
+        },
+        {
+          "line": 236,
+          "text": "            self.profile_in_progress = True"
+        },
+        {
+          "line": 237,
+          "text": "        elif torchprof_activities:"
+        },
+        {
+          "line": 238,
+          "text": "            self.torch_profiler = torch.profiler.profile("
+        },
+        {
+          "line": 239,
+          "text": "                activities=torchprof_activities,"
+        },
+        {
+          "line": 240,
+          "text": "                with_stack=with_stack if with_stack is not None else True,"
+        },
+        {
+          "line": 241,
+          "text": "                record_shapes=record_shapes if record_shapes is not None else False,"
+        },
+        {
+          "line": 242,
+          "text": "                on_trace_ready=("
+        },
+        {
+          "line": 243,
+          "text": "                    None"
+        },
+        {
+          "line": 244,
+          "text": "                    if not _is_npu"
+        },
+        {
+          "line": 245,
+          "text": "                    else torch_npu.profiler.tensorboard_trace_handler("
+        },
+        {
+          "line": 246,
+          "text": "                        str(self.torch_profiler_output_dir)"
+        },
+        {
+          "line": 247,
+          "text": "                    )"
+        },
+        {
+          "line": 248,
+          "text": "                ),"
+        },
+        {
+          "line": 249,
+          "text": "                experimental_config=("
+        },
+        {
+          "line": 250,
+          "text": "                    None"
+        },
+        {
+          "line": 267,
+          "text": "            except RuntimeError as e:"
+        },
+        {
+          "line": 268,
+          "text": "                self.torch_profiler = None"
+        },
+        {
+          "line": 269,
+          "text": "                return ProfileReqOutput(success=False, message=str(e))"
+        },
+        {
+          "line": 270,
+          "text": "            self.profile_in_progress = True"
+        },
+        {
+          "line": 271,
+          "text": ""
+        },
+        {
+          "line": 272,
+          "text": "        if \"MEM\" in activities:"
+        },
+        {
+          "line": 273,
+          "text": "            torch.cuda.memory._record_memory_history("
+        },
+        {
+          "line": 274,
+          "text": "                max_entries=envs.SGLANG_MEM_PROFILE_MAX_ENTRIES.get()"
+        },
+        {
+          "line": 275,
+          "text": "            )"
+        },
+        {
+          "line": 276,
+          "text": "            self.profile_in_progress = True"
+        },
+        {
+          "line": 277,
+          "text": ""
+        },
+        {
+          "line": 278,
+          "text": "        if \"CUDA_PROFILER\" in activities:"
+        },
+        {
+          "line": 279,
+          "text": "            if get_device().gpu_id == get_device().base_gpu_id:"
+        },
+        {
+          "line": 280,
+          "text": "                torch.cuda.cudart().cudaProfilerStart()"
+        },
+        {
+          "line": 281,
+          "text": "            self.profile_in_progress = True"
+        },
+        {
+          "line": 282,
+          "text": ""
+        },
+        {
+          "line": 283,
+          "text": "        self._apply_detailed_annotations(self.detailed_annotations)"
+        },
+        {
+          "line": 284,
+          "text": "        return ProfileReqOutput(success=True, message=\"Succeeded\")"
+        },
+        {
+          "line": 285,
+          "text": ""
+        },
+        {
+          "line": 286,
+          "text": "    def _merge_profile_traces(self) -> str:"
+        },
+        {
+          "line": 287,
+          "text": "        if not self.merge_profiles:"
+        },
+        {
+          "line": 288,
+          "text": "            return \"\""
+        },
+        {
+          "line": 289,
+          "text": ""
+        },
+        {
+          "line": 290,
+          "text": "        if get_parallel().tp_rank != 0:"
+        },
+        {
+          "line": 291,
+          "text": "            return \"\""
+        },
+        {
+          "line": 292,
+          "text": "        if get_parallel().num_dp_ranks > 1 and get_parallel().dp_rank != 0:"
+        },
+        {
+          "line": 293,
+          "text": "            return \"\""
+        },
+        {
+          "line": 294,
+          "text": "        if get_parallel().pp_size > 1 and get_parallel().pp_rank != 0:"
+        },
+        {
+          "line": 295,
+          "text": "            return \"\""
+        },
+        {
+          "line": 296,
+          "text": "        if get_parallel().moe_ep_size > 1 and get_parallel().moe_ep_rank != 0:"
+        },
+        {
+          "line": 297,
+          "text": "            return \"\""
+        },
+        {
+          "line": 313,
+          "text": "            logger.error(f\"Failed to merge profiles: {e}\", exc_info=True)"
+        },
+        {
+          "line": 314,
+          "text": "            return f\" Merge failed: {e!s}\""
+        },
+        {
+          "line": 315,
+          "text": "        else:"
+        },
+        {
+          "line": 316,
+          "text": "            return merge_message"
+        },
+        {
+          "line": 317,
+          "text": ""
+        },
+        {
+          "line": 318,
+          "text": "    def _stop_profile("
+        },
+        {
+          "line": 319,
+          "text": "        self, stage: Optional[ForwardMode] = None"
+        },
+        {
+          "line": 320,
+          "text": "    ) -> ProfileReqOutput | None:"
+        },
+        {
+          "line": 321,
+          "text": "        if envs.SGLANG_PROFILE_V2.get():"
+        },
+        {
+          "line": 322,
+          "text": "            self._apply_detailed_annotations(False)"
+        },
+        {
+          "line": 323,
+          "text": "            return self._profile_manager.manual_stop()"
+        },
+        {
+          "line": 324,
+          "text": ""
+        },
+        {
+          "line": 325,
+          "text": "        if not self.profile_in_progress:"
+        },
+        {
+          "line": 326,
+          "text": "            return ProfileReqOutput("
+        },
+        {
+          "line": 327,
+          "text": "                success=False,"
+        },
+        {
+          "line": 328,
+          "text": "                message=\"Profiling is not in progress. Call /start_profile first.\","
+        },
+        {
+          "line": 329,
+          "text": "            )"
+        },
+        {
+          "line": 374,
+          "text": ""
+        },
+        {
+          "line": 375,
+          "text": "                rpd_to_chrome_trace(\"trace.rpd\", self.rpd_profile_path)"
+        },
+        {
+          "line": 376,
+          "text": "            self.rpd_profiler = None"
+        },
+        {
+          "line": 377,
+          "text": "            self.rpd_profile_path = None"
+        },
+        {
+          "line": 378,
+          "text": ""
+        },
+        {
+          "line": 379,
+          "text": "        if self.profiler_activities is not None and \"MEM\" in self.profiler_activities:"
+        },
+        {
+          "line": 380,
+          "text": "            memory_profile_path = os.path.join("
+        },
+        {
+          "line": 381,
+          "text": "                self.torch_profiler_output_dir,"
+        },
+        {
+          "line": 382,
+          "text": "                stage_prefix"
+        },
+        {
+          "line": 383,
+          "text": "                + str(time.time())"
+        },
+        {
+          "line": 384,
+          "text": "                + f\"-TP-{get_parallel().tp_rank}-memory\""
+        },
+        {
+          "line": 385,
+          "text": "                + stage_suffix"
+        },
+        {
+          "line": 386,
+          "text": "                + \".pickle\","
+        },
+        {
+          "line": 387,
+          "text": "            )"
+        },
+        {
+          "line": 388,
+          "text": "            torch.cuda.memory._dump_snapshot(memory_profile_path)"
+        },
+        {
+          "line": 389,
+          "text": "            torch.cuda.memory._record_memory_history(enabled=None)"
+        },
+        {
+          "line": 390,
+          "text": ""
+        },
+        {
+          "line": 391,
+          "text": "        if \"CUDA_PROFILER\" in self.profiler_activities:"
+        },
+        {
+          "line": 392,
+          "text": "            if get_device().gpu_id == get_device().base_gpu_id:"
+        },
+        {
+          "line": 393,
+          "text": "                torch.cuda.cudart().cudaProfilerStop()"
+        },
+        {
+          "line": 394,
+          "text": ""
+        },
+        {
+          "line": 395,
+          "text": "        merge_message = self._merge_profile_traces()"
+        },
+        {
+          "line": 396,
+          "text": ""
+        },
+        {
+          "line": 397,
+          "text": "        logger.info("
+        },
+        {
+          "line": 398,
+          "text": "            \"Profiling done. Traces are saved to: %s%s\","
+        },
+        {
+          "line": 399,
+          "text": "            self.torch_profiler_output_dir,"
+        },
+        {
+          "line": 400,
+          "text": "            merge_message,"
+        },
+        {
+          "line": 401,
+          "text": "        )"
+        },
+        {
+          "line": 402,
+          "text": ""
+        },
+        {
+          "line": 408,
+          "text": "        self.profiler_start_forward_ct = None"
+        },
+        {
+          "line": 409,
+          "text": ""
+        },
+        {
+          "line": 410,
+          "text": "        self._apply_detailed_annotations(False)"
+        },
+        {
+          "line": 411,
+          "text": "        return ProfileReqOutput(success=True, message=f\"Succeeded.{merge_message}\")"
+        },
+        {
+          "line": 412,
+          "text": ""
+        },
+        {
+          "line": 413,
+          "text": "    def _profile_batch_predicate(self, batch: ScheduleBatch):"
+        },
+        {
+          "line": 414,
+          "text": "        if envs.SGLANG_PROFILE_V2.get():"
+        },
+        {
+          "line": 415,
+          "text": "            self._profile_manager.step(forward_mode=batch.forward_mode)"
+        },
+        {
+          "line": 416,
+          "text": "            return"
+        },
+        {
+          "line": 417,
+          "text": ""
+        },
+        {
+          "line": 418,
+          "text": "        if self.profile_by_stage:"
+        },
+        {
+          "line": 419,
+          "text": "            if batch.forward_mode.is_prefill():"
+        },
+        {
+          "line": 420,
+          "text": "                if self.profiler_prefill_ct == 0:"
+        },
+        {
+          "line": 421,
+          "text": "                    self._start_profile(batch.forward_mode)"
+        },
+        {
+          "line": 422,
+          "text": "                self.profiler_prefill_ct += 1"
+        },
+        {
+          "line": 423,
+          "text": "                if self.profiler_prefill_ct > self.profiler_target_prefill_ct:"
+        },
+        {
+          "line": 424,
+          "text": "                    if self.profile_in_progress:"
+        },
+        {
+          "line": 425,
+          "text": "                        self._stop_profile(stage=ForwardMode.EXTEND)"
+        },
+        {
+          "line": 426,
+          "text": "            elif batch.forward_mode.is_decode():"
+        },
+        {
+          "line": 427,
+          "text": "                if self.profiler_decode_ct == 0:"
+        },
+        {
+          "line": 428,
+          "text": "                    if self.profile_in_progress:"
+        },
+        {
+          "line": 429,
+          "text": "                        # force trace flush (a prefill capture must not absorb decode steps)"
+        },
+        {
+          "line": 454,
+          "text": "                self.profiler_start_forward_ct"
+        },
+        {
+          "line": 455,
+          "text": "                and self.profiler_start_forward_ct == self.get_forward_ct()"
+        },
+        {
+          "line": 456,
+          "text": "            ):"
+        },
+        {
+          "line": 457,
+          "text": "                self._start_profile()"
+        },
+        {
+          "line": 458,
+          "text": ""
+        },
+        {
+          "line": 459,
+          "text": "    def _profile(self, recv_req: ProfileReq):"
+        },
+        {
+          "line": 460,
+          "text": "        if recv_req.req_type == ProfileReqType.START_PROFILE:"
+        },
+        {
+          "line": 461,
+          "text": "            if recv_req.profile_by_stage or recv_req.start_step:"
+        },
+        {
+          "line": 462,
+          "text": "                return self._init_profile("
+        },
+        {
+          "line": 463,
+          "text": "                    recv_req.output_dir,"
+        },
+        {
+          "line": 464,
+          "text": "                    recv_req.start_step,"
+        },
+        {
+          "line": 465,
+          "text": "                    recv_req.num_steps,"
+        },
+        {
+          "line": 466,
+          "text": "                    recv_req.activities,"
+        },
+        {
+          "line": 467,
+          "text": "                    recv_req.with_stack,"
+        },
+        {
+          "line": 468,
+          "text": "                    recv_req.record_shapes,"
+        },
+        {
+          "line": 469,
+          "text": "                    recv_req.profile_by_stage,"
+        },
+        {
+          "line": 470,
+          "text": "                    recv_req.profile_id,"
+        },
+        {
+          "line": 471,
+          "text": "                    recv_req.merge_profiles,"
+        },
+        {
+          "line": 472,
+          "text": "                    recv_req.profile_prefix,"
+        },
+        {
+          "line": 473,
+          "text": "                    recv_req.detailed_annotations,"
+        },
+        {
+          "line": 474,
+          "text": "                    recv_req.profile_stages,"
+        },
+        {
+          "line": 475,
+          "text": "                )"
+        },
+        {
+          "line": 476,
+          "text": "            else:"
+        },
+        {
+          "line": 477,
+          "text": "                self._init_profile("
+        },
+        {
+          "line": 478,
+          "text": "                    recv_req.output_dir,"
+        },
+        {
+          "line": 479,
+          "text": "                    recv_req.start_step,"
+        },
+        {
+          "line": 480,
+          "text": "                    recv_req.num_steps,"
+        },
+        {
+          "line": 481,
+          "text": "                    recv_req.activities,"
+        },
+        {
+          "line": 482,
+          "text": "                    recv_req.with_stack,"
+        },
+        {
+          "line": 483,
+          "text": "                    recv_req.record_shapes,"
+        },
+        {
+          "line": 484,
+          "text": "                    recv_req.profile_by_stage,"
+        },
+        {
+          "line": 485,
+          "text": "                    recv_req.profile_id,"
+        },
+        {
+          "line": 486,
+          "text": "                    recv_req.merge_profiles,"
+        },
+        {
+          "line": 487,
+          "text": "                    recv_req.profile_prefix,"
+        },
+        {
+          "line": 488,
+          "text": "                    recv_req.detailed_annotations,"
+        },
+        {
+          "line": 489,
+          "text": "                )"
+        },
+        {
+          "line": 490,
+          "text": "                return self._start_profile()"
+        },
+        {
+          "line": 491,
+          "text": "        else:"
+        },
+        {
+          "line": 492,
+          "text": "            return self._stop_profile()"
+        }
+      ]
+    },
+    "srt/speculative/eagle_worker_v2.py": {
+      "sha256": "7d3548362886e540612587a3818b37e0d61daa91f116a47f22a757708ef4c32d",
+      "line_count": 1994,
+      "excerpts": [
+        {
+          "line": 116,
+          "text": "    get_plan_stream,"
+        },
+        {
+          "line": 117,
+          "text": "    load_token_map,"
+        },
+        {
+          "line": 118,
+          "text": "    renorm_draft_probs,"
+        },
+        {
+          "line": 119,
+          "text": "    sample_draft_proposal,"
+        },
+        {
+          "line": 120,
+          "text": "    select_top_k_tokens,"
+        },
+        {
+          "line": 121,
+          "text": "    spec_stage_span,"
+        },
+        {
+          "line": 122,
+          "text": ")"
+        },
+        {
+          "line": 123,
+          "text": "from sglang.srt.utils.async_probe import ("
+        },
+        {
+          "line": 124,
+          "text": "    maybe_detect_inf,"
+        },
+        {
+          "line": 125,
+          "text": "    maybe_detect_nan,"
+        },
+        {
+          "line": 126,
+          "text": "    maybe_detect_oob,"
+        },
+        {
+          "line": 127,
+          "text": ")"
+        },
+        {
+          "line": 128,
+          "text": "from sglang.srt.utils.common import ("
+        },
+        {
+          "line": 129,
+          "text": "    fast_topk,"
+        },
+        {
+          "line": 130,
+          "text": "    get_available_gpu_memory,"
+        },
+        {
+          "line": 131,
+          "text": "    is_cpu,"
+        },
+        {
+          "line": 132,
+          "text": "    is_cuda,"
+        },
+        {
+          "line": 434,
+          "text": "            or self.speculative_num_steps <= 1"
+        },
+        {
+          "line": 435,
+          "text": "            or not isinstance(self.draft_attn_backend, QwenSparseMultiStepDraftBackend)"
+        },
+        {
+          "line": 436,
+          "text": "            or not isinstance(self.draft_extend_attn_backend, QwenSparseAttnBackend)"
+        },
+        {
+          "line": 437,
+          "text": "        ):"
+        },
+        {
+          "line": 438,
+          "text": "            return"
+        },
+        {
+          "line": 439,
+          "text": "        if get_spec().speculative_adaptive:"
+        },
+        {
+          "line": 440,
+          "text": "            # Adaptive speculation switches SpecRuntimeState between the draft-extend"
+        },
+        {
+          "line": 441,
+          "text": "            # capture and the decode lookup; per-state index buffers would not match."
+        },
+        {
+          "line": 442,
+          "text": "            logger.warning("
+        },
+        {
+          "line": 443,
+          "text": "                \"index_share_for_mtp_iteration is disabled under adaptive \""
+        },
+        {
+          "line": 444,
+          "text": "                \"speculative decoding\""
+        },
+        {
+          "line": 445,
+          "text": "            )"
+        },
+        {
+          "line": 446,
+          "text": "            return"
+        },
+        {
+          "line": 447,
+          "text": "        from sglang.srt.layers.attention.qsa.qsa_indexer import QSAIndexer"
+        },
+        {
+          "line": 448,
+          "text": ""
+        },
+        {
+          "line": 449,
+          "text": "        layer_ids = sorted("
+        },
+        {
+          "line": 450,
+          "text": "            {"
+        },
+        {
+          "line": 655,
+          "text": "                f\"elapsed={capture_time:.2f} s, \""
+        },
+        {
+          "line": 656,
+          "text": "                f\"mem usage={(before_mem - after_mem):.2f} GB, \""
+        },
+        {
+          "line": 657,
+          "text": "                f\"avail mem={after_mem:.2f} GB.\","
+        },
+        {
+          "line": 658,
+          "text": "            )"
+        },
+        {
+          "line": 659,
+          "text": ""
+        },
+        {
+          "line": 660,
+          "text": "    def draft(self, batch: ScheduleBatch, *, with_topology: bool = False):"
+        },
+        {
+          "line": 661,
+          "text": "        draft_input: EagleDraftInput = batch.spec_info"
+        },
+        {
+          "line": 662,
+          "text": "        forward_batch, can_run_decode_cuda_graph, kv_loc_plan = prepare_for_draft("
+        },
+        {
+          "line": 663,
+          "text": "            draft_input,"
+        },
+        {
+          "line": 664,
+          "text": "            self.req_to_token_pool,"
+        },
+        {
+          "line": 665,
+          "text": "            batch,"
+        },
+        {
+          "line": 666,
+          "text": "            self.cuda_graph_runner,"
+        },
+        {
+          "line": 667,
+          "text": "            self.draft_runner,"
+        },
+        {
+          "line": 668,
+          "text": "            self.topk,"
+        },
+        {
+          "line": 669,
+          "text": "            self.speculative_num_steps,"
+        },
+        {
+          "line": 670,
+          "text": "            target_translator=self.target_worker.model_runner.kv_index_translator,"
+        },
+        {
+          "line": 671,
+          "text": "            num_draft_tokens=self.speculative_num_draft_tokens,"
+        },
+        {
+          "line": 1343,
+          "text": "            else None"
+        },
+        {
+          "line": 1344,
+          "text": "        )"
+        },
+        {
+          "line": 1345,
+          "text": ""
+        },
+        {
+          "line": 1346,
+          "text": "        # Adaptive speculative"
+        },
+        {
+          "line": 1347,
+          "text": "        self.adaptive_controller: Optional[AdaptiveController] = None"
+        },
+        {
+          "line": 1348,
+          "text": "        if get_spec().speculative_adaptive and self._hosts_draft:"
+        },
+        {
+          "line": 1349,
+          "text": "            self.adaptive_controller = AdaptiveController("
+        },
+        {
+          "line": 1350,
+          "text": "                self,"
+        },
+        {
+          "line": 1351,
+          "text": "                AdaptiveSpeculativeParams("
+        },
+        {
+          "line": 1352,
+          "text": "                    initial_steps=self.speculative_num_steps,"
+        },
+        {
+          "line": 1353,
+          "text": "                    cfg_path=get_spec().speculative_adaptive_config,"
+        },
+        {
+          "line": 1354,
+          "text": "                ),"
+        },
+        {
+          "line": 1355,
+          "text": "            )"
+        },
+        {
+          "line": 1356,
+          "text": ""
+        },
+        {
+          "line": 1357,
+          "text": "        # Some dummy tensors"
+        },
+        {
+          "line": 1358,
+          "text": "        self.num_new_pages_per_topk = torch.empty("
+        },
+        {
+          "line": 1359,
+          "text": "            (), dtype=torch.int64, device=self.device"
+        },
+        {
+          "line": 1360,
+          "text": "        )"
+        },
+        {
+          "line": 1361,
+          "text": "        self.extend_lens = torch.empty((), dtype=torch.int64, device=self.device)"
+        },
+        {
+          "line": 1362,
+          "text": ""
+        },
+        {
+          "line": 1363,
+          "text": "        self.plan_stream, self.plan_stream_ctx = get_plan_stream(self.device)"
+        },
+        {
+          "line": 1364,
+          "text": ""
+        },
+        {
+          "line": 1440,
+          "text": "                else:"
+        },
+        {
+          "line": 1441,
+          "text": "                    return self._forward_dp_spec_prefill_coordination("
+        },
+        {
+          "line": 1442,
+          "text": "                        batch, plan, on_publish, grammar_barrier, pp_proxy_tensors"
+        },
+        {
+          "line": 1443,
+          "text": "                    )"
+        },
+        {
+          "line": 1444,
+          "text": "        else:"
+        },
+        {
+          "line": 1445,
+          "text": "            self.activate_step_by_batch(batch.seq_lens.shape[0])"
+        },
+        {
+          "line": 1446,
+          "text": ""
+        },
+        {
+          "line": 1447,
+          "text": "            if batch.spec_info is None:"
+        },
+        {
+          "line": 1448,
+          "text": "                capture_mode = ("
+        },
+        {
+          "line": 1449,
+          "text": "                    CaptureHiddenMode.NULL"
+        },
+        {
+          "line": 1450,
+          "text": "                    if self.speculative_algorithm.is_standalone()"
+        },
+        {
+          "line": 1451,
+          "text": "                    else CaptureHiddenMode.LAST"
+        },
+        {
+          "line": 1452,
+          "text": "                )"
+        },
+        {
+          "line": 1453,
+          "text": "                hidden_size, hidden_dtype = get_draft_recurrent_hidden_state_spec("
+        },
+        {
+          "line": 1454,
+          "text": "                    self.draft_worker.draft_runner"
+        },
+        {
+          "line": 1455,
+          "text": "                )"
+        },
+        {
+          "line": 1456,
+          "text": "                batch.spec_info = EagleDraftInput.create_idle_input("
+        },
+        {
+          "line": 1464,
+          "text": "            if batch.spec_info is not None and batch.spec_info.is_verify_input():"
+        },
+        {
+          "line": 1465,
+          "text": "                # PP+spec: the scheduler pre-built this round's verify input"
+        },
+        {
+          "line": 1466,
+          "text": "                # from relayed per-req chains — it must match what earlier"
+        },
+        {
+          "line": 1467,
+          "text": "                # stages already ran, so do not re-draft here."
+        },
+        {
+          "line": 1468,
+          "text": "                verify_input = batch.spec_info"
+        },
+        {
+          "line": 1469,
+          "text": "            elif self.speculative_num_steps == 0:"
+        },
+        {
+          "line": 1470,
+          "text": "                # Drafting disabled (high batch size). _draft_extend below still"
+        },
+        {
+          "line": 1471,
+          "text": "                # runs, keeping draft KV warm for when the batch shrinks."
+        },
+        {
+          "line": 1472,
+          "text": "                verify_input = self._build_trivial_verify_input(batch)"
+        },
+        {
+          "line": 1473,
+          "text": "            else:"
+        },
+        {
+          "line": 1474,
+          "text": "                with ("
+        },
+        {
+          "line": 1475,
+          "text": "                    draft_tp_context(self.draft_worker.parallel_layout),"
+        },
+        {
+          "line": 1476,
+          "text": "                    speculative_moe_backend_context(),"
+        },
+        {
+          "line": 1477,
+          "text": "                    speculative_moe_a2a_backend_context(),"
+        },
+        {
+          "line": 1478,
+          "text": "                    spec_stage_span(\"draft\"),"
+        },
+        {
+          "line": 1479,
+          "text": "                ):"
+        },
+        {
+          "line": 1480,
+          "text": "                    verify_input: EagleVerifyInput = self.draft_worker.draft(batch)"
+        },
+        {
+          "line": 1481,
+          "text": "            assert verify_input.is_verify_input()"
+        },
+        {
+          "line": 1482,
+          "text": "            batch.spec_info = verify_input"
+        },
+        {
+          "line": 1483,
+          "text": "            batch_output = self.verify("
+        },
+        {
+          "line": 1484,
+          "text": "                batch,"
+        },
+        {
+          "line": 1485,
+          "text": "                pp_proxy_tensors=pp_proxy_tensors,"
+        },
+        {
+          "line": 1486,
+          "text": "                grammar_barrier=grammar_barrier,"
+        },
+        {
+          "line": 1487,
+          "text": "            )"
+        },
+        {
+          "line": 1488,
+          "text": "            # Publish before draft_extend so the fence is at verify-end."
+        },
+        {
+          "line": 1489,
+          "text": "            if on_publish is not None:"
+        },
+        {
+          "line": 1490,
+          "text": "                on_publish(batch_output.new_seq_lens)"
+        },
+        {
+          "line": 1491,
+          "text": "            if ("
+        },
+        {
+          "line": 1492,
+          "text": "                self.speculative_num_steps == 0"
+        },
+        {
+          "line": 1493,
+          "text": "                and envs.SGLANG_SPEC_SKIP_ZERO_STEP_DRAFT_EXTEND.get()"
+        },
+        {
+          "line": 1494,
+          "text": "            ):"
+        },
+        {
+          "line": 1495,
+          "text": "                self._stub_skipped_draft_extend(batch, batch_output)"
+        },
+        {
+          "line": 1496,
+          "text": "            else:"
+        },
+        {
+          "line": 1497,
+          "text": "                with ("
+        },
+        {
+          "line": 1498,
+          "text": "                    draft_tp_context(self.draft_worker.parallel_layout),"
+        },
+        {
+          "line": 1499,
+          "text": "                    speculative_moe_backend_context(),"
+        },
+        {
+          "line": 1500,
+          "text": "                    speculative_moe_a2a_backend_context(),"
+        },
+        {
+          "line": 1501,
+          "text": "                    spec_stage_span(\"draft_extend\"),"
+        },
+        {
+          "line": 1502,
+          "text": "                ):"
+        },
+        {
+          "line": 1503,
+          "text": "                    self.draft_worker._draft_extend_for_decode("
+        },
+        {
+          "line": 1504,
+          "text": "                        batch, batch_output, kv_loc_plan=verify_input.kv_loc_plan"
+        },
+        {
+          "line": 1505,
+          "text": "                    )"
+        },
+        {
+          "line": 1506,
+          "text": ""
+        },
+        {
+          "line": 1507,
+          "text": "            if ("
+        },
+        {
+          "line": 1508,
+          "text": "                get_parallel().pp_size > 1"
+        },
+        {
+          "line": 1509,
+          "text": "                and not batch.forward_mode.is_idle()"
+        },
+        {
+          "line": 1510,
+          "text": "                and self.speculative_num_steps > 0"
+        },
+        {
+          "line": 1511,
+          "text": "            ):"
+        },
+        {
+          "line": 1512,
+          "text": "                # PP tail-draft: draft the NEXT round's chain now — earlier"
+        },
+        {
+          "line": 1528,
+          "text": "                batch.seq_lens_sum = int(batch.seq_lens_cpu.sum())"
+        },
+        {
+          "line": 1529,
+          "text": "                with ("
+        },
+        {
+          "line": 1530,
+          "text": "                    draft_tp_context(self.draft_worker.parallel_layout),"
+        },
+        {
+          "line": 1531,
+          "text": "                    speculative_moe_backend_context(),"
+        },
+        {
+          "line": 1532,
+          "text": "                    speculative_moe_a2a_backend_context(),"
+        },
+        {
+          "line": 1533,
+          "text": "                    spec_stage_span(\"draft\"),"
+        },
+        {
+          "line": 1534,
+          "text": "                ):"
+        },
+        {
+          "line": 1535,
+          "text": "                    next_verify_input, parent_list, top_scores_index = ("
+        },
+        {
+          "line": 1536,
+          "text": "                        self.draft_worker.draft(batch, with_topology=True)"
+        },
+        {
+          "line": 1537,
+          "text": "                    )"
+        },
+        {
+          "line": 1538,
+          "text": "                batch_output.next_verify_chain = next_verify_input.draft_token"
+        },
+        {
+          "line": 1539,
+          "text": "                # The tree shape is data-dependent once topk > 1, so the other"
+        },
+        {
+          "line": 1540,
+          "text": "                # stages cannot re-derive it; relay it alongside the tokens."
+        },
+        {
+          "line": 1541,
+          "text": "                # clone(): both come out of cuda-graph-owned buffers under"
+        },
+        {
+          "line": 1542,
+          "text": "                # decode replay and would be overwritten before the relay."
+        },
+        {
+          "line": 1543,
+          "text": "                batch_output.next_verify_parent_list = parent_list.clone()"
+        },
+        {
+          "line": 1544,
+          "text": "                batch_output.next_verify_top_scores_index = top_scores_index.clone()"
+        },
+        {
+          "line": 1588,
+          "text": "        # Draft prefill"
+        },
+        {
+          "line": 1589,
+          "text": "        with ("
+        },
+        {
+          "line": 1590,
+          "text": "            draft_tp_context(self.draft_worker.parallel_layout),"
+        },
+        {
+          "line": 1591,
+          "text": "            speculative_moe_backend_context(),"
+        },
+        {
+          "line": 1592,
+          "text": "            speculative_moe_a2a_backend_context(),"
+        },
+        {
+          "line": 1593,
+          "text": "            spec_stage_span(\"draft_extend\"),"
+        },
+        {
+          "line": 1594,
+          "text": "        ):"
+        },
+        {
+          "line": 1595,
+          "text": "            batch_output.next_draft_input = self.draft_worker._draft_extend_for_prefill("
+        },
+        {
+          "line": 1596,
+          "text": "                batch,"
+        },
+        {
+          "line": 1597,
+          "text": "                batch_output.logits_output.hidden_states,"
+        },
+        {
+          "line": 1598,
+          "text": "                batch_output.next_token_ids,"
+        },
+        {
+          "line": 1599,
+          "text": "                batch_output.logits_output.mm_input_embeds,"
+        },
+        {
+          "line": 1600,
+          "text": "                kv_loc_plan=kv_loc_plan,"
+        },
+        {
+          "line": 1601,
+          "text": "            )"
+        },
+        {
+          "line": 1602,
+          "text": "            return batch_output"
+        },
+        {
+          "line": 1603,
+          "text": ""
+        },
+        {
+          "line": 1604,
+          "text": "    def _forward_dp_spec_prefill_coordination("
+        },
+        {
+          "line": 1644,
+          "text": "        plan.apply(draft_batch, \"draft\", rank, local_only=draft_local_only)"
+        },
+        {
+          "line": 1645,
+          "text": "        with ("
+        },
+        {
+          "line": 1646,
+          "text": "            draft_tp_context(self.draft_worker.parallel_layout),"
+        },
+        {
+          "line": 1647,
+          "text": "            speculative_moe_backend_context(),"
+        },
+        {
+          "line": 1648,
+          "text": "            speculative_moe_a2a_backend_context(),"
+        },
+        {
+          "line": 1649,
+          "text": "            spec_stage_span(\"draft\"),"
+        },
+        {
+          "line": 1650,
+          "text": "        ):"
+        },
+        {
+          "line": 1651,
+          "text": "            verify_input = self.draft_worker.draft(draft_batch)"
+        },
+        {
+          "line": 1652,
+          "text": ""
+        },
+        {
+          "line": 1653,
+          "text": "        plan.apply(batch, \"target\", rank, local_only=target_local_only)"
+        },
+        {
+          "line": 1654,
+          "text": "        if is_prefill:"
+        },
+        {
+          "line": 1655,
+          "text": "            result = self._forward_prefill_batch("
+        },
+        {
+          "line": 1656,
+          "text": "                batch, on_publish, pp_proxy_tensors, coordination_plan=plan"
+        },
+        {
+          "line": 1657,
+          "text": "            )"
+        },
+        {
+          "line": 1658,
+          "text": "            # Pin the temporary idle tensors through the overlap lifetime."
+        },
+        {
+          "line": 1659,
+          "text": "            result.extra_keep_alive_refs = list(result.extra_keep_alive_refs or ()) + ["
+        },
+        {
+          "line": 1660,
+          "text": "                draft_batch"
+        },
+        {
+          "line": 1668,
+          "text": "        plan.apply(batch, \"draft_extend\", rank, local_only=draft_local_only)"
+        },
+        {
+          "line": 1669,
+          "text": "        with ("
+        },
+        {
+          "line": 1670,
+          "text": "            draft_tp_context(self.draft_worker.parallel_layout),"
+        },
+        {
+          "line": 1671,
+          "text": "            speculative_moe_backend_context(),"
+        },
+        {
+          "line": 1672,
+          "text": "            speculative_moe_a2a_backend_context(),"
+        },
+        {
+          "line": 1673,
+          "text": "            spec_stage_span(\"draft_extend\"),"
+        },
+        {
+          "line": 1674,
+          "text": "        ):"
+        },
+        {
+          "line": 1675,
+          "text": "            self.draft_worker._draft_extend_for_decode(batch, result)"
+        },
+        {
+          "line": 1676,
+          "text": "        return result"
+        },
+        {
+          "line": 1677,
+          "text": ""
+        },
+        {
+          "line": 1678,
+          "text": "    def _build_trivial_verify_input(self, batch: ScheduleBatch) -> EagleVerifyInput:"
+        },
+        {
+          "line": 1679,
+          "text": "        \"\"\"Build a 1-node EagleVerifyInput rooted at the previous bonus token."
+        },
+        {
+          "line": 1680,
+          "text": ""
+        },
+        {
+          "line": 1681,
+          "text": "        Used when ``speculative_num_steps == 0`` to skip drafting while still"
+        },
+        {
+          "line": 1682,
+          "text": "        routing through the existing TARGET_VERIFY graph captured at"
+        },
+        {
+          "line": 1683,
+          "text": "        ``draft_token_num=1``: the kernel always accepts the root and samples"
+        },
+        {
+          "line": 1684,
+          "text": "        one new bonus token from target logits -- functionally a plain decode."
+        },
+        {
+          "line": 1685,
+          "text": "        \"\"\""
+        },
+        {
+          "line": 1686,
+          "text": "        if batch.forward_mode.is_idle():"
+        },
+        {
+          "line": 1687,
+          "text": "            return EagleVerifyInput.create_idle_input("
+        },
+        {
+          "line": 1688,
+          "text": "                topk=self.topk, spec_steps=0, num_verify_tokens=1, device=self.device"
+        },
+        {
+          "line": 1689,
+          "text": "            )"
+        },
+        {
+          "line": 1690,
+          "text": ""
+        },
+        {
+          "line": 1691,
+          "text": "        draft_input: EagleDraftInput = batch.spec_info"
+        },
+        {
+          "line": 1692,
+          "text": "        bs = batch.seq_lens.shape[0]"
+        },
+        {
+          "line": 1766,
+          "text": "        if self.adaptive_controller is not None:"
+        },
+        {
+          "line": 1767,
+          "text": "            self.adaptive_controller.on_verify_complete("
+        },
+        {
+          "line": 1768,
+          "text": "                num_correct_drafts_per_req, batch_size=batch_size"
+        },
+        {
+          "line": 1769,
+          "text": "            )"
+        },
+        {
+          "line": 1770,
+          "text": ""
+        },
+        {
+          "line": 1771,
+          "text": "    def activate_step_by_batch(self, batch_size: int) -> None:"
+        },
+        {
+          "line": 1772,
+          "text": "        if self.adaptive_controller is not None:"
+        },
+        {
+          "line": 1773,
+          "text": "            self.adaptive_controller.activate_step_by_batch(batch_size)"
+        },
+        {
+          "line": 1774,
+          "text": ""
+        },
+        {
+          "line": 1775,
+          "text": "    # -- Adaptive speculative decoding protocol --"
+        },
+        {
+          "line": 1776,
+          "text": ""
+        },
+        {
+          "line": 1777,
+          "text": "    def build_adaptive_runtime_state("
+        },
+        {
+          "line": 1778,
+          "text": "        self,"
+        },
+        {
+          "line": 1779,
+          "text": "        speculative_num_steps: int,"
+        },
+        {
+          "line": 1780,
+          "text": "        speculative_num_draft_tokens: int,"
+        },
+        {
+          "line": 1781,
+          "text": "        cuda_graph_bs=None,"
+        },
+        {
+          "line": 1782,
+          "text": "    ) -> SpecRuntimeState:"
+        },
+        {
+          "line": 1783,
+          "text": "        \"\"\"Build a SpecRuntimeState for the given step configuration.\"\"\""
+        },
+        {
+          "line": 1784,
+          "text": "        tic = time.perf_counter()"
+        },
+        {
+          "line": 1849,
+          "text": "            )"
+        },
+        {
+          "line": 1850,
+          "text": ""
+        },
+        {
+          "line": 1851,
+          "text": "        after_mem = get_available_gpu_memory(self.device, self.gpu_id)"
+        },
+        {
+          "line": 1852,
+          "text": "        log_info_on_rank0("
+        },
+        {
+          "line": 1853,
+          "text": "            logger,"
+        },
+        {
+          "line": 1854,
+          "text": "            f\"Built adaptive runtime state steps={speculative_num_steps}: \""
+        },
+        {
+          "line": 1855,
+          "text": "            f\"elapsed={time.perf_counter() - tic:.2f}s, \""
+        },
+        {
+          "line": 1856,
+          "text": "            f\"mem={(before_mem - after_mem):.2f}GB\","
+        },
+        {
+          "line": 1857,
+          "text": "        )"
+        },
+        {
+          "line": 1858,
+          "text": ""
+        },
+        {
+          "line": 1859,
+          "text": "        return state"
+        },
+        {
+          "line": 1860,
+          "text": ""
+        },
+        {
+          "line": 1861,
+          "text": "    def apply_runtime_state(self, state: SpecRuntimeState) -> None:"
+        },
+        {
+          "line": 1862,
+          "text": "        \"\"\"Apply a pre-built runtime state to this worker.\"\"\""
+        },
+        {
+          "line": 1863,
+          "text": "        if self.speculative_num_steps == state.speculative_num_steps:"
+        },
+        {
+          "line": 1864,
+          "text": "            return"
+        },
+        {
+          "line": 1865,
+          "text": ""
+        },
+        {
+          "line": 1974,
+          "text": "                cuda_graph_bs_decode=backup[12],"
+        },
+        {
+          "line": 1975,
+          "text": "                disable_cuda_graph=backup[13],"
+        },
+        {
+          "line": 1976,
+          "text": "            )"
+        },
+        {
+          "line": 1977,
+          "text": "            dw._rebuild_topk1_chain_buffers()"
+        },
+        {
+          "line": 1978,
+          "text": ""
+        },
+        {
+          "line": 1979,
+          "text": "    def verify(self, batch: ScheduleBatch, pp_proxy_tensors=None, grammar_barrier=None):"
+        },
+        {
+          "line": 1980,
+          "text": "        return run_eagle_verify("
+        },
+        {
+          "line": 1981,
+          "text": "            batch,"
+        },
+        {
+          "line": 1982,
+          "text": "            pp_proxy_tensors=pp_proxy_tensors,"
+        },
+        {
+          "line": 1983,
+          "text": "            target_worker=self.target_worker,"
+        },
+        {
+          "line": 1984,
+          "text": "            req_to_token_pool=self.req_to_token_pool,"
+        },
+        {
+          "line": 1985,
+          "text": "            token_to_kv_pool_allocator=self.token_to_kv_pool_allocator,"
+        },
+        {
+          "line": 1986,
+          "text": "            plan_stream=self.plan_stream,"
+        },
+        {
+          "line": 1987,
+          "text": "            plan_stream_ctx=self.plan_stream_ctx,"
+        },
+        {
+          "line": 1988,
+          "text": "            topk=self.topk,"
+        },
+        {
+          "line": 1989,
+          "text": "            num_draft_tokens=self.speculative_num_draft_tokens,"
+        },
+        {
+          "line": 1990,
+          "text": "            device=self.device,"
+        }
+      ]
+    },
+    "srt/server_args.py": {
+      "sha256": "fa41e6e4298eab15fd598179e4d85fb31ed815e57146f0be8f4d2761cdba08e8",
+      "line_count": 907,
+      "excerpts": []
+    }
+  },
+  "definitions": {
+    "srt/managers/scheduler_components/internal_state.py": {
+      "sha256": "3879413625ca0991e3a64ca6a969a67afd1209aeb5c5760c4ab4ba7f46e98184",
+      "excerpts": [
+        {
+          "line": 120,
+          "text": "        scheduler = self.scheduler"
+        },
+        {
+          "line": 121,
+          "text": "        if scheduler.spec_algorithm.is_none():"
+        },
+        {
+          "line": 122,
+          "text": "            return"
+        },
+        {
+          "line": 123,
+          "text": "        accept_length = self._average_accept_length()"
+        },
+        {
+          "line": 124,
+          "text": "        if accept_length is not None:"
+        },
+        {
+          "line": 125,
+          "text": "            state[\"avg_spec_accept_length\"] = accept_length"
+        },
+        {
+          "line": 126,
+          "text": "        if scheduler.spec_algorithm.is_dspark() and scheduler.draft_worker is not None:"
+        },
+        {
+          "line": 127,
+          "text": "            info_record = scheduler.draft_worker.dump_info_records()"
+        },
+        {
+          "line": 128,
+          "text": "            if info_record is not None:"
+        },
+        {
+          "line": 129,
+          "text": "                state[\"dspark_info_record\"] = info_record"
+        },
+        {
+          "line": 130,
+          "text": ""
+        },
+        {
+          "line": 131,
+          "text": "    def _add_step_times(self, state: Dict[str, Any]) -> None:"
+        },
+        {
+          "line": 132,
+          "text": "        if self.record_step_time:"
+        },
+        {
+          "line": 133,
+          "text": "            state[\"step_time_dict\"] = self.scheduler.metrics_reporter.step_time_dict"
+        },
+        {
+          "line": 134,
+          "text": ""
+        },
+        {
+          "line": 135,
+          "text": "    def _add_rust_server(self, state: Dict[str, Any]) -> None:"
+        },
+        {
+          "line": 136,
+          "text": "        if self.scheduler.rust_server is not None:"
+        },
+        {
+          "line": 205,
+          "text": ""
+        },
+        {
+          "line": 206,
+          "text": "    def _apply_accept_threshold(self, key: str, value: Any) -> Dict[str, Any]:"
+        },
+        {
+          "line": 207,
+          "text": "        # Acceptance statistics describe the previous threshold; start over."
+        },
+        {
+          "line": 208,
+          "text": "        accept_length = self._average_accept_length()"
+        },
+        {
+          "line": 209,
+          "text": "        if accept_length is not None:"
+        },
+        {
+          "line": 210,
+          "text": "            logger.info(f\"avg_spec_accept_length={accept_length}\")"
+        },
+        {
+          "line": 211,
+          "text": "        metrics_reporter = self.scheduler.metrics_reporter"
+        },
+        {
+          "line": 212,
+          "text": "        metrics_reporter.spec_total_num_accept_tokens = ("
+        },
+        {
+          "line": 213,
+          "text": "            metrics_reporter.spec_total_num_forward_ct"
+        },
+        {
+          "line": 214,
+          "text": "        ) = 0"
+        },
+        {
+          "line": 215,
+          "text": "        return {key: value}"
+        },
+        {
+          "line": 216,
+          "text": ""
+        },
+        {
+          "line": 217,
+          "text": "    def _validate_dspark_budget_frac(self, key: str, value: Any) -> None:"
+        },
+        {
+          "line": 218,
+          "text": "        self._require_dspark_worker(key, \"set_dspark_forced_budget_frac\")"
+        },
+        {
+          "line": 219,
+          "text": "        if value is not None and not (0.0 < float(value) <= 1.0):"
+        },
+        {
+          "line": 220,
+          "text": "            raise UpdateRejected(f\"{key} must be in (0, 1] or null, got {value}.\")"
+        },
+        {
+          "line": 221,
+          "text": ""
+        }
+      ]
+    },
+    "srt/managers/scheduler_components/metrics_reporter.py": {
+      "sha256": "db788b8f156a79823f43caadd2dc1e10660854a50e66a8fba1f30c1fb206cc5d",
+      "excerpts": [
+        {
+          "line": 290,
+          "text": "        }.get(getattr(self.scheduler, \"device\", \"\"), \"cuda graph\")"
+        },
+        {
+          "line": 291,
+          "text": ""
+        },
+        {
+          "line": 292,
+          "text": "        # Cumulative spec-decoding counters (reset every decode_log_interval)."
+        },
+        {
+          "line": 293,
+          "text": "        # `*_accept_tokens` includes accepted drafts and non-draft output tokens;"
+        },
+        {
+          "line": 294,
+          "text": "        # `*_correct_drafts` counts accepted draft proposals only."
+        },
+        {
+          "line": 295,
+          "text": "        self.spec_num_accept_tokens = 0  # per-log-interval"
+        },
+        {
+          "line": 296,
+          "text": "        self.spec_num_correct_drafts = 0"
+        },
+        {
+          "line": 297,
+          "text": "        self.spec_num_forward_ct = 0"
+        },
+        {
+          "line": 298,
+          "text": "        self.spec_total_num_accept_tokens = 0  # lifetime"
+        },
+        {
+          "line": 299,
+          "text": "        self.spec_total_num_forward_ct = 0"
+        },
+        {
+          "line": 300,
+          "text": "        self.spec_num_block_accept_tokens = 0"
+        },
+        {
+          "line": 301,
+          "text": "        self.spec_num_cap_tokens = 0"
+        },
+        {
+          "line": 302,
+          "text": ""
+        },
+        {
+          "line": 303,
+          "text": "        # For PD disaggregation"
+        },
+        {
+          "line": 304,
+          "text": "        self.kv_transfer_speed_gb_s: float = 0.0"
+        },
+        {
+          "line": 305,
+          "text": "        self.kv_transfer_latency_ms: float = 0.0"
+        },
+        {
+          "line": 306,
+          "text": ""
+        },
+        {
+          "line": 546,
+          "text": "        num_correct_drafts: int,"
+        },
+        {
+          "line": 547,
+          "text": "        num_accept_tokens: int,"
+        },
+        {
+          "line": 548,
+          "text": "        num_block_accept_tokens: int = 0,"
+        },
+        {
+          "line": 549,
+          "text": "        num_cap_tokens: int = 0,"
+        },
+        {
+          "line": 550,
+          "text": "    ):"
+        },
+        {
+          "line": 551,
+          "text": "        self.spec_num_accept_tokens += num_accept_tokens"
+        },
+        {
+          "line": 552,
+          "text": "        self.spec_num_correct_drafts += num_correct_drafts"
+        },
+        {
+          "line": 553,
+          "text": "        self.spec_num_forward_ct += bs"
+        },
+        {
+          "line": 554,
+          "text": "        self.spec_num_block_accept_tokens += num_block_accept_tokens"
+        },
+        {
+          "line": 555,
+          "text": "        self.spec_num_cap_tokens += num_cap_tokens"
+        },
+        {
+          "line": 556,
+          "text": ""
+        },
+        {
+          "line": 557,
+          "text": "    def _init_estimated_perf_constants(self) -> None:"
+        },
+        {
+          "line": 558,
+          "text": "        model_config = self.scheduler.model_config"
+        },
+        {
+          "line": 559,
+          "text": "        hf_text_config = model_config.hf_text_config"
+        },
+        {
+          "line": 560,
+          "text": ""
+        },
+        {
+          "line": 561,
+          "text": "        hidden_size = float(model_config.hidden_size)"
+        },
+        {
+          "line": 562,
+          "text": "        num_layers = float(getattr(model_config, \"num_attention_layers\", 0))"
+        },
+        {
+          "line": 706,
+          "text": "        return \"\""
+        },
+        {
+          "line": 707,
+          "text": ""
+        },
+        {
+          "line": 708,
+          "text": "    def reset_metrics(self):"
+        },
+        {
+          "line": 709,
+          "text": "        self.forward_ct_decode = 0"
+        },
+        {
+          "line": 710,
+          "text": "        self.num_generated_tokens = 0"
+        },
+        {
+          "line": 711,
+          "text": "        self.spec_num_accept_tokens = 0"
+        },
+        {
+          "line": 712,
+          "text": "        self.spec_num_correct_drafts = 0"
+        },
+        {
+          "line": 713,
+          "text": "        self.spec_num_forward_ct = 0"
+        },
+        {
+          "line": 714,
+          "text": "        self.spec_total_num_accept_tokens = 0"
+        },
+        {
+          "line": 715,
+          "text": "        self.spec_total_num_forward_ct = 0"
+        },
+        {
+          "line": 716,
+          "text": "        self.spec_num_block_accept_tokens = 0"
+        },
+        {
+          "line": 717,
+          "text": "        self.spec_num_cap_tokens = 0"
+        },
+        {
+          "line": 718,
+          "text": ""
+        },
+        {
+          "line": 719,
+          "text": "    def report_prefill_stats("
+        },
+        {
+          "line": 720,
+          "text": "        self,"
+        },
+        {
+          "line": 721,
+          "text": "        batch: Optional[ScheduleBatch],"
+        },
+        {
+          "line": 722,
+          "text": "        prefill_stats: PrefillStats,"
+        },
+        {
+          "line": 968,
+          "text": "            spec_accept_length = 0"
+        },
+        {
+          "line": 969,
+          "text": "            spec_accept_rate = 0"
+        },
+        {
+          "line": 970,
+          "text": "            spec_cap_length = 0"
+        },
+        {
+          "line": 971,
+          "text": "            spec_block_accept_length = 0"
+        },
+        {
+          "line": 972,
+          "text": "        else:"
+        },
+        {
+          "line": 973,
+          "text": "            spec_accept_length = self.spec_num_accept_tokens / self.spec_num_forward_ct"
+        },
+        {
+          "line": 974,
+          "text": "            num_correct_drafts = self.spec_num_correct_drafts"
+        },
+        {
+          "line": 975,
+          "text": "            if get_spec().speculative_num_draft_tokens:"
+        },
+        {
+          "line": 976,
+          "text": "                draft_per_round = get_spec().speculative_num_draft_tokens - 1"
+        },
+        {
+          "line": 977,
+          "text": "            else:"
+        },
+        {
+          "line": 978,
+          "text": "                draft_per_round = get_spec().speculative_num_steps or 0"
+        },
+        {
+          "line": 979,
+          "text": "            total_draft_tokens = self.spec_num_forward_ct * draft_per_round"
+        },
+        {
+          "line": 980,
+          "text": "            spec_accept_rate = ("
+        },
+        {
+          "line": 981,
+          "text": "                num_correct_drafts / total_draft_tokens if total_draft_tokens > 0 else 0"
+        },
+        {
+          "line": 982,
+          "text": "            )"
+        },
+        {
+          "line": 983,
+          "text": "            spec_cap_length = ("
+        },
+        {
+          "line": 984,
+          "text": "                self.spec_num_cap_tokens / self.spec_num_forward_ct"
+        },
+        {
+          "line": 994,
+          "text": "                self.spec_num_block_accept_tokens / self.spec_num_forward_ct"
+        },
+        {
+          "line": 995,
+          "text": "                if self.spec_num_forward_ct > 0"
+        },
+        {
+          "line": 996,
+          "text": "                and read_ragged_verify_mode() is RaggedVerifyMode.CAP_ACCEPT"
+        },
+        {
+          "line": 997,
+          "text": "                else 0"
+        },
+        {
+          "line": 998,
+          "text": "            )"
+        },
+        {
+          "line": 999,
+          "text": "            self.spec_total_num_accept_tokens += self.spec_num_accept_tokens"
+        },
+        {
+          "line": 1000,
+          "text": "            self.spec_total_num_forward_ct += self.spec_num_forward_ct"
+        },
+        {
+          "line": 1001,
+          "text": "            self.spec_num_accept_tokens = self.spec_num_correct_drafts = 0"
+        },
+        {
+          "line": 1002,
+          "text": "            self.spec_num_forward_ct = 0"
+        },
+        {
+          "line": 1003,
+          "text": "            self.spec_num_block_accept_tokens = 0"
+        },
+        {
+          "line": 1004,
+          "text": "            self.spec_num_cap_tokens = 0"
+        },
+        {
+          "line": 1005,
+          "text": "            msg += f\"accept len: {spec_accept_length:.2f}, accept rate: {spec_accept_rate:.2f}, \""
+        },
+        {
+          "line": 1006,
+          "text": "            if spec_cap_length > 0:"
+        },
+        {
+          "line": 1007,
+          "text": "                msg += f\"cap len: {spec_cap_length:.2f}, \""
+        },
+        {
+          "line": 1008,
+          "text": "            if spec_block_accept_length > 0:"
+        },
+        {
+          "line": 1009,
+          "text": "                msg += f\"block accept len: {spec_block_accept_length:.2f}, \""
+        },
+        {
+          "line": 1010,
+          "text": "            if self.scheduler.spec_algorithm.is_dspark():"
+        },
+        {
+          "line": 1011,
+          "text": "                draft_worker = self.scheduler.draft_worker"
+        },
+        {
+          "line": 1012,
+          "text": "                if draft_worker is not None:"
+        }
+      ]
+    },
+    "srt/speculative/base_spec_worker.py": {
+      "sha256": "74cb38b5d42fa4418e661b7a626ca421dd8c0477edf83677ec86b5956b344b30",
+      "excerpts": [
+        {
+          "line": 392,
+          "text": "        Default no-op. DSpark overrides this to settle / censor its"
+        },
+        {
+          "line": 393,
+          "text": "        block-accept estimator state for the finished request."
+        },
+        {
+          "line": 394,
+          "text": "        \"\"\""
+        },
+        {
+          "line": 395,
+          "text": "        pass"
+        },
+        {
+          "line": 396,
+          "text": ""
+        },
+        {
+          "line": 397,
+          "text": "    def activate_step_by_batch(self, batch_size: int) -> None:"
+        },
+        {
+          "line": 398,
+          "text": "        \"\"\"Activate the optimal adaptive step for the current batch size."
+        },
+        {
+          "line": 399,
+          "text": ""
+        },
+        {
+          "line": 400,
+          "text": "        Default no-op. Adaptive-aware workers override this to switch"
+        },
+        {
+          "line": 401,
+          "text": "        the runtime state before each draft round."
+        },
+        {
+          "line": 402,
+          "text": "        \"\"\""
+        },
+        {
+          "line": 403,
+          "text": "        pass"
+        }
+      ]
+    },
+    "srt/speculative/adaptive_runtime_state.py": {
+      "sha256": "40cc025d7475cc0483ef595463a6bae39a4590a57de539bb80369d267be00d1c",
+      "excerpts": [
+        {
+          "line": 32,
+          "text": "    # -- Extend stage: draft model KV cache catch-up after verify --"
+        },
+        {
+          "line": 33,
+          "text": "    draft_extend_attn_backend: \"AttentionBackend | None\""
+        },
+        {
+          "line": 34,
+          "text": "    cuda_graph_runner_for_draft_extend: \"DecodeCudaGraphRunner | None\""
+        },
+        {
+          "line": 35,
+          "text": ""
+        },
+        {
+          "line": 36,
+          "text": ""
+        },
+        {
+          "line": 37,
+          "text": "class AdaptiveSpecWorker(Protocol):"
+        },
+        {
+          "line": 38,
+          "text": "    \"\"\"Protocol that a worker must implement to use AdaptiveController.\"\"\""
+        },
+        {
+          "line": 39,
+          "text": ""
+        },
+        {
+          "line": 40,
+          "text": "    speculative_num_steps: int"
+        },
+        {
+          "line": 41,
+          "text": ""
+        },
+        {
+          "line": 42,
+          "text": "    def build_adaptive_runtime_state("
+        },
+        {
+          "line": 43,
+          "text": "        self,"
+        },
+        {
+          "line": 44,
+          "text": "        speculative_num_steps: int,"
+        },
+        {
+          "line": 45,
+          "text": "        speculative_num_draft_tokens: int,"
+        },
+        {
+          "line": 46,
+          "text": "        cuda_graph_bs: list[int] | None = None,"
+        },
+        {
+          "line": 47,
+          "text": "    ) -> SpecRuntimeState: ..."
+        },
+        {
+          "line": 48,
+          "text": ""
+        },
+        {
+          "line": 49,
+          "text": "    def apply_runtime_state(self, state: SpecRuntimeState) -> None: ..."
+        },
+        {
+          "line": 50,
+          "text": ""
+        },
+        {
+          "line": 51,
+          "text": ""
+        },
+        {
+          "line": 52,
+          "text": "class AdaptiveSpecPolicy(Protocol):"
+        },
+        {
+          "line": 53,
+          "text": "    \"\"\"Policy interface used by AdaptiveController to select runtime states.\"\"\""
+        },
+        {
+          "line": 54,
+          "text": ""
+        },
+        {
+          "line": 55,
+          "text": "    @property"
+        },
+        {
+          "line": 56,
+          "text": "    def candidate_steps(self) -> list[int]: ..."
+        },
+        {
+          "line": 57,
+          "text": ""
+        },
+        {
+          "line": 58,
+          "text": "    def set_cuda_graph_bs(self, cuda_graph_bs: list[int] | None) -> None: ..."
+        },
+        {
+          "line": 59,
+          "text": ""
+        },
+        {
+          "line": 60,
+          "text": "    def get_steps_for_batch(self, batch_size: int) -> int: ..."
+        },
+        {
+          "line": 61,
+          "text": ""
+        },
+        {
+          "line": 62,
+          "text": "    def on_verify_complete("
+        },
+        {
+          "line": 63,
+          "text": "        self, num_correct_drafts_per_req: list[int], batch_size: int"
+        },
+        {
+          "line": 64,
+          "text": "    ) -> int | None: ..."
+        },
+        {
+          "line": 65,
+          "text": ""
+        },
+        {
+          "line": 66,
+          "text": "    def cuda_graph_bs_for_step(self, step: int) -> list[int] | None: ..."
+        },
+        {
+          "line": 67,
+          "text": ""
+        },
+        {
+          "line": 68,
+          "text": ""
+        },
+        {
+          "line": 69,
+          "text": "class AdaptiveController:"
+        },
+        {
+          "line": 70,
+          "text": "    \"\"\"Facade that owns adaptive decision-making and runtime state switching."
+        },
+        {
+          "line": 71,
+          "text": ""
+        },
+        {
+          "line": 72,
+          "text": "    Works with any worker that implements AdaptiveSpecWorker protocol:"
+        },
+        {
+          "line": 73,
+          "text": "      - build_adaptive_runtime_state(steps, draft_tokens) → runtime state"
+        },
+        {
+          "line": 74,
+          "text": "      - apply_runtime_state(state) → apply it to the worker"
+        },
+        {
+          "line": 75,
+          "text": ""
+        },
+        {
+          "line": 76,
+          "text": "    The worker only needs to:"
+        },
+        {
+          "line": 77,
+          "text": "      1. Call register() for the initial state, then init_states()"
+        },
+        {
+          "line": 78,
+          "text": "         once during startup."
+        },
+        {
+          "line": 79,
+          "text": "      2. Call on_verify_complete(num_correct_drafts_per_req) after each decode verify."
+        },
+        {
+          "line": 80,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 117,
+          "text": "            self._states[steps] = state"
+        },
+        {
+          "line": 118,
+          "text": ""
+        },
+        {
+          "line": 119,
+          "text": "        # Start on the initial step."
+        },
+        {
+          "line": 120,
+          "text": "        self._activate(self.worker.speculative_num_steps)"
+        },
+        {
+          "line": 121,
+          "text": ""
+        },
+        {
+          "line": 122,
+          "text": "    def activate_step_by_batch(self, batch_size: int) -> None:"
+        },
+        {
+          "line": 123,
+          "text": "        target = self.params.get_steps_for_batch(batch_size)"
+        },
+        {
+          "line": 124,
+          "text": "        if target != self.worker.speculative_num_steps:"
+        },
+        {
+          "line": 125,
+          "text": "            self._activate(target)"
+        },
+        {
+          "line": 126,
+          "text": ""
+        },
+        {
+          "line": 127,
+          "text": "    def on_verify_complete("
+        },
+        {
+          "line": 128,
+          "text": "        self, num_correct_drafts_per_req: list[int], batch_size: int"
+        },
+        {
+          "line": 129,
+          "text": "    ) -> None:"
+        },
+        {
+          "line": 130,
+          "text": "        \"\"\"Feed verify results; switch runtime state if the policy requests it.\"\"\""
+        },
+        {
+          "line": 131,
+          "text": "        new_step = self.params.on_verify_complete("
+        },
+        {
+          "line": 132,
+          "text": "            num_correct_drafts_per_req, batch_size"
+        },
+        {
+          "line": 133,
+          "text": "        )"
+        }
+      ]
+    },
+    "srt/speculative/spec_utils.py": {
+      "sha256": "427bd9b723bda6a79761ff60964c01a35a781a8269d84bd26f581140deb0b27c",
+      "excerpts": [
+        {
+          "line": 847,
+          "text": "        disable_cp_strategy(),"
+        },
+        {
+          "line": 848,
+          "text": "    ):"
+        },
+        {
+          "line": 849,
+          "text": "        yield"
+        },
+        {
+          "line": 850,
+          "text": ""
+        },
+        {
+          "line": 851,
+          "text": ""
+        },
+        {
+          "line": 852,
+          "text": "def spec_stage_span(name: str):"
+        },
+        {
+          "line": 853,
+          "text": "    \"\"\"Profiler span for a coarse speculative-decoding stage (``draft`` /"
+        },
+        {
+          "line": 854,
+          "text": "    ``draft_extend`` / ``verify``)."
+        },
+        {
+          "line": 855,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 856,
+          "text": "    return profile_range(name)"
+        },
+        {
+          "line": 857,
+          "text": ""
+        },
+        {
+          "line": 858,
+          "text": ""
+        },
+        {
+          "line": 859,
+          "text": "def move_accept_tokens_to_target_kvcache("
+        },
+        {
+          "line": 860,
+          "text": "    batch: ScheduleBatch,"
+        },
+        {
+          "line": 861,
+          "text": "    accept_index: torch.Tensor,"
+        },
+        {
+          "line": 862,
+          "text": "    num_correct_drafts: torch.Tensor,"
+        },
+        {
+          "line": 863,
+          "text": "    token_to_kv_pool_allocator: BaseTokenToKVPoolAllocator,"
+        }
+      ]
+    },
+    "srt/speculative/eagle_worker_v2.py": {
+      "sha256": "7d3548362886e540612587a3818b37e0d61daa91f116a47f22a757708ef4c32d",
+      "excerpts": [
+        {
+          "line": 1766,
+          "text": "        if self.adaptive_controller is not None:"
+        },
+        {
+          "line": 1767,
+          "text": "            self.adaptive_controller.on_verify_complete("
+        },
+        {
+          "line": 1768,
+          "text": "                num_correct_drafts_per_req, batch_size=batch_size"
+        },
+        {
+          "line": 1769,
+          "text": "            )"
+        },
+        {
+          "line": 1770,
+          "text": ""
+        },
+        {
+          "line": 1771,
+          "text": "    def activate_step_by_batch(self, batch_size: int) -> None:"
+        },
+        {
+          "line": 1772,
+          "text": "        if self.adaptive_controller is not None:"
+        },
+        {
+          "line": 1773,
+          "text": "            self.adaptive_controller.activate_step_by_batch(batch_size)"
+        },
+        {
+          "line": 1774,
+          "text": ""
+        },
+        {
+          "line": 1775,
+          "text": "    # -- Adaptive speculative decoding protocol --"
+        },
+        {
+          "line": 1776,
+          "text": ""
+        },
+        {
+          "line": 1777,
+          "text": "    def build_adaptive_runtime_state("
+        },
+        {
+          "line": 1778,
+          "text": "        self,"
+        },
+        {
+          "line": 1779,
+          "text": "        speculative_num_steps: int,"
+        },
+        {
+          "line": 1780,
+          "text": "        speculative_num_draft_tokens: int,"
+        },
+        {
+          "line": 1781,
+          "text": "        cuda_graph_bs=None,"
+        },
+        {
+          "line": 1782,
+          "text": "    ) -> SpecRuntimeState:"
+        }
+      ]
+    },
+    "srt/speculative/adaptive_spec_params.py": {
+      "sha256": "58ec8120816e2f4f900f37d3b922ae7cd6cc7eb0860240d02f8ac93176d1e5ed",
+      "excerpts": [
+        {
+          "line": 148,
+          "text": "    for entry in bs_entries.values():"
+        },
+        {
+          "line": 149,
+          "text": "        all_steps.update(entry[\"candidate_steps\"])"
+        },
+        {
+          "line": 150,
+          "text": "    return sorted(all_steps)"
+        },
+        {
+          "line": 151,
+          "text": ""
+        },
+        {
+          "line": 152,
+          "text": ""
+        },
+        {
+          "line": 153,
+          "text": "class AdaptiveStepSlot:"
+        },
+        {
+          "line": 154,
+          "text": "    \"\"\"Tracks acceptance rate via EMA and adapts num_steps accordingly."
+        },
+        {
+          "line": 155,
+          "text": ""
+        },
+        {
+          "line": 156,
+          "text": "    The core idea: if drafts are consistently accepted, try more steps;"
+        },
+        {
+          "line": 157,
+          "text": "    if drafts are consistently rejected early, reduce steps to avoid waste."
+        },
+        {
+          "line": 158,
+          "text": ""
+        },
+        {
+          "line": 159,
+          "text": "    Formula: target_steps = clamp(round(ema_accept_len) + 1, min_steps, max_steps)"
+        },
+        {
+          "line": 160,
+          "text": "    - Probes one step beyond observed acceptance"
+        },
+        {
+          "line": 161,
+          "text": "    - EMA smoothing prevents oscillation"
+        },
+        {
+          "line": 162,
+          "text": "    - Only updates every `update_interval` batches for stability"
+        },
+        {
+          "line": 163,
+          "text": "    - num_steps can be selected from different candidate sets on different batch_sizes"
+        },
+        {
+          "line": 164,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 270,
+          "text": "            )"
+        },
+        {
+          "line": 271,
+          "text": "            return True"
+        },
+        {
+          "line": 272,
+          "text": "        return False"
+        },
+        {
+          "line": 273,
+          "text": ""
+        },
+        {
+          "line": 274,
+          "text": ""
+        },
+        {
+          "line": 275,
+          "text": "class AdaptiveSpeculativeParams:"
+        },
+        {
+          "line": 276,
+          "text": "    \"\"\"Routes ``batch_size`` to the correct per-BS slot."
+        },
+        {
+          "line": 277,
+          "text": ""
+        },
+        {
+          "line": 278,
+          "text": "    A slot is a per-BS configuration of adaptive step selection."
+        },
+        {
+          "line": 279,
+          "text": "    \"\"\""
+        },
+        {
+          "line": 280,
+          "text": ""
+        },
+        {
+          "line": 281,
+          "text": "    def __init__("
+        },
+        {
+          "line": 282,
+          "text": "        self,"
+        },
+        {
+          "line": 283,
+          "text": "        initial_steps: int,"
+        },
+        {
+          "line": 284,
+          "text": "        cfg_path: str | None = None,"
+        },
+        {
+          "line": 285,
+          "text": "    ):"
+        },
+        {
+          "line": 286,
+          "text": "        cfg, bs_entries = _load_adaptive_config(cfg_path)"
+        }
+      ]
+    }
+  }
+}

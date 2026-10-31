@@ -1,0 +1,78 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-30T14:26:00.411539+00:00",
+  "local_run_dir": "$LOCAL_HOME/Documents/infra/results/goodput-study-2026-10-30/run-20261030T134707Z",
+  "remote_run_dir": "$HOME/infra-deepseek-v4/results/goodput-study-2026-10-30/run-20261030T134707Z",
+  "formal_cases": 27,
+  "formal_requests": 5400,
+  "formal_output_tokens": 625408,
+  "warmup_requests": 216,
+  "smoke_requests": 8,
+  "rates_req_per_s": [
+    4,
+    7,
+    9
+  ],
+  "window_seconds": 30,
+  "research_slos_ms": {
+    "ttft": 500,
+    "tpot": 30
+  },
+  "business_slo_confirmed": false,
+  "max_actual_send_lag_ms": 2.134748996468261,
+  "local_rejections": 514,
+  "all_failed_requests": 514,
+  "production_default_changed": false,
+  "service": {
+    "pid": 330857,
+    "status": "healthy",
+    "physical_gpus": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "tp": 4,
+    "mode": "fixed3_mtp",
+    "diagnostic_flags_disabled": true,
+    "acceptance": "service-acceptance.json"
+  },
+  "tests": {
+    "local": {
+      "count": 61,
+      "exit_code": 0,
+      "log_sha256": "8ac8f5a0cfad840940edbacf6c5a64b815a1d258553758cb31894ef65485d050"
+    },
+    "remote": {
+      "count": 61,
+      "exit_code": 0,
+      "log_sha256": "b43170396fd2e6f6ad1d96c59f1777831b44ddd8d6bdc5f1250ad8a03bb7a3e8"
+    },
+    "source_hashes_match": true,
+    "additional_remote_files_preserved": [
+      "scripts/preflight_triton.py",
+      "scripts/final_experiments.py",
+      "scripts/download_model.py"
+    ]
+  },
+  "snapshot_files_verified": 225,
+  "archive_sha256": "af0f0cc41cc060f01dccf86aa16bedc8ec12f676dd5d369083e9f37d051854fd",
+  "native_goodput_source_sha256": "3ec11e936be87f638342f69ec25e1290c7c7d1b267a40d30229f83d19c01c8fb",
+  "unfinished_items": [],
+  "known_limits": [
+    "Research latency targets, not externally confirmed production SLOs.",
+    "Only deterministic 30-second arrival windows at 4,7,9 req/s; no production P99 guarantee or unmeasured maximum-capacity claim.",
+    "Finite-window native goodput includes final drain; good/30s is a separately named offered-window rate.",
+    "All modes instrumented equally; no gain is inferred against the earlier uninstrumented study.",
+    "The common 32 in-flight admission bound records rejections as failures; it does not defer clients."
+  ],
+  "report": "REPORT-GOODPUT.md",
+  "checksum_manifest": "SHA256SUMS",
+  "document_sha256": {
+    "REPORT-GOODPUT.md": "2d678d16d20f9c75a293ee65982b9338e49148776e0cad35be1b5e42c5d4245c",
+    "README.md": "d3a8ab661ba44b3ec7117fce3412f3dee514d190ff94b288714bc972ed13799c",
+    "docs/superpowers/plans/2026-10-30-goodput-arrival-rate.md": "5ce3485fcf20ed2ed0cba9579f859517b570a36e5a11b9a00865a6d3ae98df47",
+    "docs/superpowers/specs/2026-10-30-goodput-arrival-rate-design.md": "8be31bf9edfbaff5aa1deaea2d04fd1e4142640fb5894a06eb6c2d350cd96a65"
+  },
+  "secondary_analysis": "slo-sensitivity.json (post-hoc; primary thresholds unchanged)"
+}

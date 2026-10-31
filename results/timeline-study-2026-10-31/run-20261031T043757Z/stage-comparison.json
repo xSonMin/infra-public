@@ -1,0 +1,180 @@
+{
+  "rank_observations": [
+    {
+      "label": "sync0",
+      "ranks": [
+        {
+          "rank": 0,
+          "target_prefill_calls": 12,
+          "target_verify_calls": 36,
+          "mean_verify_batch": 17.63888888888889,
+          "target_prefill_gpu_activity_per_call_ms": 150.49661971028647,
+          "target_verify_gpu_activity_per_call_ms": 26.88081972927517,
+          "verify_all_start_gap_median_ms": 64.38743603515626,
+          "consecutive_verify_start_gap_median_ms": 30.14976171875,
+          "target_prefill_activity_share_of_gpu_busy": 0.6252689552935292,
+          "unknown_activity_share_of_gpu_busy": 0.0012960834759268873,
+          "kernel_launch_mapping_coverage": 0.9831294379330995
+        },
+        {
+          "rank": 1,
+          "target_prefill_calls": 12,
+          "target_verify_calls": 36,
+          "mean_verify_batch": 17.63888888888889,
+          "target_prefill_gpu_activity_per_call_ms": 150.42878190104165,
+          "target_verify_gpu_activity_per_call_ms": 26.877035237630206,
+          "verify_all_start_gap_median_ms": 64.35889599609375,
+          "consecutive_verify_start_gap_median_ms": 30.120431396484374,
+          "target_prefill_activity_share_of_gpu_busy": 0.6251989537867979,
+          "unknown_activity_share_of_gpu_busy": 0.0013002904549236749,
+          "kernel_launch_mapping_coverage": 0.9831294379330995
+        },
+        {
+          "rank": 2,
+          "target_prefill_calls": 12,
+          "target_verify_calls": 36,
+          "mean_verify_batch": 17.63888888888889,
+          "target_prefill_gpu_activity_per_call_ms": 150.4360215250651,
+          "target_verify_gpu_activity_per_call_ms": 26.88500412326389,
+          "verify_all_start_gap_median_ms": 64.377095703125,
+          "consecutive_verify_start_gap_median_ms": 30.119896728515624,
+          "target_prefill_activity_share_of_gpu_busy": 0.6251389048542272,
+          "unknown_activity_share_of_gpu_busy": 0.0013040469794521013,
+          "kernel_launch_mapping_coverage": 0.9831294379330995
+        },
+        {
+          "rank": 3,
+          "target_prefill_calls": 12,
+          "target_verify_calls": 36,
+          "mean_verify_batch": 17.63888888888889,
+          "target_prefill_gpu_activity_per_call_ms": 150.3073740234375,
+          "target_verify_gpu_activity_per_call_ms": 26.88255706108941,
+          "verify_all_start_gap_median_ms": 64.37136572265625,
+          "consecutive_verify_start_gap_median_ms": 30.119021484375,
+          "target_prefill_activity_share_of_gpu_busy": 0.6249664686893244,
+          "unknown_activity_share_of_gpu_busy": 0.0013030217338203568,
+          "kernel_launch_mapping_coverage": 0.9831294379330995
+        }
+      ]
+    },
+    {
+      "label": "sync8",
+      "ranks": [
+        {
+          "rank": 0,
+          "target_prefill_calls": 5,
+          "target_verify_calls": 43,
+          "mean_verify_batch": 8.0,
+          "target_prefill_gpu_activity_per_call_ms": 150.30045556640624,
+          "target_verify_gpu_activity_per_call_ms": 15.358221327670785,
+          "verify_all_start_gap_median_ms": 17.00845263671875,
+          "consecutive_verify_start_gap_median_ms": 16.956927734375,
+          "target_prefill_activity_share_of_gpu_busy": 0.5081685611990294,
+          "unknown_activity_share_of_gpu_busy": 0.002311198930414923,
+          "kernel_launch_mapping_coverage": 0.9833414113127614
+        },
+        {
+          "rank": 1,
+          "target_prefill_calls": 5,
+          "target_verify_calls": 43,
+          "mean_verify_batch": 8.0,
+          "target_prefill_gpu_activity_per_call_ms": 150.3313125,
+          "target_verify_gpu_activity_per_call_ms": 15.356220828034157,
+          "verify_all_start_gap_median_ms": 17.0326884765625,
+          "consecutive_verify_start_gap_median_ms": 16.939619140625,
+          "target_prefill_activity_share_of_gpu_busy": 0.5082884026640329,
+          "unknown_activity_share_of_gpu_busy": 0.0023082776432360604,
+          "kernel_launch_mapping_coverage": 0.9833414113127614
+        },
+        {
+          "rank": 2,
+          "target_prefill_calls": 5,
+          "target_verify_calls": 43,
+          "mean_verify_batch": 8.0,
+          "target_prefill_gpu_activity_per_call_ms": 150.50951386718748,
+          "target_verify_gpu_activity_per_call_ms": 15.481596986282705,
+          "verify_all_start_gap_median_ms": 17.03144287109375,
+          "consecutive_verify_start_gap_median_ms": 16.9667783203125,
+          "target_prefill_activity_share_of_gpu_busy": 0.5067051173168508,
+          "unknown_activity_share_of_gpu_busy": 0.002309460660641542,
+          "kernel_launch_mapping_coverage": 0.9833414113127614
+        },
+        {
+          "rank": 3,
+          "target_prefill_calls": 5,
+          "target_verify_calls": 43,
+          "mean_verify_batch": 8.0,
+          "target_prefill_gpu_activity_per_call_ms": 150.31389921875,
+          "target_verify_gpu_activity_per_call_ms": 15.359047022619912,
+          "verify_all_start_gap_median_ms": 17.041813720703125,
+          "consecutive_verify_start_gap_median_ms": 16.95596923828125,
+          "target_prefill_activity_share_of_gpu_busy": 0.508190795209171,
+          "unknown_activity_share_of_gpu_busy": 0.002317634515368881,
+          "kernel_launch_mapping_coverage": 0.9833414113127614
+        }
+      ]
+    },
+    {
+      "label": "budget100",
+      "ranks": [
+        {
+          "rank": 0,
+          "target_prefill_calls": 12,
+          "target_verify_calls": 36,
+          "mean_verify_batch": 22.0,
+          "target_prefill_gpu_activity_per_call_ms": 150.43334883626304,
+          "target_verify_gpu_activity_per_call_ms": 28.787072306315107,
+          "verify_all_start_gap_median_ms": 63.877,
+          "consecutive_verify_start_gap_median_ms": 38.0806572265625,
+          "target_prefill_activity_share_of_gpu_busy": 0.6101050369085083,
+          "unknown_activity_share_of_gpu_busy": 0.0012621113691190866,
+          "kernel_launch_mapping_coverage": 0.9836132872635216
+        },
+        {
+          "rank": 1,
+          "target_prefill_calls": 12,
+          "target_verify_calls": 36,
+          "mean_verify_batch": 22.0,
+          "target_prefill_gpu_activity_per_call_ms": 150.37197985839845,
+          "target_verify_gpu_activity_per_call_ms": 28.78570458984375,
+          "verify_all_start_gap_median_ms": 63.8704599609375,
+          "consecutive_verify_start_gap_median_ms": 38.05475244140625,
+          "target_prefill_activity_share_of_gpu_busy": 0.610022972753154,
+          "unknown_activity_share_of_gpu_busy": 0.00126589667953172,
+          "kernel_launch_mapping_coverage": 0.9836132872635216
+        },
+        {
+          "rank": 2,
+          "target_prefill_calls": 12,
+          "target_verify_calls": 36,
+          "mean_verify_batch": 22.0,
+          "target_prefill_gpu_activity_per_call_ms": 150.59494698079428,
+          "target_verify_gpu_activity_per_call_ms": 28.79160944281684,
+          "verify_all_start_gap_median_ms": 63.97868896484375,
+          "consecutive_verify_start_gap_median_ms": 38.10774755859375,
+          "target_prefill_activity_share_of_gpu_busy": 0.610315861356376,
+          "unknown_activity_share_of_gpu_busy": 0.0012669048360759163,
+          "kernel_launch_mapping_coverage": 0.9836132872635216
+        },
+        {
+          "rank": 3,
+          "target_prefill_calls": 12,
+          "target_verify_calls": 36,
+          "mean_verify_batch": 22.0,
+          "target_prefill_gpu_activity_per_call_ms": 150.4435898844401,
+          "target_verify_gpu_activity_per_call_ms": 28.787425754123266,
+          "verify_all_start_gap_median_ms": 63.9023701171875,
+          "consecutive_verify_start_gap_median_ms": 38.07923828125,
+          "target_prefill_activity_share_of_gpu_busy": 0.6101154986633697,
+          "unknown_activity_share_of_gpu_busy": 0.0012685566626623127,
+          "kernel_launch_mapping_coverage": 0.9836132872635216
+        }
+      ]
+    }
+  ],
+  "limits": [
+    "ratios are non-additive per-rank activity descriptions, not critical-path percentages",
+    "normalized GPU activity per call is not request latency and batch distributions differ",
+    "consecutive-verify gaps exclude a target EXTEND between calls but may still contain draft and CPU work"
+  ]
+}
