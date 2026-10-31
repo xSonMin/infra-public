@@ -1,0 +1,106 @@
+{
+  "status": "completed",
+  "completed_at_utc": "2026-10-31T07:34:29.568307+00:00",
+  "planned_cases": 4,
+  "verified_cases": 4,
+  "planned_formal_requests": 1920,
+  "verified_formal_requests": 1920,
+  "successful_generation_requests": 1671,
+  "local_rejections": 249,
+  "unexpected_generation_request_errors": 0,
+  "clean_windows": 2,
+  "profile_windows": 2,
+  "planned_rank_traces": 8,
+  "verified_raw_rank_traces": 8,
+  "raw_trace_compressed_bytes": 200304053,
+  "independent_local_raw_trace_reparse": true,
+  "actual_chunk_token_histograms_verified": true,
+  "local_request_recomputation_matches_remote": true,
+  "classification": "single-round controlled continuation-budget coverage test, not confirmation",
+  "fixed_conditions": {
+    "mtp_steps": 1,
+    "interval": 8,
+    "wait_budget_ms": 100,
+    "chunk_size": 1024,
+    "protect_chunked_modes": [
+      false,
+      true
+    ]
+  },
+  "prior_policy_preserved_byte_for_byte": true,
+  "cpu_consensus": {
+    "passed": true,
+    "ranks": 4,
+    "backend": "gloo",
+    "uses_gpu": false,
+    "verified_evidence_files": 15
+  },
+  "long_output_probes": {
+    "probes_per_configuration": 4,
+    "input_tokens": 2048,
+    "output_tokens": 32,
+    "deterministic_text_matches": true,
+    "zero_retractions": true
+  },
+  "profile_steps": 48,
+  "profile_offset_s": 40,
+  "native_auto_stop_verified": true,
+  "redundant_stop_requests": 0,
+  "request_timeout_s": 45,
+  "client_case_timeout_s": 300,
+  "max_inflight": 32,
+  "maximum_actual_send_lag_ms": 2.1394920186139643,
+  "research_slos_ms": {
+    "ttft": 500,
+    "tpot": 30
+  },
+  "business_slo_confirmed": false,
+  "retrieval": {
+    "formal_cases": 4,
+    "formal_requests": 1920,
+    "support_files_verified": 141,
+    "raw_trace_files_verified": 8,
+    "support_receipt": "retrieval.json",
+    "trace_receipt": "trace-retrieval.json",
+    "support_scope": "complete request records, trace summaries and support; raw trace files are retrieved separately by resumable transfer and per-file digest"
+  },
+  "service_restored_and_accepted": true,
+  "restored_pid": 876381,
+  "original_default_retained": true,
+  "runtime_override_cleared": true,
+  "installed_scheduler_source_unchanged": true,
+  "native_sources_unchanged": true,
+  "executor_ended": true,
+  "parent_lock_released": true,
+  "tests": {
+    "local": {
+      "count": 135,
+      "exit_code": 0,
+      "log_sha256": "a316c3841db44d900ef155639479f2c6a5046469719d10cdf33854a55b3af449"
+    },
+    "remote": {
+      "count": 135,
+      "exit_code": 0,
+      "log_sha256": "f6833a88733f402ccb177ee8407de5c418ed14bfbf040ee0db4580d3bf099785"
+    }
+  },
+  "unfinished_items": [],
+  "report": "$LOCAL_HOME/Documents/infra/REPORT-CONTINUATION-2026-10-31.md",
+  "primary_results": "audit-latest.json",
+  "raw_trace_analysis": "trace-analysis-local.json",
+  "cohort_analysis": "cohort-analysis.json",
+  "checksum_manifest": "SHA256SUMS",
+  "limits": [
+    "single fixed order and single round; request/rank/kernel counts are not independent trials",
+    "profiled latencies kept separate; profiling can cause rejection and delay",
+    "per-rank GPU activity is not additive end-to-end critical-path latency",
+    "four deterministic long prompts do not establish broad quality equivalence",
+    "no automatic promotion or additional parameter search"
+  ],
+  "document_sha256": {
+    "REPORT-CONTINUATION-2026-10-31.md": "e2a64518c240f4a2281befc5d2b4149934c13ff607ddf102fb4c6a340b9ef460",
+    "README.md": "95e7e3aa97724ae39332791d206110e385d972f78a9503b3fb4be48986ad8ab1",
+    "docs/superpowers/plans/2026-10-31-continuation-budget.md": "2c5f5c9cee88ba0ce425ff44112b88b0560e012cb7cd4da82c499a9b337ae269",
+    "results/continuation-study-2026-10-31/run-20261031T070530Z/SUMMARY.md": "402b55815bae8196475a57056ade745f749ff5454e2a7be17d40088ed777a8c0"
+  }
+}

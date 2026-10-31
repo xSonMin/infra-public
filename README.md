@@ -2,13 +2,17 @@
 
 DeepSeek-V4-Flash / SGLang 在四张 RTX PRO 6000 上的推理部署与性能研究，涵盖 MTP、输入／生成调度、等待预算和预填充分块。
 
-更新日期：**2026-10-31**。最新记录：[**预填充分块2048/1024对照（2026-10-31）**](REPORT-CHUNK-2026-10-31.md)。
+更新日期：**2026-10-31**。最新记录：[**续块等待预算覆盖（2026-10-31）**](REPORT-CONTINUATION-2026-10-31.md)。
 
 ## 研究内容
 
 比较不同输入长度、到达节奏和并发条件下的吞吐、首 token 延迟、逐 token 耗时与请求达标率，分析 MTP 和输入／生成调度的收益与限制。
 
 实验逐步从部署与基础基准，推进到性能边界、计时口径、外生到达率、持续负载及独立复验，再进一步检查等待预算、时间线和预填充分块。各阶段的模型版本、框架版本、设备范围和参数以报告为准。
+
+## 工作日报
+
+按日期记录完成事项、实验结果与后续问题：[日报目录](daily/README.md)。
 
 ## 阶段报告
 
@@ -24,6 +28,7 @@ DeepSeek-V4-Flash / SGLang 在四张 RTX PRO 6000 上的推理部署与性能研
 | [有效吞吐与请求达标率](REPORT-GOODPUT.md) | 在冻结的延迟阈值下比较有效吞吐与请求达标率。 |
 | [MTP 性能边界](REPORT-MTP-BOUNDARY.md) | 主基准、候选筛选、独立验证与分段回放。 |
 | [部署与基础基准](REPORT.md) | 环境、TP 配置、MTP 部署及基础基准结果。 |
+| [REPORT-CONTINUATION-2026-10-31.md](REPORT-CONTINUATION-2026-10-31.md) | 详见阶段报告。 |
 
 ## 评估指标
 
@@ -106,9 +111,17 @@ DeepSeek-V4-Flash / SGLang 在四张 RTX PRO 6000 上的推理部署与性能研
 
 证据目录：`results/chunk-study-2026-10-31/run-20261031T052225Z/`。完整范围、原服务恢复和文件校验见completion.json、service-acceptance.json、retrieval.json、trace-retrieval.json及SHA256SUMS。下一步先核对续块与间隔/等待预算的交互，尚未追加实验。
 
+### 续块等待预算覆盖（2026-10-31）
+
+[续块预算报告](REPORT-CONTINUATION-2026-10-31.md)固定MTP1/chunk1024/interval8/100ms，只改变预算是否纳入chunked_req。4窗口1920请求、8份rank原始trace和两配置各4条长输入输出核验完成，原始请求与trace均本地复算一致。
+
+纳入续块将无采样平均首字由625.77ms降至395.19ms，但逐token为57.31/57.46ms，拒绝39/38，中心60%请求双门槛达标仍均为0%。候选不推广，原服务已恢复，本地和远端各135项测试通过。
+
+证据目录：`results/continuation-study-2026-10-31/run-20261031T070530Z/`。完成范围与恢复见completion.json、service-acceptance.json、retrieval.json、trace-retrieval.json及SHA256SUMS。下一步先隔离单请求分块总成本，尚未追加测量。
+
 ## 下一步
 
-下一步先核对续块与间隔/等待预算的交互，尚未追加实验。
+下一步先隔离单请求分块总成本，尚未追加测量。
 
 ## 结果图表
 
