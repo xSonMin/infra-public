@@ -19,13 +19,13 @@
     },
     {
       "path": "PUBLICATION.md",
-      "sha256": "8dc2f29c7ac839165dc90e4a3456bd3d7d33d7fd220ca669fef0cddd43879ff3",
-      "bytes": 2388
+      "sha256": "337cda36834d92750f98ba98cb0582ded712be1e297f77012885079fda022d56",
+      "bytes": 3082
     },
     {
       "path": "README.md",
-      "sha256": "f1ce5dc6647a8bc2af8a90e768120b0d7b7aefa8cea2b2b80c11a5332f137a31",
-      "bytes": 13658
+      "sha256": "b82f9e2499690be4b15029d1cae5c91003ae1d1e5baf9bb36e948a4034490c35",
+      "bytes": 13984
     },
     {
       "path": "REPORT-CHUNK-2026-10-31.md",
@@ -53,9 +53,19 @@
       "bytes": 12915
     },
     {
+      "path": "REPORT-NIGHT-ISOLATION-2026-11-01.md",
+      "sha256": "deac7cb820373a2a724b3770a9b2318cabad6151a1c86f3a37a71127316d5e3a",
+      "bytes": 3285
+    },
+    {
       "path": "REPORT-OVERNIGHT-2026-10-31.md",
       "sha256": "7a76e22fe2cafb249e409bce609d1dce2063a9e78d09860c88256143438e7ca6",
       "bytes": 11186
+    },
+    {
+      "path": "REPORT-PROGRESS.md",
+      "sha256": "46e7c49eab643f6218ceffe6f5c1fdd9658c9f9d04af0d9353cce4ee4c38f9c0",
+      "bytes": 17608
     },
     {
       "path": "REPORT-SUSTAINED-SCHEDULING.md",
@@ -94,13 +104,13 @@
     },
     {
       "path": "daily/2026-11-01.md",
-      "sha256": "2db205a1c75f57cf264a399e66917113da892375511cbed40ac1a9505ea9579b",
-      "bytes": 1752
+      "sha256": "63954030020a7648dd323b1f01e1f47589811e420ba8f608e0d1c9efadf69bb2",
+      "bytes": 3916
     },
     {
       "path": "daily/README.md",
-      "sha256": "d776c8d5d093c05a3d5da389b489b9e249ff0f823d07a94fa9e774ff9ca951a2",
-      "bytes": 6998
+      "sha256": "6e4be139bf6b15239b7138b86e38fdd3493c920b8589e6d34a19b878e3852277",
+      "bytes": 7868
     },
     {
       "path": "daily/data/2026-10-30-mtp-boundary.json",
@@ -381,6 +391,11 @@
       "path": "results/wait-budget-study-2026-10-31/run-20261031T034015Z/completion.json",
       "sha256": "9b983a215e408ead4bac84160bbf02ca3ae22625b8d3783becc507c0be2d6310",
       "bytes": 3121
+    },
+    {
+      "path": "results/work-report-2026-10-31/progress-snapshot.json",
+      "sha256": "aaaefdb4ef6c0e5f965f2e731347e9cf0c217d5f248dc1e2c7f25b3c996b380a",
+      "bytes": 7823
     },
     {
       "path": "scripts/bench_suite.py",
@@ -715,5 +730,46 @@
       "active_journal": "daily/2026-11-01.md",
       "active_journal_end_provisional": "2026-11-01T16:30:00+08:00"
     }
+  },
+  "work_report_sync": {
+    "date": "2026-10-31",
+    "long_term_report": "REPORT-PROGRESS.md",
+    "active_daily": "daily/2026-11-01.md",
+    "evidence_cutoff_beijing": "2026-10-31T21:46:23+08:00",
+    "ongoing_stage": "night-isolation phase B",
+    "ongoing_stage_complete": false,
+    "current_runtime_verified": false,
+    "supporting_records": [
+      "REPORT-NIGHT-ISOLATION-2026-11-01.md",
+      "results/work-report-2026-10-31/progress-snapshot.json"
+    ],
+    "redactions": [
+      {
+        "path": "REPORT-PROGRESS.md",
+        "redactions": {
+          "private_identifier": 0
+        }
+      },
+      {
+        "path": "REPORT-NIGHT-ISOLATION-2026-11-01.md",
+        "redactions": {
+          "home_path": 1,
+          "private_identifier": 0
+        }
+      },
+      {
+        "path": "daily/2026-11-01.md",
+        "redactions": {
+          "private_identifier": 0
+        }
+      },
+      {
+        "path": "results/work-report-2026-10-31/progress-snapshot.json",
+        "redactions": {
+          "private_identifier": 0
+        }
+      }
+    ],
+    "new_gpu_measurements_started_by_document_update": false
   }
 }

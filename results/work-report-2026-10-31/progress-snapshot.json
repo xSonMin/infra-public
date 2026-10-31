@@ -1,0 +1,181 @@
+{
+  "review_date_beijing": "2026-10-31",
+  "report": "REPORT-PROGRESS.md",
+  "kind": "long_term_report_evidence_snapshot",
+  "raw_data_included": false,
+  "new_gpu_measurements_started_by_document_update": false,
+  "counts_are_not_a_project_total": true,
+  "completed_stages": [
+    {
+      "stage": "mtp-boundary",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-30T19:43:12+08:00",
+      "report": "REPORT-MTP-BOUNDARY.md",
+      "completion": "results/mtp-study-2026-10-30/run-20261030T070100Z/completion.json",
+      "completion_sha256": "4b3dc21527500c8ae507533594672d9cc7302a1ef190e2937e86b7459d117818",
+      "formal_windows": 107,
+      "formal_requests": 26776,
+      "count_basis": "completed formal requests"
+    },
+    {
+      "stage": "ttft-attribution",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-30T20:49:08+08:00",
+      "report": "REPORT-TTFT-ATTRIBUTION.md",
+      "completion": "results/ttft-study-2026-10-30/run-20261030T121601Z/completion.json",
+      "completion_sha256": "bab83d0389f053ab15bbf93cceb5022d7f5e038de3d45670913c3424527b2cd8",
+      "formal_windows": 27,
+      "formal_requests": 873,
+      "count_basis": "formal requests as defined by the source report"
+    },
+    {
+      "stage": "goodput",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-30T22:26:00+08:00",
+      "report": "REPORT-GOODPUT.md",
+      "completion": "results/goodput-study-2026-10-30/run-20261030T134707Z/completion.json",
+      "completion_sha256": "91ab15a32da4cfce0a206cc9d9137f95228fc79b84dc74c70ce4c5404a374471",
+      "formal_windows": 27,
+      "formal_requests": 5400,
+      "count_basis": "formal requests as defined by the source report"
+    },
+    {
+      "stage": "sustained",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-30T23:23:01+08:00",
+      "report": "REPORT-SUSTAINED-SCHEDULING.md",
+      "completion": "results/sustained-study-2026-10-30/run-20261030T143405Z/completion.json",
+      "completion_sha256": "7f0f663d62c8acd163b4bf2f7a6e2c7692405dc135b94e3e19fc19723c30f12b",
+      "formal_windows": 9,
+      "formal_requests": 7560,
+      "count_basis": "formal requests as defined by the source report"
+    },
+    {
+      "stage": "overnight-replication",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-31T07:07:01+08:00",
+      "report": "REPORT-OVERNIGHT-2026-10-31.md",
+      "completion": "results/overnight-study-2026-10-30/run-20261030T154057Z/completion.json",
+      "completion_sha256": "f1125d4a57386ac64ca62f01e8a0a320c856b9d19a5cb92a62639bbf79e05b8b",
+      "formal_windows": 63,
+      "formal_requests": 104940,
+      "count_basis": "planned formal requests, including local rejections"
+    },
+    {
+      "stage": "factorial",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-31T11:13:53+08:00",
+      "report": "REPORT-FACTORIAL-2026-10-31.md",
+      "completion": "results/factorial-study-2026-10-31/run-20261031T024039Z/completion.json",
+      "completion_sha256": "2764e661c19ed76504584a66381c4448e4389c3bd4c70f30055283abda61a50a",
+      "formal_windows": 8,
+      "formal_requests": 5280,
+      "count_basis": "planned formal requests, including local rejections"
+    },
+    {
+      "stage": "wait-budget",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-31T12:07:32+08:00",
+      "report": "REPORT-WAIT-BUDGET-2026-10-31.md",
+      "completion": "results/wait-budget-study-2026-10-31/run-20261031T034015Z/completion.json",
+      "completion_sha256": "492040155371d02706438fdb01e30bad81757bd405f308d02a202b539090e105",
+      "formal_windows": 8,
+      "formal_requests": 5280,
+      "count_basis": "planned formal requests, including local rejections"
+    },
+    {
+      "stage": "timeline",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-31T13:06:03+08:00",
+      "report": "REPORT-TIMELINE-2026-10-31.md",
+      "completion": "results/timeline-study-2026-10-31/run-20261031T043757Z/completion.json",
+      "completion_sha256": "cb56bc99e786c1264fa226a9dfd9160f43727ba487702bd137dfeae33f008194",
+      "formal_windows": 6,
+      "formal_requests": 2880,
+      "count_basis": "planned formal requests, including local rejections"
+    },
+    {
+      "stage": "chunk-size",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-31T13:59:08+08:00",
+      "report": "REPORT-CHUNK-2026-10-31.md",
+      "completion": "results/chunk-study-2026-10-31/run-20261031T052225Z/completion.json",
+      "completion_sha256": "dce9495231a3df4bc75cc91baf3d0e5d9a790a3154e51fab61437b0e81573de3",
+      "formal_windows": 4,
+      "formal_requests": 1920,
+      "count_basis": "planned formal requests, including local rejections"
+    },
+    {
+      "stage": "continuation",
+      "status": "completed",
+      "completed_at_beijing": "2026-10-31T15:34:29+08:00",
+      "report": "REPORT-CONTINUATION-2026-10-31.md",
+      "completion": "results/continuation-study-2026-10-31/run-20261031T070530Z/completion.json",
+      "completion_sha256": "c78a6fcb9aa50d212fc6eeb6cf04eb2b89c634a3174d07dfbfe9124615306c7e",
+      "formal_windows": 4,
+      "formal_requests": 1920,
+      "count_basis": "planned formal requests, including local rejections"
+    }
+  ],
+  "ongoing_night_isolation": {
+    "snapshot_at_beijing": "2026-10-31T21:46:23+08:00",
+    "status_from_saved_checkpoint": "running",
+    "live_remote_state_verified": false,
+    "formal_windows_audited": 9,
+    "formal_windows_planned": 40,
+    "formal_requests_audited": 10873,
+    "formal_requests_planned": 75236,
+    "audit_status": "passed",
+    "audit_errors": [],
+    "service_restoration_in_saved_checkpoint": false,
+    "completion_record_present_at_review": false,
+    "phase_A_formal_requests": 128,
+    "phase_A_independent_service_blocks_per_configuration": 2,
+    "phase_A_text_hashes_match": true,
+    "phase_A_comparisons": [
+      {
+        "output_tokens": 1,
+        "paired_inputs": 16,
+        "mean_differences": {
+          "first_positive_delta_ms": 39.7242795324928,
+          "first_text_delta_ms": 39.7242795324928,
+          "latency_delta_ms": 39.73156888059748
+        }
+      },
+      {
+        "output_tokens": 128,
+        "paired_inputs": 16,
+        "mean_differences": {
+          "first_positive_delta_ms": 39.217365279910155,
+          "first_text_delta_ms": 39.217365279910155,
+          "latency_delta_ms": 39.35584743612708,
+          "tpot_delta_ms": 0.0010904106788734143
+        }
+      }
+    ],
+    "sources": [
+      {
+        "path": "results/work-report-2026-10-31/checkpoint/audit-local.json",
+        "sha256": "559a311912361584e23e25fe76c1006c2d2b83d65f4c4bb506921c577a46e711"
+      },
+      {
+        "path": "results/work-report-2026-10-31/checkpoint/latest-status.json",
+        "sha256": "bc6a2a01452e377de6c071026717b952c80b9466fce42db6922470f62226907e"
+      },
+      {
+        "path": "results/work-report-2026-10-31/checkpoint/phase-A-paired-analysis.json",
+        "sha256": "f9844c7193e0218a4a14eb3cf2762312a2dc63607baff35bc31009eda0c82b2d"
+      }
+    ],
+    "limitations": [
+      "Descriptive comparison; only two independent service blocks per configuration",
+      "Client first response includes transport and CPU; not pure GPU cost",
+      "No competing request decoding; MTP1 and interval0 fixed",
+      "Only the frozen16 inputs and1/128 outputs were checked",
+      "No direct replication of prior interval8 wait-budget configurations"
+    ],
+    "frozen_stage_report": "results/work-report-2026-10-31/night-stage-snapshot.md",
+    "frozen_stage_report_sha256": "a873fdbc713d2acbab1c89246f0449209046dd2ede01967baadff789a00555dc"
+  },
+  "source_hashes_note": "Hashes identify privately retained source records at this review; the public summary is not an independent raw-data reproduction."
+}
