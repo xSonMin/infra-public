@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "30e51c7eab31bc59035b2842b7ec6c7d05d1c3a1763cdb44c21f441f63d73e2c",
-      "bytes": 2175
+      "sha256": "92e2fa82c3d417e6a0c31e2fd0d451decceba676dd4f54408c5390bc9ab8fcef",
+      "bytes": 12597
     },
     {
       "path": "REPORT-CHUNK-2026-10-31.md",
@@ -597,5 +597,13 @@
       "sha256": "0c6ea624e0fc2f1106e6d34a3591fc5afc97bcce2b9f20aee0c9919cf9419fc7",
       "bytes": 5436
     }
-  ]
+  ],
+  "readme_sync": {
+    "date": "2026-10-31",
+    "source": "sanitized_work_readme",
+    "research_sections": 9,
+    "redactions": {
+      "private_identifier": 0
+    }
+  }
 }
