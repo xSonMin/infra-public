@@ -24,8 +24,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "1227cc3f5a7ac2558e4726883a1dfe1359d3b69c2c63f5ee2b65bec55b796a50",
-      "bytes": 13474
+      "sha256": "f1ce5dc6647a8bc2af8a90e768120b0d7b7aefa8cea2b2b80c11a5332f137a31",
+      "bytes": 13658
     },
     {
       "path": "REPORT-CHUNK-2026-10-31.md",
@@ -93,9 +93,14 @@
       "bytes": 12147
     },
     {
+      "path": "daily/2026-11-01.md",
+      "sha256": "2db205a1c75f57cf264a399e66917113da892375511cbed40ac1a9505ea9579b",
+      "bytes": 1752
+    },
+    {
       "path": "daily/README.md",
-      "sha256": "4cfa0210fec5afaa81f4e2b452607b8c36731ecd00b8ecd68ce0a095a11025d0",
-      "bytes": 5244
+      "sha256": "d776c8d5d093c05a3d5da389b489b9e249ff0f823d07a94fa9e774ff9ca951a2",
+      "bytes": 6998
     },
     {
       "path": "daily/data/2026-10-30-mtp-boundary.json",
@@ -675,7 +680,8 @@
     "date": "2026-10-31",
     "entries": [
       "daily/2026-10-30.md",
-      "daily/2026-10-31.md"
+      "daily/2026-10-31.md",
+      "daily/2026-11-01.md"
     ],
     "supporting_records": [
       "REPORT-CONTINUATION-2026-10-31.md",
@@ -699,6 +705,15 @@
     "baseline_completed_requests_checked": 7032,
     "single_stream_windows_subset": 18,
     "single_stream_completed_requests_subset": 696,
-    "counts_overlap": true
+    "counts_overlap": true,
+    "period_rule": {
+      "timezone": "Asia/Shanghai",
+      "date_label": "Date of the closing meeting",
+      "start": "After the previous day meeting boundary",
+      "end": "Before the named day meeting boundary",
+      "cutoff": "Actual meeting time, usually 16:30-17:00; provisional 17:00 until confirmed",
+      "active_journal": "daily/2026-11-01.md",
+      "active_journal_end_provisional": "2026-11-01T16:30:00+08:00"
+    }
   }
 }
