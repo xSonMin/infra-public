@@ -104,18 +104,18 @@
     },
     {
       "path": "daily/2026-10-30.md",
-      "sha256": "e87c0c86d12a39d54eff0eaac36a0c3cb5461ed90ff1e19606893a7493a196f5",
-      "bytes": 5259
+      "sha256": "91180cc1d36356a0633a092ca60c78ddd2f23df450e205a3b45f314401745976",
+      "bytes": 15035
     },
     {
       "path": "daily/2026-10-31.md",
-      "sha256": "50618813320e1c49377cdb149143927e31b5c9686d3f2da3ac3c3536fc1d5264",
-      "bytes": 12147
+      "sha256": "6ab42809150453659b30f5b31344182eb49693a59e1b791e2c0c9c68cb3fa893",
+      "bytes": 24252
     },
     {
       "path": "daily/2026-11-01.md",
-      "sha256": "8454ca20ed0d6e770d5fc5e603500f38e60a286d7a09097ee2e022c657dc4cbe",
-      "bytes": 17161
+      "sha256": "63948acafa9f13e84965269a608750136adaf8166ab5cf129842ca690eca31ff",
+      "bytes": 25036
     },
     {
       "path": "daily/2026-11-02.md",
@@ -948,6 +948,39 @@
       "daily/2026-11-01.md": {},
       "results/throughput-review-2026-11-01/README.md": {},
       "results/throughput-review-2026-11-01/throughput-summary.json": {}
+    }
+  },
+  "daily_format_sync": {
+    "date": "2026-11-01",
+    "documents": [
+      "daily/2026-10-30.md",
+      "daily/2026-10-31.md",
+      "daily/2026-11-01.md"
+    ],
+    "reference": "docs/learning/2026-11-01-experiment-timeline-until-1500.md; local style reference only, not copied into the public release",
+    "major_result_subsections": {
+      "2026-10-30": 5,
+      "2026-10-31": 8,
+      "2026-11-01": 6
+    },
+    "required_fields": [
+      "实验日期和时间",
+      "为什么做",
+      "做了什么",
+      "结果怎样",
+      "得出什么结论",
+      "成果与下一步"
+    ],
+    "original_tables_preserved": 19,
+    "original_figures_preserved": 7,
+    "closed_daily_period_preserved": true,
+    "nov1_period_start": "2026-10-31T17:00:00+08:00",
+    "nov1_period_end": "2026-11-01T15:01:27+08:00",
+    "new_gpu_measurements": 0,
+    "redactions": {
+      "daily/2026-10-30.md": {},
+      "daily/2026-10-31.md": {},
+      "daily/2026-11-01.md": {}
     }
   }
 }
