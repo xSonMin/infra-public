@@ -1,0 +1,25 @@
+{
+  "status": "complete",
+  "finalized_at_beijing": "2026-11-01T14:46:43+08:00",
+  "workflow_status": "completed",
+  "clean_cases": 4,
+  "clean_planned_requests": 3840,
+  "clean_successful_requests": 3840,
+  "clean_local_rejections": 0,
+  "profile_cases": 0,
+  "profile_planned_requests": 0,
+  "profile_gate": {
+    "status": "not_triggered",
+    "reason": "No clean case met the predeclared3-before/3-after descriptive gate"
+  },
+  "service_restored": true,
+  "restored_pid": 1056981,
+  "independent_acceptance": "passed",
+  "raw_files_verified": 72,
+  "raw_bytes_verified": 7610801,
+  "unretrieved_formal_files": [],
+  "unfinished_clean_cases": [],
+  "optional_profile_status": "not_triggered",
+  "root_cause": "unresolved",
+  "report_sha256": "542c2b2613b040d5890443200def289757609e20076ba5b4630bb88bebf11ae4"
+}

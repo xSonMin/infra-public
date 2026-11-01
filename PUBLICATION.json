@@ -19,13 +19,13 @@
     },
     {
       "path": "PUBLICATION.md",
-      "sha256": "0a5c6b2f7d6e906cc89bd4c3375cf8b27520261257aab6f988390a8cac50a2f3",
-      "bytes": 3781
+      "sha256": "6c022a6e880519eacf6c1adc5fb85347ad393d66fce85b7ee91b91d46f7e685b",
+      "bytes": 4774
     },
     {
       "path": "README.md",
-      "sha256": "fcce06092954ea9a945e4b22eed6d4073e06dfc3eb19712830e25fe9ca662e2a",
-      "bytes": 14385
+      "sha256": "ce7576d96b0d849aa29c8acd0841fc01039bc5428442191ea0ac39d4d32e8e02",
+      "bytes": 14817
     },
     {
       "path": "REPORT-CHUNK-2026-10-31.md",
@@ -36,6 +36,16 @@
       "path": "REPORT-CONTINUATION-2026-10-31.md",
       "sha256": "aa470e46526d5a32b952cd45407013ea3d0dd08c2685855492b51cb3115a4f9a",
       "bytes": 8600
+    },
+    {
+      "path": "REPORT-DRIFT-AUDIT-2026-11-01.md",
+      "sha256": "d36fbbbe2c6d78fdb01af1e25e0b30cf3a65ddbdcd80eb70809dc1116fbc468e",
+      "bytes": 6556
+    },
+    {
+      "path": "REPORT-DRIFT-DIAGNOSTIC-2026-11-01.md",
+      "sha256": "5e766abb1a5bd23b199518cf1d102a5799eebbdead758e89e2c8645d101471d4",
+      "bytes": 6199
     },
     {
       "path": "REPORT-FACTORIAL-2026-10-31.md",
@@ -64,8 +74,8 @@
     },
     {
       "path": "REPORT-PROGRESS.md",
-      "sha256": "055447c90b66027f405a23a31ac625e21812e1090ea11d72a19fafc9f0aed167",
-      "bytes": 64046
+      "sha256": "a0adb22f3f89a301e91be783e751f115a414c57429eb9e5c856404ddbddc5d84",
+      "bytes": 71157
     },
     {
       "path": "REPORT-SUSTAINED-SCHEDULING.md",
@@ -104,13 +114,18 @@
     },
     {
       "path": "daily/2026-11-01.md",
-      "sha256": "17c4b9f3d634a5f4cf4401620c591921b131e000a3cdf2eaa0767dfcbb1054a8",
-      "bytes": 5847
+      "sha256": "544c48d11dee9b3e93e892e147f2782e7033d601e2f938169bc6d4e96fe2ffee",
+      "bytes": 12584
+    },
+    {
+      "path": "daily/2026-11-02.md",
+      "sha256": "7a9c77821fff686f50f460f24b529d72bf09be18b0e5977a6d4db3862297af84",
+      "bytes": 2021
     },
     {
       "path": "daily/README.md",
-      "sha256": "6862e965e7bf6d6116e7b69fc2c8317b0c13aa6ac4d34620f48864598d35e966",
-      "bytes": 8019
+      "sha256": "4ddc2d5ea80baf5c12eb9fcaebce3e471d3f3f0481d9416677a9931e7955f38b",
+      "bytes": 9484
     },
     {
       "path": "daily/data/2026-10-30-mtp-boundary.json",
@@ -296,6 +311,46 @@
       "path": "results/continuation-study-2026-10-31/run-20261031T070530Z/completion.json",
       "sha256": "955fe5ded91339a8a76217d541cddcf0b8d327b07940baca123e31b4b7a35fb8",
       "bytes": 3808
+    },
+    {
+      "path": "results/daily-close-2026-11-01/README.md",
+      "sha256": "8d8260c9f8b69cff661c2fc54a74c41a1f44803204494a80e1b9516ac76b2952",
+      "bytes": 1585
+    },
+    {
+      "path": "results/daily-close-2026-11-01/closure-snapshot.json",
+      "sha256": "89c7e09a9c84f0a7204662ffeadfa94fe50974359395ea837642015d9af86b1b",
+      "bytes": 7661
+    },
+    {
+      "path": "results/drift-audit-2026-11-01/run-20261101T044359Z/NEXT-DIAGNOSTIC.md",
+      "sha256": "2b89c1ea59ca71d97e07d12cfcc6039bdf07684c6d9d6e667a0c965cfe9df02b",
+      "bytes": 3459
+    },
+    {
+      "path": "results/drift-audit-2026-11-01/run-20261101T044359Z/README.md",
+      "sha256": "7dc699608a2f2ad7a05deecc714facb15a6b89ff6686311091d1729f8c719a00",
+      "bytes": 1043
+    },
+    {
+      "path": "results/drift-audit-2026-11-01/run-20261101T044359Z/figures/01-drift-timeline.png",
+      "sha256": "d04d038d8cc0dc107d541cbc20bd972a154c0c905d31e0d7fda93b47327a6fd6",
+      "bytes": 317528
+    },
+    {
+      "path": "results/drift-audit-2026-11-01/run-20261101T044359Z/figures/02-matched-inputs.png",
+      "sha256": "4fd443ebcebe50256847c13a36ad8282781c85b0e9f6f23b238a2dd248718c11",
+      "bytes": 137997
+    },
+    {
+      "path": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/analysis/figures/short-abba.png",
+      "sha256": "88cab06553f0dd85ac6f98c96484482d3e4daf60062f09cc609b826f8ef451e3",
+      "bytes": 221861
+    },
+    {
+      "path": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/completion.json",
+      "sha256": "26319dac73aa7e383ed2e6db70c61fb9837d59a914272a4a84499e98a2028423",
+      "bytes": 815
     },
     {
       "path": "results/factorial-study-2026-10-31/run-20261031T024039Z/SUMMARY.md",
@@ -762,11 +817,12 @@
     }
   },
   "daily_sync": {
-    "date": "2026-10-31",
+    "date": "2026-11-01",
     "entries": [
       "daily/2026-10-30.md",
       "daily/2026-10-31.md",
-      "daily/2026-11-01.md"
+      "daily/2026-11-01.md",
+      "daily/2026-11-02.md"
     ],
     "supporting_records": [
       "REPORT-CONTINUATION-2026-10-31.md",
@@ -793,65 +849,62 @@
     "counts_overlap": true,
     "period_rule": {
       "timezone": "Asia/Shanghai",
-      "date_label": "Date of the closing meeting",
-      "start": "After the previous day meeting boundary",
-      "end": "Before the named day meeting boundary",
-      "cutoff": "Actual meeting time, usually 16:30-17:00; provisional 17:00 until confirmed",
-      "active_journal": "daily/2026-11-01.md",
-      "active_journal_end_provisional": "2026-11-01T16:30:00+08:00"
+      "cutoff_priority": "Explicit user cutoff; default17:00 local when unspecified",
+      "start_priority": "User-provided start; otherwise previous confirmed cutoff, with previous17:00 provisional if absent",
+      "same_day_after_cutoff": "Assigned to next dated daily, including the remainder until24:00",
+      "midnight_switches_report": false,
+      "closed_daily": "daily/2026-11-01.md",
+      "closed_period_start": "2026-10-31T17:00:00+08:00",
+      "closed_period_end": "2026-11-01T15:01:27+08:00",
+      "active_daily": "daily/2026-11-02.md",
+      "active_period_start": "2026-11-01T15:01:27+08:00",
+      "active_period_end_provisional": "2026-11-02T17:00:00+08:00"
     }
   },
   "work_report_sync": {
     "date": "2026-11-01",
     "long_term_report": "REPORT-PROGRESS.md",
-    "active_daily": "daily/2026-11-01.md",
-    "evidence_cutoff_beijing": "2026-11-01T06:02:47+08:00",
-    "latest_stage_status": "complete, attempt 2",
-    "completed_formal_cases": 40,
-    "planned_formal_requests": 75236,
-    "successful_formal_requests": 73291,
-    "local_rejections": 1945,
-    "unexpected_errors": 0,
-    "historical_restoration_accepted": true,
-    "current_runtime_verified": false,
-    "detail": {
-      "main_sections": 15,
-      "tables": 37,
-      "new_figures": 10,
-      "full_baseline_mode_groups": 18,
-      "final_load_windows": 36
-    },
-    "supporting_records": [
-      "REPORT-NIGHT-ISOLATION-2026-11-01.md",
-      "results/work-report-2026-11-01/report-data.json"
-    ],
-    "redactions": {
-      "REPORT-PROGRESS.md": {
-        "private_identifier": 0
+    "closed_daily": "daily/2026-11-01.md",
+    "active_daily": "daily/2026-11-02.md",
+    "daily_work_cutoff_beijing": "2026-11-01T15:01:27+08:00",
+    "scientific_stage_finalized_at_beijing": "2026-11-01T14:46:43+08:00",
+    "latest_stage": "single-configuration ABBA short diagnostic",
+    "latest_stage_status": "complete",
+    "stage_counts": {
+      "night_attempt02": {
+        "cases": 40,
+        "planned": 75236,
+        "successful": 73291,
+        "local_rejections": 1945
       },
-      "REPORT-NIGHT-ISOLATION-2026-11-01.md": {
-        "home_path": 1,
-        "private_identifier": 0
+      "offline_audit": {
+        "reused_windows": 36,
+        "reused_planned_requests": 75108,
+        "target_reused_requests": 7200,
+        "new_gpu_requests": 0
       },
-      "daily/README.md": {
-        "private_identifier": 0
-      },
-      "daily/2026-11-01.md": {
-        "private_identifier": 0
-      },
-      "tools/render_progress_figures.py": {
-        "private_identifier": 0
-      },
-      "results/work-report-2026-11-01/README.md": {
-        "private_identifier": 0
-      },
-      "results/work-report-2026-11-01/report-data.json": {
-        "private_identifier": 0
-      },
-      "results/work-report-2026-11-01/document-stats.json": {
-        "private_identifier": 0
+      "short_diagnostic": {
+        "clean_cases": 4,
+        "planned": 3840,
+        "successful": 3840,
+        "local_rejections": 0,
+        "profile_cases": 0
       }
     },
-    "new_gpu_measurements_started_by_document_update": false
+    "historical_restoration_accepted": true,
+    "live_runtime_checked_by_document_closure": false,
+    "new_gpu_measurements_started_by_document_closure": false,
+    "redactions": {
+      "REPORT-PROGRESS.md": {},
+      "REPORT-DRIFT-AUDIT-2026-11-01.md": {},
+      "REPORT-DRIFT-DIAGNOSTIC-2026-11-01.md": {},
+      "daily/README.md": {},
+      "daily/2026-11-01.md": {},
+      "daily/2026-11-02.md": {},
+      "results/daily-close-2026-11-01/README.md": {},
+      "results/daily-close-2026-11-01/closure-snapshot.json": {},
+      "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/completion.json": {},
+      "results/drift-audit-2026-11-01/run-20261101T044359Z/NEXT-DIAGNOSTIC.md": {}
+    }
   }
 }

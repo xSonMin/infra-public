@@ -1,0 +1,214 @@
+{
+  "report_date": "2026-11-01",
+  "status": "closed",
+  "timezone": "Asia/Shanghai",
+  "period_start": "2026-10-31T17:00:00+08:00",
+  "period_end": "2026-11-01T15:01:27+08:00",
+  "cutoff_basis": "User explicitly closed this report at the current turn;15:01:27 is the recorded Beijing cutoff. The previous start is explicitly17:00.",
+  "default_cutoff_local_time": "17:00:00",
+  "next_daily": "daily/2026-11-02.md",
+  "next_period_start": "2026-11-01T15:01:27+08:00",
+  "next_period_end_provisional": "2026-11-02T17:00:00+08:00",
+  "scientific_evidence_cutoff_beijing": "2026-11-01T14:46:43+08:00",
+  "live_remote_checked_for_document_closure": false,
+  "night": {
+    "status": "complete",
+    "attempt": 2,
+    "formal_cases": 40,
+    "formal_planned_requests": 75236,
+    "formal_successful_requests": 73291,
+    "local_rejections": 1945,
+    "unexpected_errors": 0,
+    "micro_formal_requests": 128,
+    "load_windows": 36,
+    "load_planned_requests": 75108,
+    "warmup_requests": 328,
+    "smoke_requests": 8,
+    "finalized_at_beijing": "2026-11-01T06:02:47+08:00",
+    "independent_acceptance": "passed",
+    "micro_comparisons": [
+      {
+        "output_tokens": 1,
+        "paired_inputs": 16,
+        "mean_differences": {
+          "first_positive_delta_ms": 39.40788937597972,
+          "first_text_delta_ms": 39.40788937597972
+        }
+      },
+      {
+        "output_tokens": 128,
+        "paired_inputs": 16,
+        "mean_differences": {
+          "first_positive_delta_ms": 38.82916912425571,
+          "first_text_delta_ms": 38.82916912425571,
+          "tpot_delta_ms": -0.001502084367845288
+        }
+      }
+    ]
+  },
+  "offline_audit": {
+    "status": "offline_audit_complete",
+    "created_at_beijing": "2026-11-01T12:44:05+08:00",
+    "new_gpu_requests": 0,
+    "load_windows": 36,
+    "reexamined_planned_requests": 75108,
+    "target_planned_requests": 7200,
+    "source_file_count": 291,
+    "source_hashes_rechecked": true
+  },
+  "short_diagnostic": {
+    "status": "complete",
+    "finalized_at_beijing": "2026-11-01T14:46:43+08:00",
+    "clean_cases": 4,
+    "planned_requests": 3840,
+    "successful_requests": 3840,
+    "local_rejections": 0,
+    "unexpected_errors": 0,
+    "profile_cases": 0,
+    "profile_gate": {
+      "status": "not_triggered",
+      "reason": "No clean case met the predeclared3-before/3-after descriptive gate"
+    },
+    "service_restored": true,
+    "independent_acceptance": "passed",
+    "retrieved_files": 72,
+    "retrieved_bytes": 7610801,
+    "source_hashes_rechecked": true,
+    "root_cause": "unresolved",
+    "clean_windows": [
+      {
+        "case": "clean1-A",
+        "input_order": "A",
+        "planned_requests": 960,
+        "successful_requests": 960,
+        "local_rejections": 0,
+        "mean_ttft_ms": 195.22881437994025,
+        "mean_tpot_ms": 40.992751241595926,
+        "mean_server_e2e_s": 5.400336126724142,
+        "center_time_weighted_inflight": 21.887140717897232,
+        "transition_offsets_s": []
+      },
+      {
+        "case": "clean2-B",
+        "input_order": "B",
+        "planned_requests": 960,
+        "successful_requests": 960,
+        "local_rejections": 0,
+        "mean_ttft_ms": 194.86341605443158,
+        "mean_tpot_ms": 30.32032792992157,
+        "mean_server_e2e_s": 4.0445696071494845,
+        "center_time_weighted_inflight": 16.311419701642283,
+        "transition_offsets_s": []
+      },
+      {
+        "case": "clean3-B",
+        "input_order": "B",
+        "planned_requests": 960,
+        "successful_requests": 960,
+        "local_rejections": 0,
+        "mean_ttft_ms": 195.22364063038063,
+        "mean_tpot_ms": 30.35290903034678,
+        "mean_server_e2e_s": 4.049006036609141,
+        "center_time_weighted_inflight": 16.325593423354196,
+        "transition_offsets_s": []
+      },
+      {
+        "case": "clean4-A",
+        "input_order": "A",
+        "planned_requests": 960,
+        "successful_requests": 960,
+        "local_rejections": 0,
+        "mean_ttft_ms": 195.4368505924625,
+        "mean_tpot_ms": 30.413974960572222,
+        "mean_server_e2e_s": 4.057018290949115,
+        "center_time_weighted_inflight": 16.350832293658943,
+        "transition_offsets_s": []
+      }
+    ],
+    "report_digest_scope": "completion report hash matches the run-local REPORT.md; root stage-report copy only adjusts its image relative path."
+  },
+  "image_access_diagnosis": {
+    "work_type": "Local network/page diagnosis; no repository path edit and no network-setting change.",
+    "observations": [
+      {
+        "check": "github_page",
+        "status": 200
+      },
+      {
+        "check": "github_api_image",
+        "status": 200,
+        "git_blob_sha": "987369b4d02cb9d4e1caa1601e575d0a6f498889",
+        "size": 209822
+      },
+      {
+        "check": "raw_image",
+        "error_type": "URLError",
+        "error": "<urlopen error [Errno 61] Connection refused>"
+      },
+      {
+        "check": "github_image_route",
+        "error_type": "URLError",
+        "error": "<urlopen error [Errno 61] Connection refused>"
+      },
+      {
+        "check": "exact_download_url",
+        "error_type": "URLError",
+        "error": "<urlopen error [Errno 61] Connection refused>"
+      },
+      {
+        "check": "rendered_image_src",
+        "status": 302
+      },
+      {
+        "check": "raw_domain_resolution",
+        "address_classes": [
+          {
+            "version": 4,
+            "loopback": false,
+            "private": true,
+            "global": false
+          },
+          {
+            "version": 6,
+            "loopback": false,
+            "private": true,
+            "global": false
+          }
+        ]
+      }
+    ],
+    "conclusion": "The GitHub page and contents API succeeded; image requests redirect to raw.githubusercontent.com and were refused on this device. Repository images are present; exact local DNS/proxy rule is not established.",
+    "resolution_status": "diagnosed; current image-route availability not rechecked during this closure"
+  },
+  "counting_boundary": "Offline reanalysis and plots reuse existing requests; failed attempt1 is preserved separately; night and short diagnostic protocols remain separate rather than one performance baseline.",
+  "sources": {
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/completion.json": {
+      "sha256": "86362bcd61a9c82023a95986cdc39c8efd551ff8831a9e1b6767cdf699e3ae11",
+      "bytes": 55781
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/analysis/FINAL-SUMMARY.json": {
+      "sha256": "1a88fe6d12fd3c3974862b76754f42905224e40e246eb4d9213ad45ce64438ae",
+      "bytes": 47636
+    },
+    "results/drift-audit-2026-11-01/run-20261101T044359Z/summary.json": {
+      "sha256": "e1e96b6879ec8d25cc35b98641e7f81ae213700d57e707230a15770276eeb095",
+      "bytes": 108038
+    },
+    "results/drift-audit-2026-11-01/run-20261101T044359Z/sources.json": {
+      "sha256": "fd45ba3da53d7c43078a6a7d4778c2d43f300db54dbcb15fabc427de0ead56ee",
+      "bytes": 57473
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/completion.json": {
+      "sha256": "26319dac73aa7e383ed2e6db70c61fb9837d59a914272a4a84499e98a2028423",
+      "bytes": 815
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/analysis/summary.json": {
+      "sha256": "37c3fa8dbdc38547d3333f986e3d968b0eb000d4edda9b67176d151466f0ccc7",
+      "bytes": 17219
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieval-final-verified.json": {
+      "sha256": "efe4f0decdd7b4dd0c54a774cfa3722375bb9c57fe80bcc312e06a580209c5ec",
+      "bytes": 11998
+    }
+  }
+}
