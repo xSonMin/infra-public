@@ -1,0 +1,9 @@
+{
+  "tables": 37,
+  "figures": 10,
+  "lines": 818,
+  "characters": 39027,
+  "source_data": "report-data.json",
+  "evidence_cutoff_beijing": "2026-11-01T06:02:47+08:00",
+  "bytes": 64046
+}

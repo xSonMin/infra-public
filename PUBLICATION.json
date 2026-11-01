@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "snapshot_date": "2026-10-31",
+  "snapshot_date": "2026-11-01",
   "kind": "sanitized_research_snapshot",
   "raw_data_included": false,
   "experiment_revalidated": false,
@@ -19,13 +19,13 @@
     },
     {
       "path": "PUBLICATION.md",
-      "sha256": "337cda36834d92750f98ba98cb0582ded712be1e297f77012885079fda022d56",
-      "bytes": 3082
+      "sha256": "0a5c6b2f7d6e906cc89bd4c3375cf8b27520261257aab6f988390a8cac50a2f3",
+      "bytes": 3781
     },
     {
       "path": "README.md",
-      "sha256": "b82f9e2499690be4b15029d1cae5c91003ae1d1e5baf9bb36e948a4034490c35",
-      "bytes": 13984
+      "sha256": "fcce06092954ea9a945e4b22eed6d4073e06dfc3eb19712830e25fe9ca662e2a",
+      "bytes": 14385
     },
     {
       "path": "REPORT-CHUNK-2026-10-31.md",
@@ -54,8 +54,8 @@
     },
     {
       "path": "REPORT-NIGHT-ISOLATION-2026-11-01.md",
-      "sha256": "deac7cb820373a2a724b3770a9b2318cabad6151a1c86f3a37a71127316d5e3a",
-      "bytes": 3285
+      "sha256": "49df13928d322fab91ff30bb25a96483e9177ce5568d38aecdb43b8b54adc1fe",
+      "bytes": 8782
     },
     {
       "path": "REPORT-OVERNIGHT-2026-10-31.md",
@@ -64,8 +64,8 @@
     },
     {
       "path": "REPORT-PROGRESS.md",
-      "sha256": "46e7c49eab643f6218ceffe6f5c1fdd9658c9f9d04af0d9353cce4ee4c38f9c0",
-      "bytes": 17608
+      "sha256": "055447c90b66027f405a23a31ac625e21812e1090ea11d72a19fafc9f0aed167",
+      "bytes": 64046
     },
     {
       "path": "REPORT-SUSTAINED-SCHEDULING.md",
@@ -104,13 +104,13 @@
     },
     {
       "path": "daily/2026-11-01.md",
-      "sha256": "63954030020a7648dd323b1f01e1f47589811e420ba8f608e0d1c9efadf69bb2",
-      "bytes": 3916
+      "sha256": "17c4b9f3d634a5f4cf4401620c591921b131e000a3cdf2eaa0767dfcbb1054a8",
+      "bytes": 5847
     },
     {
       "path": "daily/README.md",
-      "sha256": "6e4be139bf6b15239b7138b86e38fdd3493c920b8589e6d34a19b878e3852277",
-      "bytes": 7868
+      "sha256": "6862e965e7bf6d6116e7b69fc2c8317b0c13aa6ac4d34620f48864598d35e966",
+      "bytes": 8019
     },
     {
       "path": "daily/data/2026-10-30-mtp-boundary.json",
@@ -398,6 +398,71 @@
       "bytes": 7823
     },
     {
+      "path": "results/work-report-2026-11-01/README.md",
+      "sha256": "405d150d74223a38f791128dda07fd93ac8ff492fe17cf0323607903290bfcee",
+      "bytes": 3901
+    },
+    {
+      "path": "results/work-report-2026-11-01/document-stats.json",
+      "sha256": "7e1b8f6721b7be42aae41bf4849225b038705e2af829a85b1cf92c8a0874af06",
+      "bytes": 188
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/01-baseline-throughput.png",
+      "sha256": "9c22110b941775da83527b91b482ad2c32f140e6e12ea3ffd49548a835587365",
+      "bytes": 209822
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/02-baseline-latency.png",
+      "sha256": "2b8931782983ee1311404abff41f7de5cb6ca3b8bc6d6910af8bc2d6d95a8da1",
+      "bytes": 220845
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/03-generation-throughput-tradeoff.png",
+      "sha256": "0fbb1d576e5800d445f71fc413a25ff6823e4f01efb57d1c303d8b74b5f2f115",
+      "bytes": 238881
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/04-gpu-stage-activity.png",
+      "sha256": "de0cc4979f7687e6707303a4e474d0eb193ee7f8ef9259cd194802b1b7ba4d66",
+      "bytes": 171893
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/05-ttft-arrival-control.png",
+      "sha256": "c46aabc3dcef3c37c7b5a175bced755986a381bc5fb0d395e5de14939bbda969",
+      "bytes": 136345
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/06-goodput-arrival-rate.png",
+      "sha256": "01c24661cd74a0583043f42689245d443e8cd03c17f5f4f936a3c09a969e352a",
+      "bytes": 223779
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/07-slo-sensitivity.png",
+      "sha256": "5d541dcd5a5b8116c835914097bacf0e3647af82f35000d165fb33538a7d7c2c",
+      "bytes": 126544
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/08-chunk-abba.png",
+      "sha256": "be543774028b6d744b942f38d18e3d07df717ae555f6b2444d9acd4a657264cb",
+      "bytes": 158649
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/09-night-load-matrix.png",
+      "sha256": "cad353fbd6ce54c8d67435c61014d61c73050e58071d2789890c5f5e9f89004f",
+      "bytes": 212928
+    },
+    {
+      "path": "results/work-report-2026-11-01/figures/10-night-minute-cohorts.png",
+      "sha256": "164ab579ebdf4a0285f4804335dfb4f68891f355ca0ddee08ad239182453b4e6",
+      "bytes": 177554
+    },
+    {
+      "path": "results/work-report-2026-11-01/report-data.json",
+      "sha256": "883ca93001484ff879a32cb0b8c543c964de8476c51aa6daf191eb5dbda6f3bc",
+      "bytes": 212002
+    },
+    {
       "path": "scripts/bench_suite.py",
       "sha256": "3d841ac975cf042cd24aaa3d047b814b85d8a758f68f1bfaa97d41314afd2b05",
       "bytes": 11004
@@ -681,6 +746,11 @@
       "path": "tools/render_daily_figures.py",
       "sha256": "1e47b5023d5592538004d57d5fcf3a7c6fc3e74550aad582ae174bc0f9a7d6d6",
       "bytes": 9458
+    },
+    {
+      "path": "tools/render_progress_figures.py",
+      "sha256": "e8a865eaa11b2f7bb43a13766cccefed1e13cc9569972c08ef7906e9a95949cd",
+      "bytes": 15592
     }
   ],
   "readme_sync": {
@@ -732,44 +802,56 @@
     }
   },
   "work_report_sync": {
-    "date": "2026-10-31",
+    "date": "2026-11-01",
     "long_term_report": "REPORT-PROGRESS.md",
     "active_daily": "daily/2026-11-01.md",
-    "evidence_cutoff_beijing": "2026-10-31T21:46:23+08:00",
-    "ongoing_stage": "night-isolation phase B",
-    "ongoing_stage_complete": false,
+    "evidence_cutoff_beijing": "2026-11-01T06:02:47+08:00",
+    "latest_stage_status": "complete, attempt 2",
+    "completed_formal_cases": 40,
+    "planned_formal_requests": 75236,
+    "successful_formal_requests": 73291,
+    "local_rejections": 1945,
+    "unexpected_errors": 0,
+    "historical_restoration_accepted": true,
     "current_runtime_verified": false,
+    "detail": {
+      "main_sections": 15,
+      "tables": 37,
+      "new_figures": 10,
+      "full_baseline_mode_groups": 18,
+      "final_load_windows": 36
+    },
     "supporting_records": [
       "REPORT-NIGHT-ISOLATION-2026-11-01.md",
-      "results/work-report-2026-10-31/progress-snapshot.json"
+      "results/work-report-2026-11-01/report-data.json"
     ],
-    "redactions": [
-      {
-        "path": "REPORT-PROGRESS.md",
-        "redactions": {
-          "private_identifier": 0
-        }
+    "redactions": {
+      "REPORT-PROGRESS.md": {
+        "private_identifier": 0
       },
-      {
-        "path": "REPORT-NIGHT-ISOLATION-2026-11-01.md",
-        "redactions": {
-          "home_path": 1,
-          "private_identifier": 0
-        }
+      "REPORT-NIGHT-ISOLATION-2026-11-01.md": {
+        "home_path": 1,
+        "private_identifier": 0
       },
-      {
-        "path": "daily/2026-11-01.md",
-        "redactions": {
-          "private_identifier": 0
-        }
+      "daily/README.md": {
+        "private_identifier": 0
       },
-      {
-        "path": "results/work-report-2026-10-31/progress-snapshot.json",
-        "redactions": {
-          "private_identifier": 0
-        }
+      "daily/2026-11-01.md": {
+        "private_identifier": 0
+      },
+      "tools/render_progress_figures.py": {
+        "private_identifier": 0
+      },
+      "results/work-report-2026-11-01/README.md": {
+        "private_identifier": 0
+      },
+      "results/work-report-2026-11-01/report-data.json": {
+        "private_identifier": 0
+      },
+      "results/work-report-2026-11-01/document-stats.json": {
+        "private_identifier": 0
       }
-    ],
+    },
     "new_gpu_measurements_started_by_document_update": false
   }
 }
