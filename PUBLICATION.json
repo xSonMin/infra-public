@@ -19,8 +19,8 @@
     },
     {
       "path": "PUBLICATION.md",
-      "sha256": "6c022a6e880519eacf6c1adc5fb85347ad393d66fce85b7ee91b91d46f7e685b",
-      "bytes": 4774
+      "sha256": "cc02db17dd265d9f8e8493fcc7e3b24034befd4ffdcf55a4cc75c953486a5ec8",
+      "bytes": 5770
     },
     {
       "path": "README.md",
@@ -74,8 +74,8 @@
     },
     {
       "path": "REPORT-PROGRESS.md",
-      "sha256": "a0adb22f3f89a301e91be783e751f115a414c57429eb9e5c856404ddbddc5d84",
-      "bytes": 71157
+      "sha256": "720e067e8ef69b6f3b7adf199d29929738cd243fad9a62bf28c56749324d7671",
+      "bytes": 76894
     },
     {
       "path": "REPORT-SUSTAINED-SCHEDULING.md",
@@ -114,8 +114,8 @@
     },
     {
       "path": "daily/2026-11-01.md",
-      "sha256": "544c48d11dee9b3e93e892e147f2782e7033d601e2f938169bc6d4e96fe2ffee",
-      "bytes": 12584
+      "sha256": "8454ca20ed0d6e770d5fc5e603500f38e60a286d7a09097ee2e022c657dc4cbe",
+      "bytes": 17161
     },
     {
       "path": "daily/2026-11-02.md",
@@ -406,6 +406,16 @@
       "path": "results/sustained-study-2026-10-30/run-20261030T143405Z/completion.json",
       "sha256": "8f6866681777b0cc10e43c63bb13a0b960761dba395d42cca40262f02e6e0e3a",
       "bytes": 3419
+    },
+    {
+      "path": "results/throughput-review-2026-11-01/README.md",
+      "sha256": "53ba34e1f27ac5c58ffeadefa0f53c3f5268be4938b085a56a2203bcede44ef0",
+      "bytes": 3683
+    },
+    {
+      "path": "results/throughput-review-2026-11-01/throughput-summary.json",
+      "sha256": "178099186aa5ae02210dc284900f913fff7a7377da50e4dc4a5280b38a37a92e",
+      "bytes": 92812
     },
     {
       "path": "results/timeline-study-2026-10-31/run-20261031T043757Z/SUMMARY.md",
@@ -905,6 +915,39 @@
       "results/daily-close-2026-11-01/closure-snapshot.json": {},
       "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/completion.json": {},
       "results/drift-audit-2026-11-01/run-20261101T044359Z/NEXT-DIAGNOSTIC.md": {}
+    }
+  },
+  "throughput_metric_sync": {
+    "date": "2026-11-01",
+    "documents": [
+      "daily/2026-11-01.md",
+      "REPORT-PROGRESS.md"
+    ],
+    "summary": "results/throughput-review-2026-11-01/throughput-summary.json",
+    "units": "actual successful output tokens per saved full measurement second; four-GPU service total",
+    "reported_metrics": [
+      "output_throughput_tok_s",
+      "slo_output_throughput_tok_s"
+    ],
+    "latency_thresholds_ms": {
+      "ttft": 500,
+      "tpot": 30
+    },
+    "business_slo_confirmed": false,
+    "rechecked_formal_load_windows": {
+      "night_attempt02": 36,
+      "short_abba": 4
+    },
+    "new_gpu_measurements": 0,
+    "profile_windows_included": 0,
+    "closed_daily_start": "2026-10-31T17:00:00+08:00",
+    "closed_daily_end": "2026-11-01T15:01:27+08:00",
+    "concurrent_post_cutoff_work_copied": false,
+    "redactions": {
+      "REPORT-PROGRESS.md": {},
+      "daily/2026-11-01.md": {},
+      "results/throughput-review-2026-11-01/README.md": {},
+      "results/throughput-review-2026-11-01/throughput-summary.json": {}
     }
   }
 }

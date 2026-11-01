@@ -1,0 +1,1922 @@
+{
+  "review_date_beijing": "2026-11-01",
+  "operation": "Offline metric supplement to closed Nov1 daily and cumulative report; no new GPU measurement, no live remote check.",
+  "closed_daily_period_start": "2026-10-31T17:00:00+08:00",
+  "closed_daily_period_end": "2026-11-01T15:01:27+08:00",
+  "metrics": {
+    "output_throughput_tok_s": "Sum of actual output_len of successful, length-validated formal requests / saved measurement duration_s. Four-GPU service total; prefill and drain included; warmup, service restart and initialization excluded.",
+    "slo_output_throughput_tok_s": "Sum of actual output_len of successful formal requests meeting TTFT<=500ms and TPOT<=30ms / the same duration_s. Rejected requests add zero output; thresholds remain research-only.",
+    "mean_aggregation": "Within each workload and configuration, calculate each round independently then give equal weight to3 rounds; do not pool intervals or duplicate reused offline-analysis requests.",
+    "offered_rate_limit": "Under a fixed arrival schedule, output throughput is limited by offered rate and output length; it is not maximum model capacity and can stay similar while TPOT worsens.",
+    "not_equivalent": "1000/mean TPOT is a per-request generation-rate conversion, not aggregate system throughput; offered_rate*configured_output_length is only a planned output rate, not a measured throughput."
+  },
+  "formal_load_windows_rechecked": {
+    "night_attempt02": 36,
+    "short_abba": 4
+  },
+  "profile_windows_included": 0,
+  "unexpected_errors": 0,
+  "cases": [
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-one1024-long-low-periodic",
+      "workload": "long-low-periodic",
+      "configuration": "one1024",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 1200,
+      "successful_requests": 1200,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.4950950010098,
+      "total_successful_output_tokens": 153600,
+      "output_throughput_tok_s": 255.78893362941076,
+      "slo_good_requests": 1200,
+      "slo_output_tokens": 153600,
+      "slo_output_throughput_tok_s": 255.78893362941076,
+      "attainment": 1.0,
+      "mean_ttft_ms": 215.5095727025279,
+      "mean_tpot_ms": 9.756773722202523,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-low-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-low-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-one1024-long-low-periodic",
+      "workload": "long-low-periodic",
+      "configuration": "one1024",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 1200,
+      "successful_requests": 1200,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.4896816350229,
+      "total_successful_output_tokens": 153600,
+      "output_throughput_tok_s": 255.791239545991,
+      "slo_good_requests": 1200,
+      "slo_output_tokens": 153600,
+      "slo_output_throughput_tok_s": 255.791239545991,
+      "attainment": 1.0,
+      "mean_ttft_ms": 215.4378373401414,
+      "mean_tpot_ms": 9.753996803778318,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-low-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-low-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-one1024-long-low-periodic",
+      "workload": "long-low-periodic",
+      "configuration": "one1024",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 1200,
+      "successful_requests": 1200,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.495935709012,
+      "total_successful_output_tokens": 153600,
+      "output_throughput_tok_s": 255.78857551907132,
+      "slo_good_requests": 1200,
+      "slo_output_tokens": 153600,
+      "slo_output_throughput_tok_s": 255.78857551907132,
+      "attainment": 1.0,
+      "mean_ttft_ms": 215.43475467709263,
+      "mean_tpot_ms": 9.754915318962935,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-low-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-low-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-one2048-long-low-periodic",
+      "workload": "long-low-periodic",
+      "configuration": "one2048",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 1200,
+      "successful_requests": 1200,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.4354741749994,
+      "total_successful_output_tokens": 153600,
+      "output_throughput_tok_s": 255.81433244104537,
+      "slo_good_requests": 1200,
+      "slo_output_tokens": 153600,
+      "slo_output_throughput_tok_s": 255.81433244104537,
+      "attainment": 1.0,
+      "mean_ttft_ms": 178.13822440441677,
+      "mean_tpot_ms": 8.87980446762773,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-low-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-low-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-one2048-long-low-periodic",
+      "workload": "long-low-periodic",
+      "configuration": "one2048",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 1200,
+      "successful_requests": 1200,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.4389305549848,
+      "total_successful_output_tokens": 153600,
+      "output_throughput_tok_s": 255.8128598657448,
+      "slo_good_requests": 1200,
+      "slo_output_tokens": 153600,
+      "slo_output_throughput_tok_s": 255.8128598657448,
+      "attainment": 1.0,
+      "mean_ttft_ms": 178.07647764823437,
+      "mean_tpot_ms": 8.883282751175486,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-low-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-low-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-one2048-long-low-periodic",
+      "workload": "long-low-periodic",
+      "configuration": "one2048",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 1200,
+      "successful_requests": 1200,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.4367669950007,
+      "total_successful_output_tokens": 153600,
+      "output_throughput_tok_s": 255.8137816388564,
+      "slo_good_requests": 1200,
+      "slo_output_tokens": 153600,
+      "slo_output_throughput_tok_s": 255.8137816388564,
+      "attainment": 1.0,
+      "mean_ttft_ms": 178.1759237369018,
+      "mean_tpot_ms": 8.880123968515042,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-low-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-low-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-original3-long-low-periodic",
+      "workload": "long-low-periodic",
+      "configuration": "original3",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 1200,
+      "successful_requests": 1200,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.3292683240143,
+      "total_successful_output_tokens": 153600,
+      "output_throughput_tok_s": 255.85958923644856,
+      "slo_good_requests": 1200,
+      "slo_output_tokens": 153600,
+      "slo_output_throughput_tok_s": 255.85958923644856,
+      "attainment": 1.0,
+      "mean_ttft_ms": 180.61483896199206,
+      "mean_tpot_ms": 6.604774963751428,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-low-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-low-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-original3-long-low-periodic",
+      "workload": "long-low-periodic",
+      "configuration": "original3",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 1200,
+      "successful_requests": 1200,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.3022063669923,
+      "total_successful_output_tokens": 153600,
+      "output_throughput_tok_s": 255.87112352890014,
+      "slo_good_requests": 1200,
+      "slo_output_tokens": 153600,
+      "slo_output_throughput_tok_s": 255.87112352890014,
+      "attainment": 1.0,
+      "mean_ttft_ms": 180.90575103657707,
+      "mean_tpot_ms": 6.596474855038967,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-low-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-low-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-original3-long-low-periodic",
+      "workload": "long-low-periodic",
+      "configuration": "original3",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 1200,
+      "successful_requests": 1200,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.3031402259949,
+      "total_successful_output_tokens": 153600,
+      "output_throughput_tok_s": 255.87072548408548,
+      "slo_good_requests": 1200,
+      "slo_output_tokens": 153600,
+      "slo_output_throughput_tok_s": 255.87072548408548,
+      "attainment": 1.0,
+      "mean_ttft_ms": 180.83163607123424,
+      "mean_tpot_ms": 6.589663413592282,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-low-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-low-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-one1024-long-periodic",
+      "workload": "long-periodic",
+      "configuration": "one1024",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2197,
+      "local_rejections": 203,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.4798720509862,
+      "total_successful_output_tokens": 281216,
+      "output_throughput_tok_s": 467.54016728952473,
+      "slo_good_requests": 10,
+      "slo_output_tokens": 1280,
+      "slo_output_throughput_tok_s": 2.128084512014223,
+      "attainment": 0.004166666666666667,
+      "mean_ttft_ms": 249.23078934775438,
+      "mean_tpot_ms": 59.58668022442018,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-one1024-long-periodic",
+      "workload": "long-periodic",
+      "configuration": "one1024",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2198,
+      "local_rejections": 202,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.4691797209962,
+      "total_successful_output_tokens": 281344,
+      "output_throughput_tok_s": 467.76129099500525,
+      "slo_good_requests": 10,
+      "slo_output_tokens": 1280,
+      "slo_output_throughput_tok_s": 2.1281223430164022,
+      "attainment": 0.004166666666666667,
+      "mean_ttft_ms": 248.38767519816398,
+      "mean_tpot_ms": 59.639259638808255,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-one1024-long-periodic",
+      "workload": "long-periodic",
+      "configuration": "one1024",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2199,
+      "local_rejections": 201,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.5323723839829,
+      "total_successful_output_tokens": 281472,
+      "output_throughput_tok_s": 467.92494123711907,
+      "slo_good_requests": 10,
+      "slo_output_tokens": 1280,
+      "slo_output_throughput_tok_s": 2.1278987777949934,
+      "attainment": 0.004166666666666667,
+      "mean_ttft_ms": 249.1530218373297,
+      "mean_tpot_ms": 59.735967811106114,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-one2048-long-periodic",
+      "workload": "long-periodic",
+      "configuration": "one2048",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.0731587919872,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.08587283684113,
+      "slo_good_requests": 32,
+      "slo_output_tokens": 4096,
+      "slo_output_throughput_tok_s": 6.814478304491215,
+      "attainment": 0.013333333333333334,
+      "mean_ttft_ms": 195.8877360276771,
+      "mean_tpot_ms": 30.638502889811313,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-one2048-long-periodic",
+      "workload": "long-periodic",
+      "configuration": "one2048",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.0851513679954,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.0756758852732,
+      "slo_good_requests": 33,
+      "slo_output_tokens": 4224,
+      "slo_output_throughput_tok_s": 7.027290543422506,
+      "attainment": 0.01375,
+      "mean_ttft_ms": 195.77211835008106,
+      "mean_tpot_ms": 30.651491670474936,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-one2048-long-periodic",
+      "workload": "long-periodic",
+      "configuration": "one2048",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.2968261839997,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 510.895761664964,
+      "slo_good_requests": 30,
+      "slo_output_tokens": 3840,
+      "slo_output_throughput_tok_s": 6.386197020812051,
+      "attainment": 0.0125,
+      "mean_ttft_ms": 204.0623537721573,
+      "mean_tpot_ms": 40.24426629822566,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-original3-long-periodic",
+      "workload": "long-periodic",
+      "configuration": "original3",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.2724194460025,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 510.9164998505112,
+      "slo_good_requests": 20,
+      "slo_output_tokens": 2560,
+      "slo_output_throughput_tok_s": 4.25763749875426,
+      "attainment": 0.008333333333333333,
+      "mean_ttft_ms": 218.93899568018242,
+      "mean_tpot_ms": 37.86583806026784,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-original3-long-periodic",
+      "workload": "long-periodic",
+      "configuration": "original3",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.2532553419878,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 510.9327845971781,
+      "slo_good_requests": 20,
+      "slo_output_tokens": 2560,
+      "slo_output_throughput_tok_s": 4.257773204976484,
+      "attainment": 0.008333333333333333,
+      "mean_ttft_ms": 219.05751960865018,
+      "mean_tpot_ms": 37.91788608864306,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-original3-long-periodic",
+      "workload": "long-periodic",
+      "configuration": "original3",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.2366968179995,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 510.94685608152855,
+      "slo_good_requests": 19,
+      "slo_output_tokens": 2432,
+      "slo_output_throughput_tok_s": 4.044995943978768,
+      "attainment": 0.007916666666666667,
+      "mean_ttft_ms": 219.13815584108912,
+      "mean_tpot_ms": 37.899734548279035,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-one1024-long-poisson",
+      "workload": "long-poisson",
+      "configuration": "one1024",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2345,
+      "successful_requests": 2083,
+      "local_rejections": 262,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.0684958649799,
+      "total_successful_output_tokens": 266624,
+      "output_throughput_tok_s": 443.5833883063681,
+      "slo_good_requests": 540,
+      "slo_output_tokens": 69120,
+      "slo_output_throughput_tok_s": 114.99521348316792,
+      "attainment": 0.2302771855010661,
+      "mean_ttft_ms": 512.9455300746179,
+      "mean_tpot_ms": 37.35050143924441,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-poisson.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-poisson.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-one1024-long-poisson",
+      "workload": "long-poisson",
+      "configuration": "one1024",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2397,
+      "successful_requests": 2132,
+      "local_rejections": 265,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.4499368979887,
+      "total_successful_output_tokens": 272896,
+      "output_throughput_tok_s": 453.73019973611804,
+      "slo_good_requests": 411,
+      "slo_output_tokens": 52608,
+      "slo_output_throughput_tok_s": 87.46862668458937,
+      "attainment": 0.17146433041301626,
+      "mean_ttft_ms": 504.21144624991115,
+      "mean_tpot_ms": 39.71571394829765,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-poisson.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-poisson.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-one1024-long-poisson",
+      "workload": "long-poisson",
+      "configuration": "one1024",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2294,
+      "successful_requests": 2068,
+      "local_rejections": 226,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.3071150020114,
+      "total_successful_output_tokens": 264704,
+      "output_throughput_tok_s": 440.214315440313,
+      "slo_good_requests": 533,
+      "slo_output_tokens": 68224,
+      "slo_output_throughput_tok_s": 113.45949232576731,
+      "attainment": 0.23234524847428073,
+      "mean_ttft_ms": 490.4517509050591,
+      "mean_tpot_ms": 36.22932890894644,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-poisson.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-poisson.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-one2048-long-poisson",
+      "workload": "long-poisson",
+      "configuration": "one2048",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2345,
+      "successful_requests": 2232,
+      "local_rejections": 113,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.8979762009985,
+      "total_successful_output_tokens": 285696,
+      "output_throughput_tok_s": 475.44843104020634,
+      "slo_good_requests": 1114,
+      "slo_output_tokens": 142592,
+      "slo_output_throughput_tok_s": 237.2981864600313,
+      "attainment": 0.4750533049040512,
+      "mean_ttft_ms": 366.76464497098857,
+      "mean_tpot_ms": 28.65550038867588,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-poisson.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-poisson.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-one2048-long-poisson",
+      "workload": "long-poisson",
+      "configuration": "one2048",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2397,
+      "successful_requests": 2295,
+      "local_rejections": 102,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.1099819229858,
+      "total_successful_output_tokens": 293760,
+      "output_throughput_tok_s": 488.6959272581778,
+      "slo_good_requests": 960,
+      "slo_output_tokens": 122880,
+      "slo_output_throughput_tok_s": 204.42182578119855,
+      "attainment": 0.4005006257822278,
+      "mean_ttft_ms": 363.90794327000435,
+      "mean_tpot_ms": 30.798768892876023,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-poisson.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-poisson.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-one2048-long-poisson",
+      "workload": "long-poisson",
+      "configuration": "one2048",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2294,
+      "successful_requests": 2213,
+      "local_rejections": 81,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.56989578699,
+      "total_successful_output_tokens": 283264,
+      "output_throughput_tok_s": 470.8746265127287,
+      "slo_good_requests": 1136,
+      "slo_output_tokens": 145408,
+      "slo_output_throughput_tok_s": 241.71422309916844,
+      "attainment": 0.4952048823016565,
+      "mean_ttft_ms": 351.83739496002397,
+      "mean_tpot_ms": 27.75329832861755,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-poisson.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-poisson.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-original3-long-poisson",
+      "workload": "long-poisson",
+      "configuration": "original3",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2345,
+      "successful_requests": 2237,
+      "local_rejections": 108,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.9495215149946,
+      "total_successful_output_tokens": 286336,
+      "output_throughput_tok_s": 476.47263164158375,
+      "slo_good_requests": 989,
+      "slo_output_tokens": 126592,
+      "slo_output_throughput_tok_s": 210.65330026532246,
+      "attainment": 0.42174840085287846,
+      "mean_ttft_ms": 383.57517191644325,
+      "mean_tpot_ms": 30.2286882106961,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-poisson.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-poisson.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-original3-long-poisson",
+      "workload": "long-poisson",
+      "configuration": "original3",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2397,
+      "successful_requests": 2292,
+      "local_rejections": 105,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.1570594380028,
+      "total_successful_output_tokens": 293376,
+      "output_throughput_tok_s": 488.01888856510357,
+      "slo_good_requests": 889,
+      "slo_output_tokens": 113792,
+      "slo_output_throughput_tok_s": 189.28830363629015,
+      "attainment": 0.3708802670004172,
+      "mean_ttft_ms": 380.8860712370593,
+      "mean_tpot_ms": 31.67631779492603,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-poisson.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-poisson.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-original3-long-poisson",
+      "workload": "long-poisson",
+      "configuration": "original3",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2294,
+      "successful_requests": 2217,
+      "local_rejections": 77,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 601.5664884439902,
+      "total_successful_output_tokens": 283776,
+      "output_throughput_tok_s": 471.7284048418555,
+      "slo_good_requests": 978,
+      "slo_output_tokens": 125184,
+      "slo_output_throughput_tok_s": 208.09669821169808,
+      "attainment": 0.42632955536181344,
+      "mean_ttft_ms": 368.3313792771096,
+      "mean_tpot_ms": 29.409550232141324,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-poisson.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-poisson.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-one1024-short-periodic",
+      "workload": "short-periodic",
+      "configuration": "one1024",
+      "round": 1,
+      "input_tokens": 512,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.6888529400167,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.4128529211716,
+      "slo_good_requests": 2400,
+      "slo_output_tokens": 307200,
+      "slo_output_throughput_tok_s": 511.4128529211716,
+      "attainment": 1.0,
+      "mean_ttft_ms": 97.79086562088196,
+      "mean_tpot_ms": 10.55320828553205,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-short-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-short-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-one1024-short-periodic",
+      "workload": "short-periodic",
+      "configuration": "one1024",
+      "round": 2,
+      "input_tokens": 512,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.6866422099993,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.41473509344877,
+      "slo_good_requests": 2400,
+      "slo_output_tokens": 307200,
+      "slo_output_throughput_tok_s": 511.41473509344877,
+      "attainment": 1.0,
+      "mean_ttft_ms": 97.2049284028132,
+      "mean_tpot_ms": 10.574898584736658,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-short-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-short-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-one1024-short-periodic",
+      "workload": "short-periodic",
+      "configuration": "one1024",
+      "round": 3,
+      "input_tokens": 512,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.7012352230086,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.40231114382993,
+      "slo_good_requests": 2400,
+      "slo_output_tokens": 307200,
+      "slo_output_throughput_tok_s": 511.40231114382993,
+      "attainment": 1.0,
+      "mean_ttft_ms": 100.66622904574615,
+      "mean_tpot_ms": 10.683159315974756,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-short-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-short-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-one2048-short-periodic",
+      "workload": "short-periodic",
+      "configuration": "one2048",
+      "round": 1,
+      "input_tokens": 512,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.695884307992,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.40686664417166,
+      "slo_good_requests": 2400,
+      "slo_output_tokens": 307200,
+      "slo_output_throughput_tok_s": 511.40686664417166,
+      "attainment": 1.0,
+      "mean_ttft_ms": 96.94274295794457,
+      "mean_tpot_ms": 10.526722468049584,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-short-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-short-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-one2048-short-periodic",
+      "workload": "short-periodic",
+      "configuration": "one2048",
+      "round": 2,
+      "input_tokens": 512,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.688686731999,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.4129944269438,
+      "slo_good_requests": 2400,
+      "slo_output_tokens": 307200,
+      "slo_output_throughput_tok_s": 511.4129944269438,
+      "attainment": 1.0,
+      "mean_ttft_ms": 97.93425821980539,
+      "mean_tpot_ms": 10.568601156703817,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-short-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-short-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-one2048-short-periodic",
+      "workload": "short-periodic",
+      "configuration": "one2048",
+      "round": 3,
+      "input_tokens": 512,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.6929806140251,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.40933873737265,
+      "slo_good_requests": 2400,
+      "slo_output_tokens": 307200,
+      "slo_output_throughput_tok_s": 511.40933873737265,
+      "attainment": 1.0,
+      "mean_ttft_ms": 100.78852123368658,
+      "mean_tpot_ms": 10.684299646390008,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-short-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-short-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r1-original3-short-periodic",
+      "workload": "short-periodic",
+      "configuration": "original3",
+      "round": 1,
+      "input_tokens": 512,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.5734478139784,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.51112510580407,
+      "slo_good_requests": 2400,
+      "slo_output_tokens": 307200,
+      "slo_output_throughput_tok_s": 511.51112510580407,
+      "attainment": 1.0,
+      "mean_ttft_ms": 100.18194172804215,
+      "mean_tpot_ms": 9.750119711426551,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-short-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-short-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r2-original3-short-periodic",
+      "workload": "short-periodic",
+      "configuration": "original3",
+      "round": 2,
+      "input_tokens": 512,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.5983495410183,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.4899170714747,
+      "slo_good_requests": 2400,
+      "slo_output_tokens": 307200,
+      "slo_output_throughput_tok_s": 511.4899170714747,
+      "attainment": 1.0,
+      "mean_ttft_ms": 102.65702276864128,
+      "mean_tpot_ms": 9.858229239433253,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-short-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-short-periodic.requests.jsonl"
+    },
+    {
+      "phase": "night_attempt02_load",
+      "key": "B-r3-original3-short-periodic",
+      "workload": "short-periodic",
+      "configuration": "original3",
+      "round": 3,
+      "input_tokens": 512,
+      "output_tokens_per_success": 128,
+      "planned_requests": 2400,
+      "successful_requests": 2400,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 600,
+      "measurement_duration_s": 600.5954696570116,
+      "total_successful_output_tokens": 307200,
+      "output_throughput_tok_s": 511.49236969009434,
+      "slo_good_requests": 2400,
+      "slo_output_tokens": 307200,
+      "slo_output_throughput_tok_s": 511.49236969009434,
+      "attainment": 1.0,
+      "mean_ttft_ms": 99.15551636137631,
+      "mean_tpot_ms": 9.713335267789354,
+      "summary_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-short-periodic.summary.json",
+      "raw_source": "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-short-periodic.requests.jsonl"
+    },
+    {
+      "phase": "short_abba_diagnostic",
+      "key": "clean1-A",
+      "workload": "A",
+      "configuration": "one2048",
+      "round": 1,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 960,
+      "successful_requests": 960,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 240,
+      "measurement_duration_s": 241.25999395101098,
+      "total_successful_output_tokens": 122880,
+      "output_throughput_tok_s": 509.3260510690031,
+      "slo_good_requests": 21,
+      "slo_output_tokens": 2688,
+      "slo_output_throughput_tok_s": 11.141507367134443,
+      "attainment": 0.021875,
+      "mean_ttft_ms": 195.22881437994025,
+      "mean_tpot_ms": 40.992751241595926,
+      "summary_source": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean1-A.summary.json",
+      "raw_source": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean1-A.requests.jsonl"
+    },
+    {
+      "phase": "short_abba_diagnostic",
+      "key": "clean2-B",
+      "workload": "B",
+      "configuration": "one2048",
+      "round": 2,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 960,
+      "successful_requests": 960,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 240,
+      "measurement_duration_s": 241.0789413859893,
+      "total_successful_output_tokens": 122880,
+      "output_throughput_tok_s": 509.7085597503846,
+      "slo_good_requests": 28,
+      "slo_output_tokens": 3584,
+      "slo_output_throughput_tok_s": 14.866499659386218,
+      "attainment": 0.029166666666666667,
+      "mean_ttft_ms": 194.86341605443158,
+      "mean_tpot_ms": 30.32032792992157,
+      "summary_source": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean2-B.summary.json",
+      "raw_source": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean2-B.requests.jsonl"
+    },
+    {
+      "phase": "short_abba_diagnostic",
+      "key": "clean3-B",
+      "workload": "B",
+      "configuration": "one2048",
+      "round": 3,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 960,
+      "successful_requests": 960,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 240,
+      "measurement_duration_s": 241.0780776309839,
+      "total_successful_output_tokens": 122880,
+      "output_throughput_tok_s": 509.7103859774896,
+      "slo_good_requests": 30,
+      "slo_output_tokens": 3840,
+      "slo_output_throughput_tok_s": 15.92844956179655,
+      "attainment": 0.03125,
+      "mean_ttft_ms": 195.22364063038063,
+      "mean_tpot_ms": 30.35290903034678,
+      "summary_source": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean3-B.summary.json",
+      "raw_source": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean3-B.requests.jsonl"
+    },
+    {
+      "phase": "short_abba_diagnostic",
+      "key": "clean4-A",
+      "workload": "A",
+      "configuration": "one2048",
+      "round": 4,
+      "input_tokens": 2048,
+      "output_tokens_per_success": 128,
+      "planned_requests": 960,
+      "successful_requests": 960,
+      "local_rejections": 0,
+      "unexpected_errors": 0,
+      "planned_window_s": 240,
+      "measurement_duration_s": 241.07630769099342,
+      "total_successful_output_tokens": 122880,
+      "output_throughput_tok_s": 509.7141281817914,
+      "slo_good_requests": 29,
+      "slo_output_tokens": 3712,
+      "slo_output_throughput_tok_s": 15.397614288824949,
+      "attainment": 0.030208333333333334,
+      "mean_ttft_ms": 195.4368505924625,
+      "mean_tpot_ms": 30.413974960572222,
+      "summary_source": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean4-A.summary.json",
+      "raw_source": "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean4-A.requests.jsonl"
+    }
+  ],
+  "night_aggregates": [
+    {
+      "phase": "night_attempt02_load",
+      "workload": "long-low-periodic",
+      "configuration": "one1024",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-one1024-long-low-periodic",
+        "B-r2-one1024-long-low-periodic",
+        "B-r3-one1024-long-low-periodic"
+      ],
+      "mean_output_throughput_tok_s": 255.7895828981577,
+      "min_output_throughput_tok_s": 255.78857551907132,
+      "max_output_throughput_tok_s": 255.791239545991,
+      "mean_slo_output_throughput_tok_s": 255.7895828981577,
+      "min_slo_output_throughput_tok_s": 255.78857551907132,
+      "max_slo_output_throughput_tok_s": 255.791239545991,
+      "mean_measurement_duration_s": 600.4935707816816,
+      "successful_requests_sum": 3600,
+      "output_tokens_sum": 460800,
+      "local_rejections_sum": 0
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "long-low-periodic",
+      "configuration": "one2048",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-one2048-long-low-periodic",
+        "B-r2-one2048-long-low-periodic",
+        "B-r3-one2048-long-low-periodic"
+      ],
+      "mean_output_throughput_tok_s": 255.8136579818822,
+      "min_output_throughput_tok_s": 255.8128598657448,
+      "max_output_throughput_tok_s": 255.81433244104537,
+      "mean_slo_output_throughput_tok_s": 255.8136579818822,
+      "min_slo_output_throughput_tok_s": 255.8128598657448,
+      "max_slo_output_throughput_tok_s": 255.81433244104537,
+      "mean_measurement_duration_s": 600.4370572416616,
+      "successful_requests_sum": 3600,
+      "output_tokens_sum": 460800,
+      "local_rejections_sum": 0
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "long-low-periodic",
+      "configuration": "original3",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-original3-long-low-periodic",
+        "B-r2-original3-long-low-periodic",
+        "B-r3-original3-long-low-periodic"
+      ],
+      "mean_output_throughput_tok_s": 255.86714608314472,
+      "min_output_throughput_tok_s": 255.85958923644856,
+      "max_output_throughput_tok_s": 255.87112352890014,
+      "mean_slo_output_throughput_tok_s": 255.86714608314472,
+      "min_slo_output_throughput_tok_s": 255.85958923644856,
+      "max_slo_output_throughput_tok_s": 255.87112352890014,
+      "mean_measurement_duration_s": 600.3115383056671,
+      "successful_requests_sum": 3600,
+      "output_tokens_sum": 460800,
+      "local_rejections_sum": 0
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "long-periodic",
+      "configuration": "one1024",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-one1024-long-periodic",
+        "B-r2-one1024-long-periodic",
+        "B-r3-one1024-long-periodic"
+      ],
+      "mean_output_throughput_tok_s": 467.742133173883,
+      "min_output_throughput_tok_s": 467.54016728952473,
+      "max_output_throughput_tok_s": 467.92494123711907,
+      "mean_slo_output_throughput_tok_s": 2.128035210941873,
+      "min_slo_output_throughput_tok_s": 2.1278987777949934,
+      "max_slo_output_throughput_tok_s": 2.1281223430164022,
+      "mean_measurement_duration_s": 601.4938080519884,
+      "successful_requests_sum": 6594,
+      "output_tokens_sum": 844032,
+      "local_rejections_sum": 606
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "long-periodic",
+      "configuration": "one2048",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-one2048-long-periodic",
+        "B-r2-one2048-long-periodic",
+        "B-r3-one2048-long-periodic"
+      ],
+      "mean_output_throughput_tok_s": 511.01910346235945,
+      "min_output_throughput_tok_s": 510.895761664964,
+      "max_output_throughput_tok_s": 511.08587283684113,
+      "mean_slo_output_throughput_tok_s": 6.742655289575257,
+      "min_slo_output_throughput_tok_s": 6.386197020812051,
+      "max_slo_output_throughput_tok_s": 7.027290543422506,
+      "mean_measurement_duration_s": 601.1517121146608,
+      "successful_requests_sum": 7200,
+      "output_tokens_sum": 921600,
+      "local_rejections_sum": 0
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "long-periodic",
+      "configuration": "original3",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-original3-long-periodic",
+        "B-r2-original3-long-periodic",
+        "B-r3-original3-long-periodic"
+      ],
+      "mean_output_throughput_tok_s": 510.9320468430726,
+      "min_output_throughput_tok_s": 510.9164998505112,
+      "max_output_throughput_tok_s": 510.94685608152855,
+      "mean_slo_output_throughput_tok_s": 4.186802215903171,
+      "min_slo_output_throughput_tok_s": 4.044995943978768,
+      "max_slo_output_throughput_tok_s": 4.257773204976484,
+      "mean_measurement_duration_s": 601.2541238686632,
+      "successful_requests_sum": 7200,
+      "output_tokens_sum": 921600,
+      "local_rejections_sum": 0
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "long-poisson",
+      "configuration": "one1024",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-one1024-long-poisson",
+        "B-r2-one1024-long-poisson",
+        "B-r3-one1024-long-poisson"
+      ],
+      "mean_output_throughput_tok_s": 445.84263449426635,
+      "min_output_throughput_tok_s": 440.214315440313,
+      "max_output_throughput_tok_s": 453.73019973611804,
+      "mean_slo_output_throughput_tok_s": 105.30777749784153,
+      "min_slo_output_throughput_tok_s": 87.46862668458937,
+      "max_slo_output_throughput_tok_s": 114.99521348316792,
+      "mean_measurement_duration_s": 601.2751825883266,
+      "successful_requests_sum": 6283,
+      "output_tokens_sum": 804224,
+      "local_rejections_sum": 753
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "long-poisson",
+      "configuration": "one2048",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-one2048-long-poisson",
+        "B-r2-one2048-long-poisson",
+        "B-r3-one2048-long-poisson"
+      ],
+      "mean_output_throughput_tok_s": 478.33966160370426,
+      "min_output_throughput_tok_s": 470.8746265127287,
+      "max_output_throughput_tok_s": 488.6959272581778,
+      "mean_slo_output_throughput_tok_s": 227.81141178013277,
+      "min_slo_output_throughput_tok_s": 204.42182578119855,
+      "max_slo_output_throughput_tok_s": 241.71422309916844,
+      "mean_measurement_duration_s": 601.1926179703247,
+      "successful_requests_sum": 6740,
+      "output_tokens_sum": 862720,
+      "local_rejections_sum": 296
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "long-poisson",
+      "configuration": "original3",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-original3-long-poisson",
+        "B-r2-original3-long-poisson",
+        "B-r3-original3-long-poisson"
+      ],
+      "mean_output_throughput_tok_s": 478.73997501618095,
+      "min_output_throughput_tok_s": 471.7284048418555,
+      "max_output_throughput_tok_s": 488.01888856510357,
+      "mean_slo_output_throughput_tok_s": 202.67943403777022,
+      "min_slo_output_throughput_tok_s": 189.28830363629015,
+      "max_slo_output_throughput_tok_s": 210.65330026532246,
+      "mean_measurement_duration_s": 601.2243564656625,
+      "successful_requests_sum": 6746,
+      "output_tokens_sum": 863488,
+      "local_rejections_sum": 290
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "short-periodic",
+      "configuration": "one1024",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-one1024-short-periodic",
+        "B-r2-one1024-short-periodic",
+        "B-r3-one1024-short-periodic"
+      ],
+      "mean_output_throughput_tok_s": 511.4099663861501,
+      "min_output_throughput_tok_s": 511.40231114382993,
+      "max_output_throughput_tok_s": 511.41473509344877,
+      "mean_slo_output_throughput_tok_s": 511.4099663861501,
+      "min_slo_output_throughput_tok_s": 511.40231114382993,
+      "max_slo_output_throughput_tok_s": 511.41473509344877,
+      "mean_measurement_duration_s": 600.6922434576749,
+      "successful_requests_sum": 7200,
+      "output_tokens_sum": 921600,
+      "local_rejections_sum": 0
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "short-periodic",
+      "configuration": "one2048",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-one2048-short-periodic",
+        "B-r2-one2048-short-periodic",
+        "B-r3-one2048-short-periodic"
+      ],
+      "mean_output_throughput_tok_s": 511.40973326949603,
+      "min_output_throughput_tok_s": 511.40686664417166,
+      "max_output_throughput_tok_s": 511.4129944269438,
+      "mean_slo_output_throughput_tok_s": 511.40973326949603,
+      "min_slo_output_throughput_tok_s": 511.40686664417166,
+      "max_slo_output_throughput_tok_s": 511.4129944269438,
+      "mean_measurement_duration_s": 600.6925172180054,
+      "successful_requests_sum": 7200,
+      "output_tokens_sum": 921600,
+      "local_rejections_sum": 0
+    },
+    {
+      "phase": "night_attempt02_load",
+      "workload": "short-periodic",
+      "configuration": "original3",
+      "independent_rounds": 3,
+      "round_case_keys": [
+        "B-r1-original3-short-periodic",
+        "B-r2-original3-short-periodic",
+        "B-r3-original3-short-periodic"
+      ],
+      "mean_output_throughput_tok_s": 511.497803955791,
+      "min_output_throughput_tok_s": 511.4899170714747,
+      "max_output_throughput_tok_s": 511.51112510580407,
+      "mean_slo_output_throughput_tok_s": 511.497803955791,
+      "min_slo_output_throughput_tok_s": 511.4899170714747,
+      "max_slo_output_throughput_tok_s": 511.51112510580407,
+      "mean_measurement_duration_s": 600.5890890040027,
+      "successful_requests_sum": 7200,
+      "output_tokens_sum": 921600,
+      "local_rejections_sum": 0
+    }
+  ],
+  "prior_closed_loop_baseline_reference": [
+    {
+      "workload": "long-context",
+      "concurrency": 1,
+      "normal_output_tok_s": 102.81593921265105,
+      "mtp3_output_tok_s": 194.05043064609177,
+      "paired_speedup": 1.887363150608539
+    },
+    {
+      "workload": "long-context",
+      "concurrency": 8,
+      "normal_output_tok_s": 518.6083242168704,
+      "mtp3_output_tok_s": 617.1522837253973,
+      "paired_speedup": 1.190018209951353
+    },
+    {
+      "workload": "long-context",
+      "concurrency": 32,
+      "normal_output_tok_s": 944.4489253261128,
+      "mtp3_output_tok_s": 937.8722275439156,
+      "paired_speedup": 0.9930365627692905
+    },
+    {
+      "workload": "long-decode",
+      "concurrency": 1,
+      "normal_output_tok_s": 108.3495102376313,
+      "mtp3_output_tok_s": 212.2461729985353,
+      "paired_speedup": 1.9589122186414742
+    },
+    {
+      "workload": "long-decode",
+      "concurrency": 8,
+      "normal_output_tok_s": 714.1972149833057,
+      "mtp3_output_tok_s": 898.4971024721605,
+      "paired_speedup": 1.2580524347371684
+    },
+    {
+      "workload": "long-decode",
+      "concurrency": 32,
+      "normal_output_tok_s": 1905.609324209537,
+      "mtp3_output_tok_s": 1876.079709475809,
+      "paired_speedup": 0.9845050972537613
+    },
+    {
+      "workload": "short",
+      "concurrency": 1,
+      "normal_output_tok_s": 101.84811274815868,
+      "mtp3_output_tok_s": 187.70151984377605,
+      "paired_speedup": 1.8429574933079578
+    },
+    {
+      "workload": "short",
+      "concurrency": 8,
+      "normal_output_tok_s": 605.0022548472077,
+      "mtp3_output_tok_s": 675.5512155121023,
+      "paired_speedup": 1.1166114419090922
+    },
+    {
+      "workload": "short",
+      "concurrency": 32,
+      "normal_output_tok_s": 1325.5747691150932,
+      "mtp3_output_tok_s": 1246.2754688998243,
+      "paired_speedup": 0.940177439365789
+    }
+  ],
+  "micro_limit": "ABBA micro blocks mix output1 and128 within one measurement duration. Do not label a subgroup token count / shared block duration as its independent single-stream throughput. Use the prior pure C1 baseline for that reference.",
+  "sources": {
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/analysis/FINAL-SUMMARY.json": {
+      "sha256": "1a88fe6d12fd3c3974862b76754f42905224e40e246eb4d9213ad45ce64438ae",
+      "bytes": 47636
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-low-periodic.summary.json": {
+      "sha256": "4510cca5527132eaefdf898c16dfade19b137688b6d752d0cf031b909d40d30b",
+      "bytes": 1432
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-low-periodic.requests.jsonl": {
+      "sha256": "d55b5ea97b81220d60d8dc8ef7aafbbbbe921f5bed1a582a4731f9c3d7b49419",
+      "bytes": 1406715
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-low-periodic.origin.json": {
+      "sha256": "770d2718caf41f84a498e9b469de9a593d9afe09c77b97e4fc449bea71af290d",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-low-periodic.summary.json": {
+      "sha256": "bb39ac13e1170e58294c38a4145e03861697b1b1860798cb04ce49b2fac9d4aa",
+      "bytes": 1432
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-low-periodic.requests.jsonl": {
+      "sha256": "7a2fcabd029e0173b4928fb7ce7723f8063dbd0e547d6e70adb4d4bb95b0fa70",
+      "bytes": 1406780
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-low-periodic.origin.json": {
+      "sha256": "123284b8a0c085e1a92f05bf1ba1718320add6e0860cc72c97b0076a5e38229e",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-low-periodic.summary.json": {
+      "sha256": "7c663f0925911d3bbcd3bde04b34585e5b7cbffba229bf2402310e9d0aa317f8",
+      "bytes": 1433
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-low-periodic.requests.jsonl": {
+      "sha256": "90f037f4e051629a8bbd63f75186c698b8837aa5498b85f143902c5438a9f382",
+      "bytes": 1406674
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-low-periodic.origin.json": {
+      "sha256": "ff30444c26b4d17ac33ffccb297914f5fd78f6caa79417f5fc45ed27bcfc27f4",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-low-periodic.summary.json": {
+      "sha256": "9e9d1216127ead22ce7becf5aa9e205db3af0b6b2b44a285046d016322560c84",
+      "bytes": 1433
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-low-periodic.requests.jsonl": {
+      "sha256": "807ed8c90fdc504474bb04e76b43194585f27784d7afebcf5cc0d9a0313b7ec7",
+      "bytes": 1406691
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-low-periodic.origin.json": {
+      "sha256": "8ec32d5be85dd3fa0fd9ed2aa2c59f9cd941bac9658a5c15d8734d181c86384b",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-low-periodic.summary.json": {
+      "sha256": "522015a080c4b081590a5b1b7351627c9aa70d1566342a1ee3d6aa4d33e9c467",
+      "bytes": 1433
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-low-periodic.requests.jsonl": {
+      "sha256": "5c8fd09912bd472178f6739b68b36903847e56a0ef47c0e737881c854b1e9da4",
+      "bytes": 1406703
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-low-periodic.origin.json": {
+      "sha256": "9005d3cfb002bee9c2e3989cb2bbd613cb9f696256714a1a0a4c9ef28635728d",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-low-periodic.summary.json": {
+      "sha256": "cab17ccc8b5602fe1d233cd99315e92917d807b8bb9187ba9e31644f7d1ef3e8",
+      "bytes": 1432
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-low-periodic.requests.jsonl": {
+      "sha256": "080301f920e14bf2f619360acb49ed8ce3e46d6842642460b2f845ede53c3225",
+      "bytes": 1406719
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-low-periodic.origin.json": {
+      "sha256": "0dedfb98ae81e10e4b943bb3710ee3c766fbceaa13bffc545390cffe5d310758",
+      "bytes": 63
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-low-periodic.summary.json": {
+      "sha256": "75e3a00a7ace47d418e73e01fdcc844f52955d11b980955c1e6b646b96c9f47b",
+      "bytes": 1438
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-low-periodic.requests.jsonl": {
+      "sha256": "0045cde45fd9fb2421548ce5955631b6bebafa0936c79284874fff2580abe57b",
+      "bytes": 1452856
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-low-periodic.origin.json": {
+      "sha256": "13b6763825e926ccae9e1ec7f30b0721838e3f4084f16d2b07de5065ff091537",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-low-periodic.summary.json": {
+      "sha256": "bee585d348e50d4ec25e09130829f55452dd215a1ed48902622ffde5c1105dfc",
+      "bytes": 1438
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-low-periodic.requests.jsonl": {
+      "sha256": "4acf677722a1cc59db269cbc1dc96d3a6fb624b1192dc401dfe0d1e999dba466",
+      "bytes": 1452686
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-low-periodic.origin.json": {
+      "sha256": "fad28e1d7217df7a80f3cf8fc61e09d1e345e9a1713c4be079f4f2744c86173a",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-low-periodic.summary.json": {
+      "sha256": "ef005dd42ace49a5cfc5c05a99fcb674485da4a7838c1aca15278edbe5a518f8",
+      "bytes": 1439
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-low-periodic.requests.jsonl": {
+      "sha256": "be3c708dbc7a82f546e2a5e3b9b32415c4302f19897c460704f4635a301eab82",
+      "bytes": 1452727
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-low-periodic.origin.json": {
+      "sha256": "04ff803edb30f1cc331e5743d8db4be9be2eb52f795345a7ccf6955ef44de09b",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-periodic.summary.json": {
+      "sha256": "433710f488b30031d87f26114d469b19eeaa03b1fd78f5c0d945337acb31e678",
+      "bytes": 1477
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-periodic.requests.jsonl": {
+      "sha256": "ca38fe5725b1f7f2334e539c45cb326e3d83b3fa5847c67451202e04cd331c9d",
+      "bytes": 2663552
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-periodic.origin.json": {
+      "sha256": "ddd84d053408aea15d9b004a32a2317dcac91b2d1c2fb35f61832106e5b34f78",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-periodic.summary.json": {
+      "sha256": "dff0e9148b9690e3d3ffb1b3e481e4e80208bd1a46d4394644f754c1c7477a8c",
+      "bytes": 1476
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-periodic.requests.jsonl": {
+      "sha256": "6df60d95f7eb7a4702644e8fd090bb72fc05f40c1f44778254f12895e2df2319",
+      "bytes": 2664101
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-periodic.origin.json": {
+      "sha256": "8c400d67f732b4b050458b41e263e923c03ff7cc0ec548e02b53459364c314d4",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-periodic.summary.json": {
+      "sha256": "8d8a420900dc94788963c35d4ebfd137742ac8c6f1e7e2ab4959f6593fea6dc6",
+      "bytes": 1476
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-periodic.requests.jsonl": {
+      "sha256": "897e006bc0a087412b3ea16e6df5affd387373a0da0d6b5883c58119cdde960b",
+      "bytes": 2665058
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-periodic.origin.json": {
+      "sha256": "38fa7cc00a3ad671c6962e97891a3aa991a1f0e75486a9dbf031d2621b7e4c6c",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-periodic.summary.json": {
+      "sha256": "836039a7bdee8108e714844965aa8a01eea8b6b2234e82eeaeb23f6585321d35",
+      "bytes": 1474
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-periodic.requests.jsonl": {
+      "sha256": "c56c12d96286fe2baa917829020821b979a9b963fd5d0b3f1b68d3d310b2cdf7",
+      "bytes": 2803752
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-periodic.origin.json": {
+      "sha256": "fb98977a71ed627361593c70e28aef84db8faf3250ddd7d63299fd9e8ac644d9",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-periodic.summary.json": {
+      "sha256": "988238fa169ebd03195be9109873682db45472b7866b286b3a4c8ed3badc8494",
+      "bytes": 1434
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-periodic.requests.jsonl": {
+      "sha256": "2506e266c11e5e2c58d514eca1fc8664a51b8ce29e121a302cb1a4886afe16cc",
+      "bytes": 2803753
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-periodic.origin.json": {
+      "sha256": "d932339c94441059043bc8b54a7485a763edd71e599dc4047124ac47d670bcd6",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-periodic.summary.json": {
+      "sha256": "1b2864f9ef42ab7337edb1510917c25098bb3f423746641be9bef61079d7c48e",
+      "bytes": 1429
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-periodic.requests.jsonl": {
+      "sha256": "46dddd4db29c19c601a1105316effe1c18cac3bd8743ed82fc76362e64ba4990",
+      "bytes": 2803691
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-periodic.origin.json": {
+      "sha256": "a9bc51532c321b5f0d232aa2451369f45d191be35c05520a17b400d18574a3fc",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-periodic.summary.json": {
+      "sha256": "af343e3a07039da0e07fe93914a7a7974814b386f124d964c44cd7a48c7f1110",
+      "bytes": 1477
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-periodic.requests.jsonl": {
+      "sha256": "196b855e9f76807c262104a9a47c98f151ada65d9f1a8f0fce5e70e1c9e508a1",
+      "bytes": 2895553
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-periodic.origin.json": {
+      "sha256": "9b9a0ccca9e9ca613fad78f40edf9becf20122c65d8990b085ba27048e18464b",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-periodic.summary.json": {
+      "sha256": "3b424f96b08cde15c8bbe3f67f8f6e5af0f286883ea78e34cd72e171474d3332",
+      "bytes": 1478
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-periodic.requests.jsonl": {
+      "sha256": "1ec85727ec104801845fa13dc74157ab2b3750d3a8e6fc0cd980fea22b7180af",
+      "bytes": 2895549
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-periodic.origin.json": {
+      "sha256": "454bccee12d1ffa06e8382a641f59dafc9dc9f709c47e3d2b8a1ebcfd507e912",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-periodic.summary.json": {
+      "sha256": "c17553c1364e2158023b510f646c61a95e2e73d33b88170fc493d32c50b8d1d3",
+      "bytes": 1479
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-periodic.requests.jsonl": {
+      "sha256": "2c20e71a08aa400e5ff09e601a15fd985b7397728bce1dc59521db93175873db",
+      "bytes": 2895668
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-periodic.origin.json": {
+      "sha256": "2a4a31d5e4a29c1abbf550de3230ff192b3d4459e04584010477b97beef1e586",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-poisson.summary.json": {
+      "sha256": "01a652d9e182c9502ce61b2f161d42233179b7f061676202ed80f1969e79077f",
+      "bytes": 1452
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-poisson.requests.jsonl": {
+      "sha256": "02f10a11d7fe0a3af41d840e684fc603a4e8d3b0005391074fcb8f57acd18342",
+      "bytes": 2584011
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-long-poisson.origin.json": {
+      "sha256": "c2132cfdff8f9d298a361375f46ec85f5b4f6bf906913d731b628347b54e54bb",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-poisson.summary.json": {
+      "sha256": "3c0c8b2d131c7c1cd126c300d18f7654cdff3775406b30228eb6a487399adae6",
+      "bytes": 1457
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-poisson.requests.jsonl": {
+      "sha256": "509319e39e2418a744f3586699a71f772e5b58206d43427467e3b3f9b4b53f5f",
+      "bytes": 2643026
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-long-poisson.origin.json": {
+      "sha256": "3570fcc33ac869dc8850b49d9ea35d21a4df706cafbac25624a94cec1a219da3",
+      "bytes": 63
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-poisson.summary.json": {
+      "sha256": "93bed89605bf875dfec7a8bec90278bd3ad1159b49f76059d6c24768535709a1",
+      "bytes": 1469
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-poisson.requests.jsonl": {
+      "sha256": "77e07f6d281639a723474dc6a66b1b5b833554b3e82ea1400a956d0542e82428",
+      "bytes": 2548524
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-long-poisson.origin.json": {
+      "sha256": "fd9607f31de0b42eca655a8fb0c0e748de4e3250f67acf4f374118775c1e3960",
+      "bytes": 63
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-poisson.summary.json": {
+      "sha256": "b6034a9199f22820d8a76bf35d78edaae2180e6dbe12b5a36227529377f89a87",
+      "bytes": 1470
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-poisson.requests.jsonl": {
+      "sha256": "df0996f0865ad6ebe967c737182c8fc9ccf0ba22edda29a380449ef702f734fe",
+      "bytes": 2687324
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-long-poisson.origin.json": {
+      "sha256": "18caa0077f7a35c20a61e091dc5bf14a129e09faf5b9274ea9efa6642af5e7c6",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-poisson.summary.json": {
+      "sha256": "e1def973bf1d4abed16c58d5e0ca2550f1803267861cf7e398c819b134b8aa0e",
+      "bytes": 1454
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-poisson.requests.jsonl": {
+      "sha256": "7279e536a132fb3197cbd01aadc87f578cb72c0eef237a7a8da89faac8f7246a",
+      "bytes": 2755820
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-long-poisson.origin.json": {
+      "sha256": "51f115f1019a4472b6f9eae52d98e0a96a475cc6c75a57ceed7faa8561bee337",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-poisson.summary.json": {
+      "sha256": "f95c181ca9c0ddf0af34eb84e438091c11008ca8d07cefeb9c8f7163804ee4e4",
+      "bytes": 1466
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-poisson.requests.jsonl": {
+      "sha256": "850c8e6d2a5affefcbe468712e66b8fb9b0d6fff3871150d242618958f8ce547",
+      "bytes": 2648904
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-long-poisson.origin.json": {
+      "sha256": "a1556bbe7f0889cb947a33e8da99533dc4f9c6d400c0c817807cc67e15a97b82",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-poisson.summary.json": {
+      "sha256": "a5788e8269d13ecb5865708f8a1ed7de0cdf17902c9bb412b884da9e9a91c6d8",
+      "bytes": 1474
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-poisson.requests.jsonl": {
+      "sha256": "b8bc986e041821c54722a7aa3c403687f576c4882a77643ea09ad30b213c1f94",
+      "bytes": 2776119
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-long-poisson.origin.json": {
+      "sha256": "56216d62c31b0951086f2285386bb8b8d2be3f7b439b4dba4df6f73c9fbe98ae",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-poisson.summary.json": {
+      "sha256": "38b2802414b46b992b16e2e0b5c6f00603eabcf3967a7cbfe7032f3cb3578709",
+      "bytes": 1469
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-poisson.requests.jsonl": {
+      "sha256": "b5541c51fd9408459e5e769664655e2b4a863109135718216289684f96e6a626",
+      "bytes": 2841236
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-long-poisson.origin.json": {
+      "sha256": "e2303ba4bdbabd33534c2ddc4018732a1fd2bb486f1ee9cb8c5dd8b53551e472",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-poisson.summary.json": {
+      "sha256": "c8a7e1a624166fbc50ca5001718328ada603a3b370f38081e26c56d325270daa",
+      "bytes": 1459
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-poisson.requests.jsonl": {
+      "sha256": "3a6760265515a8d5aacfc39896e5de7d49b14e686079203438517489bedd7d37",
+      "bytes": 2736370
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-long-poisson.origin.json": {
+      "sha256": "7940b72d99414af46d9c13ce1e07517e0cb9559889c6328af0ddd9afccbfabe5",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-short-periodic.summary.json": {
+      "sha256": "d3b497afd33a6b1f8fa995f484bd0dc1bdd6f5a34def180a536c6c7490beb758",
+      "bytes": 1425
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-short-periodic.requests.jsonl": {
+      "sha256": "fa41013ec33302e3466511274f30e6461341d72cf91958f45b79b703b1043c18",
+      "bytes": 2805840
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one1024-short-periodic.origin.json": {
+      "sha256": "cae718ba3c8dabd78478544e9b3f4254c57ba29d0dcb55ed5a8d7ec507c843f0",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-short-periodic.summary.json": {
+      "sha256": "30d1446c81a3f0fb479c12d18777aad1ae6db7042b345cd63ec71e8629781e50",
+      "bytes": 1423
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-short-periodic.requests.jsonl": {
+      "sha256": "84e0218b3b3b7fb1faf9ba28ef9b2c4246971f086bc4854fdfdadf081cce1ba3",
+      "bytes": 2805922
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one1024-short-periodic.origin.json": {
+      "sha256": "0441fe78266001cd3d1c163e48a84af1ca3b581c27400bedee125342594bf4d0",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-short-periodic.summary.json": {
+      "sha256": "69f5e3595e372b8bc343c7251e44c0fee8a5f5007a1af52f7fee0239ed159c38",
+      "bytes": 1429
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-short-periodic.requests.jsonl": {
+      "sha256": "134b487a3ae74498e8bbfdd0fbf8b27ca53373933c405679ce19d1403ee66e21",
+      "bytes": 2805910
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one1024-short-periodic.origin.json": {
+      "sha256": "02c2f88333029c63c7c90201d1ad2426f881a7be7259dc3605f5a3ff1c19eddf",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-short-periodic.summary.json": {
+      "sha256": "d1890e115b3b7cf25a1e960187eb933c5fab24b98cb99b90e9e14bcad048dd7b",
+      "bytes": 1424
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-short-periodic.requests.jsonl": {
+      "sha256": "ce1f65c966b7e539f87e46b76721c73e3b975d8f19c13855de82a6431725124a",
+      "bytes": 2805945
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-one2048-short-periodic.origin.json": {
+      "sha256": "0dbb716e2548dcddd648cb75c3b0abe4c76426ad20d246a3e9c22bd7051845a3",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-short-periodic.summary.json": {
+      "sha256": "1486db526b64a6939056405d787684bbc4478f44629f010b1f33a97127780db6",
+      "bytes": 1421
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-short-periodic.requests.jsonl": {
+      "sha256": "d59f557a2ff1f1638277ad2ea2eb8f68249086077fa7303219daebdeb44d8ee6",
+      "bytes": 2805821
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-one2048-short-periodic.origin.json": {
+      "sha256": "cb14dd77012cb418ca8832d5b60fe1123ff37f13bb8610566f818a6eb5da0971",
+      "bytes": 65
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-short-periodic.summary.json": {
+      "sha256": "4fa6e6d2f1663c097b4750e5edebbc42c7117bb55846dcfb5ec0bf5b819e5705",
+      "bytes": 1428
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-short-periodic.requests.jsonl": {
+      "sha256": "d2ff8699524e50e565ab5d6b391df37d6db523d8615c877875781685a6779a00",
+      "bytes": 2805926
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-one2048-short-periodic.origin.json": {
+      "sha256": "7eda6f404792b6bd03945f1b26f9fc67a4804805a3f95bf11c491a58725c1dde",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-short-periodic.summary.json": {
+      "sha256": "eea0f0b2303867eedaba35221459e4a06a9710d48183dafa9a6762c3c834036a",
+      "bytes": 1433
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-short-periodic.requests.jsonl": {
+      "sha256": "063a880e4c8f2330043552e8cbc33afc185b6e980c63d15108905127954b0122",
+      "bytes": 2894643
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r1-original3-short-periodic.origin.json": {
+      "sha256": "4d5fd8d2be1caeeb90f933d3a5ca97098b9b7f6bac4bb269a96028a15f6e4716",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-short-periodic.summary.json": {
+      "sha256": "9ee6209984d26e847cd488dba48dd7161cc9f0a32e3df818bc7670da232da315",
+      "bytes": 1432
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-short-periodic.requests.jsonl": {
+      "sha256": "9f8fe048e49453f91dda462d14410a6b2b8d350423f865f856dafa70b371431c",
+      "bytes": 2894786
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r2-original3-short-periodic.origin.json": {
+      "sha256": "18fdc3191299f0eb0edd7a2b41f7a06be4799fb592bcae6d2884a21f68d83e44",
+      "bytes": 64
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-short-periodic.summary.json": {
+      "sha256": "da4680777f9bd1f29ccf478a7fd9f7ab92f52ac52ff53228c77b929a794ec585",
+      "bytes": 1430
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-short-periodic.requests.jsonl": {
+      "sha256": "cb6d32744291a6109727cb43899bcd33dc5fe139abebdb765f6241eacdba47df",
+      "bytes": 2894551
+    },
+    "results/night-isolation-2026-10-31/run-20261031T152137Z-attempt02-fresh/retrieved/cases/B-r3-original3-short-periodic.origin.json": {
+      "sha256": "7521965325e7c5d2707feacbbedc588cb9fa4cf30edc1ec5d4d5f6dbf2c96ec0",
+      "bytes": 65
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/analysis/summary.json": {
+      "sha256": "37c3fa8dbdc38547d3333f986e3d968b0eb000d4edda9b67176d151466f0ccc7",
+      "bytes": 17219
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean1-A.summary.json": {
+      "sha256": "0c09c6a3ba66ff788ade5a9424e520bdb5a0aa3c789cb424f69d213a54f11cc9",
+      "bytes": 1414
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean1-A.requests.jsonl": {
+      "sha256": "bffa4f5f98b2190db59ef31a4df14f0573bdb5c28e1262d9d496fbbf5689d54f",
+      "bytes": 1102678
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean1-A.origin.json": {
+      "sha256": "8de30f1bf9c6dd9f8bf512c5f96253c52646c4be81e6dbb93d8ea209c9fb431b",
+      "bytes": 65
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean2-B.summary.json": {
+      "sha256": "cd74ac5c35b0c1943429ba554887db9d436ee3e92d538dc5f7db3d0e9bfecb33",
+      "bytes": 1451
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean2-B.requests.jsonl": {
+      "sha256": "4f17046029cec4fa430f9b93fd37c3a303d6e3faa464f5505bef204038fa18f5",
+      "bytes": 1102643
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean2-B.origin.json": {
+      "sha256": "5faf93f6af40d9d13ed8dd3ad3cd4bcf5a0038f766296a7cb9838a9203ae8f8f",
+      "bytes": 65
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean3-B.summary.json": {
+      "sha256": "096caa40d7a3eba8ef4f413c9a9c4416c45b1c2df19344ead04914b39b70374c",
+      "bytes": 1410
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean3-B.requests.jsonl": {
+      "sha256": "faeb43fb4a9bea318cdee571cb6745fd4fdcb8aba5a1758fff2872afb7a3eda6",
+      "bytes": 1102728
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean3-B.origin.json": {
+      "sha256": "a03d90b922519a554ee2a85f2575662bf8720ad14e827e5fd62453a7040f101a",
+      "bytes": 64
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean4-A.summary.json": {
+      "sha256": "113edfde677eb0ac34c39aa9bd1c8e8c118eceebc98e3cb8cc1a86897816302f",
+      "bytes": 1452
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean4-A.requests.jsonl": {
+      "sha256": "255bcd0dfc3dd906a9272f6387736cf736f5dffb5ca94b49091456a29af40bd0",
+      "bytes": 1102760
+    },
+    "results/drift-diagnostic-2026-11-01/run-20261101T061222Z/retrieved/cases/clean4-A.origin.json": {
+      "sha256": "575f57129a7f299c8e91aec692d4effc0763245a29a072b603aaaa2c77160049",
+      "bytes": 65
+    },
+    "results/mtp-study-2026-10-30/run-20261030T070100Z/analysis-final/summary.json": {
+      "sha256": "7d52337df7bfad9365c821c5e3db113322332386565e0bf816daf0a9e7a48961",
+      "bytes": 65744
+    },
+    "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json": {
+      "sha256": "d602418f3c0c0ba845ff962de6ed783e7d3ab5ebeff7583957c4b1a7548f3f40",
+      "bytes": 45380
+    }
+  },
+  "earlier_goodput_aggregates": [
+    {
+      "arrival_rate_req_s": 4,
+      "configuration": "none",
+      "independent_rounds": 3,
+      "mean_output_throughput_tok_s": 487.9723702254932,
+      "mean_slo_output_throughput_tok_s": 487.9723702254932,
+      "source": "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json",
+      "source_verification": "Uses prior verified output_throughput field; recomputed against fixed128 outputs, successful count and saved full duration. No new raw request reanalysis for this earlier stage."
+    },
+    {
+      "arrival_rate_req_s": 4,
+      "configuration": "fixed1",
+      "independent_rounds": 3,
+      "mean_output_throughput_tok_s": 499.38520698426794,
+      "mean_slo_output_throughput_tok_s": 499.38520698426794,
+      "source": "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json",
+      "source_verification": "Uses prior verified output_throughput field; recomputed against fixed128 outputs, successful count and saved full duration. No new raw request reanalysis for this earlier stage."
+    },
+    {
+      "arrival_rate_req_s": 4,
+      "configuration": "fixed3",
+      "independent_rounds": 3,
+      "mean_output_throughput_tok_s": 500.6964423037756,
+      "mean_slo_output_throughput_tok_s": 500.6964423037756,
+      "source": "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json",
+      "source_verification": "Uses prior verified output_throughput field; recomputed against fixed128 outputs, successful count and saved full duration. No new raw request reanalysis for this earlier stage."
+    },
+    {
+      "arrival_rate_req_s": 7,
+      "configuration": "none",
+      "independent_rounds": 3,
+      "mean_output_throughput_tok_s": 795.4687576802809,
+      "mean_slo_output_throughput_tok_s": 82.19816938348069,
+      "source": "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json",
+      "source_verification": "Uses prior verified output_throughput field; recomputed against fixed128 outputs, successful count and saved full duration. No new raw request reanalysis for this earlier stage."
+    },
+    {
+      "arrival_rate_req_s": 7,
+      "configuration": "fixed1",
+      "independent_rounds": 3,
+      "mean_output_throughput_tok_s": 853.2208571197729,
+      "mean_slo_output_throughput_tok_s": 257.32003426354856,
+      "source": "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json",
+      "source_verification": "Uses prior verified output_throughput field; recomputed against fixed128 outputs, successful count and saved full duration. No new raw request reanalysis for this earlier stage."
+    },
+    {
+      "arrival_rate_req_s": 7,
+      "configuration": "fixed3",
+      "independent_rounds": 3,
+      "mean_output_throughput_tok_s": 852.9479542922678,
+      "mean_slo_output_throughput_tok_s": 828.5782113985236,
+      "source": "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json",
+      "source_verification": "Uses prior verified output_throughput field; recomputed against fixed128 outputs, successful count and saved full duration. No new raw request reanalysis for this earlier stage."
+    },
+    {
+      "arrival_rate_req_s": 9,
+      "configuration": "none",
+      "independent_rounds": 3,
+      "mean_output_throughput_tok_s": 800.8695861358298,
+      "mean_slo_output_throughput_tok_s": 72.07826275222467,
+      "source": "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json",
+      "source_verification": "Uses prior verified output_throughput field; recomputed against fixed128 outputs, successful count and saved full duration. No new raw request reanalysis for this earlier stage."
+    },
+    {
+      "arrival_rate_req_s": 9,
+      "configuration": "fixed1",
+      "independent_rounds": 3,
+      "mean_output_throughput_tok_s": 891.6536533098073,
+      "mean_slo_output_throughput_tok_s": 117.00405829751794,
+      "source": "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json",
+      "source_verification": "Uses prior verified output_throughput field; recomputed against fixed128 outputs, successful count and saved full duration. No new raw request reanalysis for this earlier stage."
+    },
+    {
+      "arrival_rate_req_s": 9,
+      "configuration": "fixed3",
+      "independent_rounds": 3,
+      "mean_output_throughput_tok_s": 920.4831547472727,
+      "mean_slo_output_throughput_tok_s": 367.9468742800574,
+      "source": "results/goodput-study-2026-10-30/run-20261030T134707Z/summary.json",
+      "source_verification": "Uses prior verified output_throughput field; recomputed against fixed128 outputs, successful count and saved full duration. No new raw request reanalysis for this earlier stage."
+    }
+  ]
+}
