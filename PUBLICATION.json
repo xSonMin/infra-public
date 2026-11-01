@@ -104,18 +104,18 @@
     },
     {
       "path": "daily/2026-10-30.md",
-      "sha256": "91180cc1d36356a0633a092ca60c78ddd2f23df450e205a3b45f314401745976",
-      "bytes": 15035
+      "sha256": "49055e0f53c1734ff59d3cde2c7e5cdeb275d2595e3a90ac7307e45f81a89212",
+      "bytes": 15063
     },
     {
       "path": "daily/2026-10-31.md",
-      "sha256": "6ab42809150453659b30f5b31344182eb49693a59e1b791e2c0c9c68cb3fa893",
-      "bytes": 24252
+      "sha256": "52d38733b7383824708b376769196524bfb1a22252d58f6fa00fd36e0f0f0bda",
+      "bytes": 25104
     },
     {
       "path": "daily/2026-11-01.md",
-      "sha256": "63948acafa9f13e84965269a608750136adaf8166ab5cf129842ca690eca31ff",
-      "bytes": 25036
+      "sha256": "50a0194993fbf121b41cef04abf0b17a1561297b63076b10a7a46ecfec5206a5",
+      "bytes": 25192
     },
     {
       "path": "daily/2026-11-02.md",
@@ -957,22 +957,27 @@
       "daily/2026-10-31.md",
       "daily/2026-11-01.md"
     ],
-    "reference": "docs/learning/2026-11-01-experiment-timeline-until-1500.md; local style reference only, not copied into the public release",
-    "major_result_subsections": {
-      "2026-10-30": 5,
-      "2026-10-31": 8,
-      "2026-11-01": 6
-    },
-    "required_fields": [
-      "实验日期和时间",
+    "reference": "User-provided five-subheading example; date/time belongs in each experiment heading.",
+    "experiment_heading_includes_date_and_time": true,
+    "unknown_review_time_explicitly_labeled": true,
+    "detail_heading_level": 4,
+    "detail_heading_names": [
       "为什么做",
       "做了什么",
       "结果怎样",
       "得出什么结论",
       "成果与下一步"
     ],
-    "original_tables_preserved": 19,
+    "major_result_subsections": {
+      "2026-10-30": 5,
+      "2026-10-31": 8,
+      "2026-11-01": 6
+    },
+    "removed_numbered_bold_field_list": true,
+    "original_tables_preserved": 27,
     "original_figures_preserved": 7,
+    "all_link_targets_preserved": true,
+    "outside_major_results_unchanged": true,
     "closed_daily_period_preserved": true,
     "nov1_period_start": "2026-10-31T17:00:00+08:00",
     "nov1_period_end": "2026-11-01T15:01:27+08:00",
